@@ -12,7 +12,7 @@
   <a href="https://github.com/MDBrodskiy/Electricity_Magnetism">
     <img src="images/background.png" alt="background">
   </a>
-  <h3 align="center">Fundamentals of Electricity_Magnetism</h3>
+  <h3 align="center">Electricity & Magnetism</h3>
 <br />
 </p>
 
