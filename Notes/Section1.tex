@@ -1,0 +1,147 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Written By Michael Brodskiy
+% Class: Electricity & Magnetism
+% Professor: D. Wood
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\include{Includes.tex}
+
+\title{Vector Calculus}
+\date{\today}
+\author{Michael Brodskiy\\ \small Professor: D. Wood}
+
+\begin{document}
+
+\maketitle
+
+\begin{itemize}
+
+  \item A vector is defined by:
+
+    \begin{itemize}
+
+      \item Transformation under rotation
+
+        $$\left( \begin{array}{c} A_x'\\A_y'\end{array} \right)=\left( \begin{array}{c c} \mathbb{R}_{xx} & \mathbb{R}_{yy}\\ \mathbb{R}_{yx} & \mathbb{R}_{yy}\end{array} \right)\left( \begin{array}{c} A_x\\ A_y\end{array} \right)$$
+      $$\mathbb{R}=\left( \begin{array}{c c}\cos(\delta\phi) & -\sin(\delta\phi)\\ \sin(\delta\phi) & \cos(\delta\phi) \end{array} \right)$$
+
+      \item Examples include electric fields, magnetic fields, momentum, displacement, etc.
+
+    \end{itemize}
+
+  \item Scalars
+
+    \begin{itemize}
+
+      \item Invariant under rotation
+
+      \item Examples include charge, mass, electric potential, energy, etc.
+
+    \end{itemize}
+
+  \item Tensors (rank 2)
+
+    \begin{itemize}
+
+      \item $\mathbb{R}$ above is an example
+
+    \end{itemize}
+
+  \item Differential Operators
+
+    \begin{itemize}
+
+      \item Gradient $\longrightarrow \vec{\nabla}=\hat{x}\frac{\partial}{\partial x}+\hat{y}\frac{\partial}{\partial y} + \hat{z}\frac{\partial}{\partial z}$
+
+        \begin{itemize}
+
+          \item Must operate on something to be useful
+
+          \item Ex. $\vec{E}=-\vec{\nabla}V(x,y,z)$
+
+        \end{itemize}
+
+    \end{itemize}
+
+  \item Maxwell's Equations in a Vacuum (in SI units)
+
+    $$\vec{\nabla}\cdot\vec{E}=\frac{1}{\epsilon_o}\rho$$
+    $$\vec{\nabla}\times\vec{E}=-\frac{\partial\vec{B}}{\partial t}$$
+    $$\vec{\nabla}\cdot\vec{B}=0$$
+    $$\vec{\nabla}\times\vec{B}=\mu_o\vec{J}+\mu_o\epsilon_o\frac{\partial\vec{E}}{\partial t}$$
+
+    \begin{itemize}
+
+      \item SI units for E\&M: Coulomb, Volt, Tesla, Ampere
+
+    \end{itemize}
+
+  \item Force between two objects
+
+    \begin{itemize}
+
+      \item In SI:
+
+        $$\vec{F}_{12}=\frac{q_1q_2(\widehat{r_1-r_2})}{4\pi\epsilon_o r_{12}^2}$$
+
+      \item In CGS:
+
+        $$F=\frac{q_1q_2}{r^2}$$
+
+    \end{itemize}
+
+  \item Cross Products
+
+    $$\vec{A}\times\vec{B}=\left|\begin{matrix}\hat{i} & \hat{j} & \hat{k}\\ A_x & A_y & A_z\\ B_x & B_y & B_z\end{matrix}\right|$$
+
+    \begin{itemize}
+
+      \item Not cumulative:
+
+    $$\vec{A}\times\vec{B}=-\vec{B}\times\vec{A}$$
+
+      \item Distributive:
+
+        $$\vec{A}\times(\vec{B}+\vec{C})=\vec{A}\times\vec{B}+\vec{A}\times\vec{C}$$
+
+      \item Not associative:
+
+        $$(\vec{A}\times\vec{B})\times\vec{C}\neq\vec{A}\times(\vec{B}\times\vec{C})$$
+
+    \end{itemize}
+
+  \item Unit Vectors:
+
+    $$\hat{v}=\frac{\vec{v}}{|\vec{v}|}$$
+
+  \item Gradient of a scalar field
+
+    \begin{itemize}
+
+      \item If $T$ is a scalar field, then:
+
+        $$\vec{\nabla}T=\frac{\partial T}{\partial x}\hat{x}+\frac{\partial T}{\partial y}\hat{y}+\frac{\partial T}{\partial z}\hat{z}$$
+
+      \item Ex. $T=y^2z$
+
+        $$\vec{\nabla}T=0\hat{x}+(2yz)\hat{y}+(y^2)\hat{z}$$
+
+      \item Ex. $T=r^3=(x^2+y^2+z^2)^{\frac{3}{2}}$
+
+        $$\vec{\nabla}T=\left(\frac{3}{2}(x^2+y^2+z^2)^{\frac{1}{2}}(2x)\right)\hat{x}+\left(\frac{3}{2}(x^2+y^2+z^2)^{\frac{1}{2}}(2y)\right)\hat{y}$$
+        $$+\left(\frac{3}{2}(x^2+y^2+z^2)^{\frac{1}{2}}(2z)\right)\hat{z}$$
+        $$\vec{\nabla}T=3r(x\hat{x}+y\hat{y}+z\hat{z})=3r\vec{r}=3r^2\hat{r}$$
+        $$\vec{\nabla}(r^3)=3r^2(\vec{\nabla}r)$$
+
+        Thus, we see:
+
+        $$\vec{\nabla}r=\hat{r}$$
+
+        Think in terms of dimensionality.
+
+    \end{itemize}
+
+\end{itemize}
+
+\end{document}
+
