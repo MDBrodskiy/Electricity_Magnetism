@@ -141,6 +141,86 @@
 
     \end{itemize}
 
+  \item Product Rule
+
+    \begin{itemize}
+
+      \item In One Dimension:
+
+        $$\frac{d}{dx}(fg)=\frac{df}{dx}g+f\frac{dg}{dx}$$
+
+      \item Three Dimensions:
+
+        $$\vec{\nabla}(fg)=(\vec{\nabla}f)g+f(\vec{\nabla}g)=g\vec{\nabla}f+f\vec{\nabla}g$$
+
+        where $f,g$ are scalar functions of $x,y,z$
+
+      \item Where $a$ is constant:
+
+        $$\vec{\nabla}(af)=a\vec{\nabla}(f)$$
+
+    \end{itemize}
+
+  \item Chain Rule
+
+    \begin{itemize}
+
+      \item In One Dimension:
+
+        $$\frac{d}{dx}(f(g(x)))=f'(g(x))\frac{dg}{dx}=\frac{\partial f}{\partial g}\frac{\partial g}{\partial x}$$
+
+      \item Three Dimensions:
+
+        $$\vec{\nabla}(f(g(x,y,z)))=\frac{\partial f}{\partial g}\vec{\nabla}g$$
+
+      \item Example:
+
+        $$f(g)=g^3,\,g=r=\sqrt{x^2+y^2+z^2}$$
+        $$\frac{\partial f}{\partial g}\vec{\nabla}g=3g^2\vec{\nabla}(r)=3r^2\hat{r}$$
+
+    \end{itemize}
+
+  \item Divergence (where $\vec{v}$ is a vector function)
+
+      $$\vec{\nabla}\cdot\vec{v}=\frac{\partial v_x}{\partial x}+\frac{\partial v_y}{\partial y}+\frac{\partial v_z}{\partial z}$$
+
+    \begin{itemize}
+
+      \item Example of positive divergence (where $\vec{v}=x\hat{x}$). Looking at the graph of the vector field and taking a sample volume, there is more going ``out'' than ``in,'' which indicates that the divergence is greater than 0
+
+        $$\vec{\nabla}\cdot\vec{v}=1 + 0 + 0=1$$
+
+      \item Zero divergence would mean the same quantity ``out'' as ``in,'' like when $\vec{v}$ is a constant in any direction
+
+      \item Negative divergence 
+
+        $$\vec{v}=\frac{\hat{r}}{r^3}$$
+        $$\vec{\nabla}\cdot\frac{\hat{r}}{r^3}=\vec{\nabla}\cdot\frac{\vec{r}}{r^4}=(\vec{\nabla}\cdot\vec{r})\frac{1}{r^4}+\vec{r}\left( \vec{\nabla}\frac{1}{r^4} \right)=\frac{3}{r^4}+\vec{r}\left( -\frac{4\hat{r}}{r^5} \right)=-\frac{1}{r^4}\footnote{Keep in mind, $r\hat{r}=\vec{r}$, and $\vec{r}=x\hat{x}+y\hat{y}+z\hat{z}$}$$
+
+    \end{itemize}
+    
+  \item Curl
+
+    $$\vec{\nabla}\times\vec{v}=\text{curl}(\vec{v})=\left|\begin{matrix} \hat{x} & \hat{y} & \hat{z}\\ \frac{\partial}{\partial x} & \frac{\partial}{\partial y} & \frac{\partial}{\partial z} \\ v_x & v_y & v_z\end{matrix}\right|$$
+
+    \begin{itemize}
+
+      \item Product rule for curl:
+
+        \begin{itemize}
+
+          \item Scalar times vector:
+
+            $$\vec{\nabla}\times(f(x,y,z)\vec{A}(x,y,z))=\vec{\nabla}f\times A+f(\vec{\nabla}\times\vec{A})$$
+
+          \item Vector times vector:
+
+            $$\vec{\nabla}\times(\vec{A}\times\vec{B})=(\vec{B}\cdot\vec{\nabla})\vec{A}-(\vec{A}\cdot\vec{\nabla})\vec{B}+\vec{A}(\vec{\nabla}\cdot\vec{B})-\vec{B}(\vec{\nabla}\cdot\vec{A})$$
+
+        \end{itemize}
+
+    \end{itemize}
+
 \end{itemize}
 
 \end{document}
