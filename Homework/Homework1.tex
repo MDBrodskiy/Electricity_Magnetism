@@ -24,29 +24,29 @@
 
         We know $r=\sqrt{x^2+y^2+z^2}$. Converting and applying the chain rule, we get:
 
-        $$\frac{\partial}{\partial x}\left( x^2+y^2+z^2\right)^{\frac{1}{2}}\hat{x}+\frac{\partial}{\partial y}\left( x^2+y^2+z^2\right)^{\frac{1}{2}}\hat{y}+\frac{\partial}{\partial z}\left( x^2+y^2+z^2\right)^{\frac{1}{2}}\hat{z}$$
-        $$(x^2+y^2+z^2)^{-\frac{3}{2}}(x\hat{x}+y\hat{y}=z\hat{z})$$
-        $$\frac{x\hat{x}+y\hat{y}+z\hat{z}}{r^3}$$
+        $$\frac{\partial}{\partial x}\left( x^2+y^2+z^2\right)^{-\frac{1}{2}}\bold{\hat{x}}+\frac{\partial}{\partial y}\left( x^2+y^2+z^2\right)^{-\frac{1}{2}}\bold{\hat{y}}+\frac{\partial}{\partial z}\left( x^2+y^2+z^2\right)^{-\frac{1}{2}}\bold{\hat{z}}$$
+        $$(x^2+y^2+z^2)^{-\frac{3}{2}}(x\bold{\hat{x}}+y\bold{\hat{y}}=z\bold{\hat{z}})$$
+        $$\frac{x\bold{\hat{x}}+y\bold{\hat{y}}+z\bold{\hat{z}}}{r^3}$$
 
-        We also know that $\vec{r}=x\hat{x}+y\hat{y}+z\hat{z}$, and that $r\hat{r}=\vec{r}$. Thus, we get:
+        We also know that $\vec{r}=x\bold{\hat{x}}+y\bold{\hat{y}}+z\bold{\hat{z}}$, and that $r\bold{\hat{r}}=\vec{r}$. Thus, we get:
 
-        $$\boxed{\vec{\nabla}\left( \frac{1}{r} \right)=\frac{\vec{r}}{r^3}\rightarrow\frac{\hat{r}}{r^2}}$$
+        $$\boxed{\vec{\nabla}\left( \frac{1}{r} \right)=\frac{\vec{r}}{r^3}\rightarrow\frac{\bold{\hat{r}}}{r^2}}$$
 
-      \item $\vec{\nabla}\cdot\hat{x}$
+      \item $\vec{\nabla}\cdot\bold{\hat{x}}$
 
         This implies the following:
 
-        $$v_x=1\hat{x},\quad v_y=0\hat{y},\quad v_z=0\hat{z}$$
+        $$v_x=1\bold{\hat{x}},\quad v_y=0\bold{\hat{y}},\quad v_z=0\bold{\hat{z}}$$
 
         Thus, we find:
 
-        $$\boxed{\vec{\nabla}\cdot\hat{x}=\frac{\partial}{\partial x}(1\hat{x})=0}$$
+        $$\boxed{\vec{\nabla}\cdot\bold{\hat{x}}=\frac{\partial}{\partial x}(1\bold{\hat{x}})=0}$$
 
-      \item $\vec{\nabla}\cdot\hat{r}$
+      \item $\vec{\nabla}\cdot\bold{\hat{r}}$
 
         This could be written as:
 
-        $$\vec{\nabla}\cdot\left( \frac{x\hat{x}+y\hat{y}+z\hat{z}}{\sqrt{x^2+y^2+z^2}} \right)$$
+        $$\vec{\nabla}\cdot\left( \frac{x\bold{\hat{x}}+y\bold{\hat{y}}+z\bold{\hat{z}}}{\sqrt{x^2+y^2+z^2}} \right)$$
 
         Thus, we need to compute:
 
@@ -68,16 +68,16 @@
 
         $$\left( \frac{1}{r}-\frac{x^2}{r^3} \right)+\left( \frac{1}{r}-\frac{y^2}{r^3} \right)+\left( \frac{1}{r}-\frac{z^2}{r^3} \right)$$
         $$\frac{3}{r}-\left( \frac{x^2+y^2+z^2}{r^3} \right)$$
-        $$\boxed{\vec{\nabla}\cdot\hat{r}=\frac{3}{r}-\frac{1}{r}=\frac{2}{r}}$$
+        $$\boxed{\vec{\nabla}\cdot\bold{\hat{r}}=\frac{3}{r}-\frac{1}{r}=\frac{2}{r}}$$
 
       \item $\vec{\nabla}r^n$ ($n>0$)
 
-        $$\vec{\nabla}((x^2+y^2+z^2)^\frac{n}{2})\Rightarrow \frac{n}{2}(x^2+y^2+z^2)^{\frac{n}{2}-1}\left( 2x\hat{x}+2y\hat{y}+2z\hat{z} \right)$$
+        $$\vec{\nabla}((x^2+y^2+z^2)^\frac{n}{2})\Rightarrow \frac{n}{2}(x^2+y^2+z^2)^{\frac{n}{2}-1}\left( 2x\bold{\hat{x}}+2y\bold{\hat{y}}+2z\bold{\hat{z}} \right)$$
         $$n\vec{r}r^{n-2}\rightarrow \frac{n\vec{r}}{r^{2-n}}$$
 
         Thus, we get:
 
-        $$\boxed{\frac{n\hat{r}}{r^{1-n}}\quad\text{or}\quad n\hat{r}r^{n-1}}$$
+        $$\boxed{\frac{n\bold{\hat{r}}}{r^{1-n}}\quad\text{or}\quad n\bold{\hat{r}}r^{n-1}}$$
 
     \end{enumerate}
 
@@ -96,7 +96,7 @@
 
           \item Curl:
 
-            $$\vec{\nabla}\times\vec{v}_a=\left|\begin{matrix} \hat{x} & \hat{y} & \hat{z}\\ \frac{\partial}{\partial x} & \frac{\partial}{\partial y} & \frac{\partial}{\partial z} \\ xy & yz & zy \end{matrix}\right|=(z-y)\hat{x}-(0-0)\hat{y}+(0-x)\hat{z}$$
+            $$\vec{\nabla}\times\vec{v}_a=\left|\begin{matrix} \bold{\hat{x}} & \bold{\hat{y}} & \bold{\hat{z}}\\ \frac{\partial}{\partial x} & \frac{\partial}{\partial y} & \frac{\partial}{\partial z} \\ xy & yz & zy \end{matrix}\right|=(z-y)\bold{\hat{x}}-(0-0)\bold{\hat{y}}+(0-x)\bold{\hat{z}}$$
             $$\boxed{\text{curl}(\vec{v}_a)=\langle z-y, 0, -x\rangle}$$
 
         \end{itemize}
@@ -112,7 +112,7 @@
 
           \item Curl:
 
-            $$\vec{\nabla}\times\vec{v}_b=\left|\begin{matrix} \hat{x} & \hat{y} & \hat{z}\\ \frac{\partial}{\partial x} & \frac{\partial}{\partial y} & \frac{\partial}{\partial z} \\ y^2 & 2xy+z^2 & 2xz \end{matrix}\right|=(0-2z)\hat{x}-(2z-0)\hat{y}+(2y-2y)\hat{z}$$
+            $$\vec{\nabla}\times\vec{v}_b=\left|\begin{matrix} \bold{\hat{x}} & \bold{\hat{y}} & \bold{\hat{z}}\\ \frac{\partial}{\partial x} & \frac{\partial}{\partial y} & \frac{\partial}{\partial z} \\ y^2 & 2xy+z^2 & 2xz \end{matrix}\right|=(0-2z)\bold{\hat{x}}-(2z-0)\bold{\hat{y}}+(2y-2y)\bold{\hat{z}}$$
             $$\boxed{\text{curl}(\vec{v}_b)=\langle -2z, -2z, 0\rangle}$$
 
         \end{itemize}
@@ -128,7 +128,7 @@
 
           \item Curl:
 
-            $$\vec{\nabla}\times\vec{v}_c=\left|\begin{matrix} \hat{x} & \hat{y} & \hat{z}\\ \frac{\partial}{\partial x} & \frac{\partial}{\partial y} & \frac{\partial}{\partial z} \\ yz & xz & xy \end{matrix}\right|=(x-x)\hat{x}-(y-y)\hat{y}+(z-z)\hat{z}$$
+            $$\vec{\nabla}\times\vec{v}_c=\left|\begin{matrix} \bold{\hat{x}} & \bold{\hat{y}} & \bold{\hat{z}}\\ \frac{\partial}{\partial x} & \frac{\partial}{\partial y} & \frac{\partial}{\partial z} \\ yz & xz & xy \end{matrix}\right|=(x-x)\bold{\hat{x}}-(y-y)\bold{\hat{y}}+(z-z)\bold{\hat{z}}$$
             $$\boxed{\text{curl}(\vec{v}_c)=\langle 0, 0, 0\rangle}$$
 
         \end{itemize}
@@ -141,20 +141,53 @@
 
       \item $(\vec{r}\cdot\vec{\nabla})\vec{r}$
 
-        $$(\vec{r}\cdot\vec{\nabla})=\frac{\partial}{\partial x}(x\hat{x})+\frac{\partial}{\partial y} (y\hat{y})+\frac{\partial}{\partial z}(z\hat{z})=1+1+1=3$$
-        $$\boxed{(\vec{r}\cdot\vec{\nabla})\vec{r}=3\vec{r}=3x\hat{x}+3y\hat{y}+3z\hat{z}}$$
+        $$(\vec{r}\cdot\vec{\nabla})=\frac{\partial}{\partial x}(x\bold{\hat{x}})+\frac{\partial}{\partial y} (y\bold{\hat{y}})+\frac{\partial}{\partial z}(z\bold{\hat{z}})=1+1+1=3$$
+        $$\boxed{(\vec{r}\cdot\vec{\nabla})\vec{r}=3\vec{r}=3x\bold{\hat{x}}+3y\bold{\hat{y}}+3z\bold{\hat{z}}}$$
 
-      \item $(\hat{r}\cdot\vec{\nabla})r$
+      \item $(\bold{\hat{r}}\cdot\vec{\nabla})r$
 
-        From Problem \textbf{1c}, we know the value of $(\hat{r}\cdot\vec{\nabla})$, which gives us:
+        From Problem \textbf{1c}, we know the value of $(\bold{\hat{r}}\cdot\vec{\nabla})$, which gives us:
 
         $$\boxed{\left( \frac{2}{r} \right)r=2}$$
 
-      \item $(\hat{r}\cdot\vec{\nabla})\hat{r}$
+      \item $(\bold{\hat{r}}\cdot\vec{\nabla})\bold{\hat{r}}$
 
         Again, employing what we know from Problem \textbf{1c}, we get:
 
-        $$\boxed{\left( \frac{2}{r} \right)\hat{r}=\frac{2\hat{r}}{r}}$$
+        $$\boxed{\left( \frac{2}{r} \right)\bold{\hat{r}}=\frac{2\bold{\hat{r}}}{r}}$$
+
+    \end{enumerate}
+
+  \item Consider a vector field $\vec{v}=2xz\bold{\hat{x}}+(x+2)\bold{\hat{y}}+y(z^2-3)\bold{\hat{z}}$ and a cube with vertices at (0,0,0), (0,2,0), (2,0,0), (0,0,2), etc. In the text (Example 1.7), the flux was calculated through the top five faces of the cube, and found to total to 20.
+
+    \begin{enumerate}
+
+      \item Find the upward flux through the bottom surface, i.e.\ the square surface in the $xy$-plane bounded by the points (0,0,0), (2,0,0), (2,2,0), (0,2,0).
+
+        According to the Stoke's Theorem, we must first find the curl of $\vec{v}$:
+
+        $$\vec{\nabla}\times\vec{v}=\left|\begin{matrix}\bold{\hat{x}} & \bold{\hat{y}} & \bold{\hat{z}}\\ \frac{\partial}{\partial x} & \frac{\partial}{\partial y} & \frac{\partial}{\partial z}\\ 2xz & x+2 & yz^2-3y\end{matrix}\right|=(z^2-3-0)\bold{\hat{x}}-(0-2x)\bold{\hat{y}}+(1-0)\bold{\hat{z}}$$
+        $$\text{curl}(\vec{v})=\langle z^2-3,2x,1\rangle$$
+
+        Furthermore, because the surface is in the $xy$ plane, and the flux we want to find is in the $\bold{\hat{z}}$ direction, we know:
+
+        $$d\vec{a}=dx\,dy\,\bold{\hat{z}}$$
+
+      \item 
+
+    \end{enumerate}
+
+  \item 
+
+    \begin{enumerate}
+
+      \item 
+
+      \item 
+
+      \item 
+
+      \item 
 
     \end{enumerate}
 
@@ -168,35 +201,31 @@
 
     \end{enumerate}
 
-  \item 
+  \item Consider two vector functions $\vec{v}=x^2\bold{\hat{z}}$ and $\vec{w}=x\bold{\hat{x}}+y\bold{\hat{y}}+z\bold{\hat{z}}$
 
     \begin{enumerate}
 
-      \item 
+      \item calculate the divergence and curl of each
 
-      \item 
+        \begin{itemize}
 
-      \item 
+          \item div$(x^2\bold{\hat{z}})$
 
-      \item 
+            $$\boxed{\frac{\partial}{\partial x}(0)+\frac{\partial}{\partial y}(0)+\frac{\partial}{\partial z}(x^2)=0}$$
 
-    \end{enumerate}
+          \item curl$(x^2\bold{\hat{z}})$
 
-  \item 
+            $$\vec{\nabla}\times\vec{v}=\left|\begin{matrix}\bold{\hat{x}} & \bold{\hat{y}} & \bold{\hat{z}}\\ \frac{\partial}{\partial x} & \frac{\partial}{\partial y} & \frac{\partial}{\partial z}\\ 0 & 0 & x^2\end{matrix}\right|=(0-0)\bold{\hat{x}}-(2x-0)\bold{\hat{y}}+(0-0)\bold{\hat{z}}=\boxed{-2x\bold{\hat{y}}}$$
 
-    \begin{enumerate}
+          \item div$(\vec{w}=\vec{r})$
 
-      \item 
+            $$\boxed{\frac{\partial}{\partial x}(x)+\frac{\partial}{\partial y}(y)+\frac{\partial}{\partial z}(z)=3}$$
 
-      \item 
+          \item curl$(\vec{w}=\vec{r})$
 
-    \end{enumerate}
+            $$\vec{\nabla}\times\vec{v}=\left|\begin{matrix}\bold{\hat{x}} & \bold{\hat{y}} & \bold{\hat{z}}\\ \frac{\partial}{\partial x} & \frac{\partial}{\partial y} & \frac{\partial}{\partial z}\\ x & y & z\end{matrix}\right|=(0-0)\bold{\hat{x}}-(0-0)\bold{\hat{y}}+(0-0)\bold{\hat{z}}=\boxed{0}$$
 
-  \item 
-
-    \begin{enumerate}
-
-      \item 
+        \end{itemize}
 
       \item 
 
