@@ -51,7 +51,7 @@
 
     \begin{itemize}
 
-      \item Gradient $\longrightarrow \vec{\nabla}=\hat{x}\frac{\partial}{\partial x}+\hat{y}\frac{\partial}{\partial y} + \hat{z}\frac{\partial}{\partial z}$
+      \item Gradient $\longrightarrow \vec{\nabla}=\bold{hat{x}}\frac{\partial}{\partial x}+\bold{\hat{y}}\frac{\partial}{\partial y} + \bold{\hat{z}}\frac{\partial}{\partial z}$
 
         \begin{itemize}
 
@@ -120,7 +120,7 @@
 
       \item If $T$ is a scalar field, then:
 
-        $$\vec{\nabla}T=\frac{\partial T}{\partial x}\hat{x}+\frac{\partial T}{\partial y}\hat{y}+\frac{\partial T}{\partial z}\hat{z}$$
+        $$\vec{\nabla}T=\frac{\partial T}{\partial x}\bold{\hat{x}}+\frac{\partial T}{\partial y}\bold{\hat{y}}+\frac{\partial T}{\partial z}\bold{\hat{z}}$$
 
       \item Ex. $T=y^2z$
 
@@ -186,7 +186,7 @@
 
     \begin{itemize}
 
-      \item Example of positive divergence (where $\vec{v}=x\hat{x}$). Looking at the graph of the vector field and taking a sample volume, there is more going ``out'' than ``in,'' which indicates that the divergence is greater than 0
+      \item Example of positive divergence (where $\vec{v}=x\bold{\hat{x}}$). Looking at the graph of the vector field and taking a sample volume, there is more going ``out'' than ``in,'' which indicates that the divergence is greater than 0
 
         $$\vec{\nabla}\cdot\vec{v}=1 + 0 + 0=1$$
 
@@ -194,14 +194,14 @@
 
       \item Negative divergence 
 
-        $$\vec{v}=\frac{\hat{r}}{r^3}$$
-        $$\vec{\nabla}\cdot\frac{\hat{r}}{r^3}=\vec{\nabla}\cdot\frac{\vec{r}}{r^4}=(\vec{\nabla}\cdot\vec{r})\frac{1}{r^4}+\vec{r}\left( \vec{\nabla}\frac{1}{r^4} \right)=\frac{3}{r^4}+\vec{r}\left( -\frac{4\hat{r}}{r^5} \right)=-\frac{1}{r^4}\footnote{Keep in mind, $r\hat{r}=\vec{r}$, and $\vec{r}=x\hat{x}+y\hat{y}+z\hat{z}$}$$
+        $$\vec{v}=\frac{\bold{\hat{r}}}{r^3}$$
+        $$\vec{\nabla}\cdot\frac{\bold{\hat{r}}}{r^3}=\vec{\nabla}\cdot\frac{\vec{r}}{r^4}=(\vec{\nabla}\cdot\vec{r})\frac{1}{r^4}+\vec{r}\left( \vec{\nabla}\frac{1}{r^4} \right)=\frac{3}{r^4}+\vec{r}\left( -\frac{4\bold{\hat{r}}}{r^5} \right)=-\frac{1}{r^4}\footnote{Keep in mind, $r\bold{\hat{r}}=\vec{r}$, and $\vec{r}=x\bold{\hat{x}}+y\bold{\hat{y}}+z\bold{\hat{z}}$}$$
 
     \end{itemize}
     
   \item Curl
 
-    $$\vec{\nabla}\times\vec{v}=\text{curl}(\vec{v})=\left|\begin{matrix} \hat{x} & \hat{y} & \hat{z}\\ \frac{\partial}{\partial x} & \frac{\partial}{\partial y} & \frac{\partial}{\partial z} \\ v_x & v_y & v_z\end{matrix}\right|$$
+    $$\vec{\nabla}\times\vec{v}=\text{curl}(\vec{v})=\left|\begin{matrix} \bold{\hat{x}} & \bold{\hat{y}} & \bold{\hat{z}}\\ \frac{\partial}{\partial x} & \frac{\partial}{\partial y} & \frac{\partial}{\partial z} \\ v_x & v_y & v_z\end{matrix}\right|$$
 
     \begin{itemize}
 
@@ -220,6 +220,50 @@
         \end{itemize}
 
     \end{itemize}
+
+  \item The Laplacian
+
+    \begin{itemize}
+
+      \item $\nabla^2 T=\vec{\nabla}\cdot \vec{\nabla}T=\displaystyle \frac{\partial^2T}{\partial x^2}+\frac{\partial^2T}{\partial y^2}+\frac{\partial^2T}{\partial z^2}$
+
+      \item $\nabla^2 \vec{v}=\nabla^2v_x\bold{\hat{x}}+\nabla^2v_y\bold{\hat{y}}+\nabla^2v_z\bold{\hat{z}}$
+
+    \end{itemize}
+
+  \item The Fundamental Theorem of Calculus
+
+  \item In one dimension
+
+    $$\int_a^b f(x)\,dx=f(b)-f(a)$$
+
+  \item In three dimensions:
+
+    $$\int_{\vec{a}}^{\vec{b}}\vec{\nabla}T\,\cdot d\vec{l}=T(\vec{b})-T(\vec{a})$$
+
+    \begin{itemize}
+
+      \item Where $d\vec{l}=dx\bold{\hat{x}}+dy\bold{\hat{y}}+dz\bold{\hat{z}}$
+
+      \item This means that the above formula is independent of path; that is:
+
+        $$\oint\vec{\nabla}T\,\cdot d\vec{l}=\int_{\vec{a}}^{\vec{b}}\vec{\nabla} T\,\cdot d\vec{l}$$
+
+    \end{itemize}
+
+  \item Fundamental Theorem for Divergence
+
+    $$\underbrace{\int\vec{\nabla}\vec{N}d\tau}_{\text{volume}}=\underbrace{\oint\vec{v}\cdot d\vec{a}}_{\text{surface}}$$
+
+    \begin{itemize}
+
+      \item $d\tau$ refers to the differential volume element (that is, $dx\,dy\,dz$, $r^2\sin(\theta)\,dr\,d\theta\,d\phi$, etc.)
+
+    \end{itemize}
+
+  \item Fundamental Theorem for Curl (Stoke's Theorem)
+
+    $$\underbrace{\oint\vec{v}\cdot d\vec{l}}_{\text{boundary}}=\underbrace{\int(\vec{\nabla}\times\vec{v})\cdot d\vec{a}}_{\text{surface}}$$
 
 \end{itemize}
 
