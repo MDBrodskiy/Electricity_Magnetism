@@ -164,30 +164,59 @@
 
       \item Find the upward flux through the bottom surface, i.e.\ the square surface in the $xy$-plane bounded by the points (0,0,0), (2,0,0), (2,2,0), (0,2,0).
 
-        According to the Stoke's Theorem, we must first find the curl of $\vec{v}$:
+        According to Green's Theorem, we know:
 
-        $$\vec{\nabla}\times\vec{v}=\left|\begin{matrix}\bold{\hat{x}} & \bold{\hat{y}} & \bold{\hat{z}}\\ \frac{\partial}{\partial x} & \frac{\partial}{\partial y} & \frac{\partial}{\partial z}\\ 2xz & x+2 & yz^2-3y\end{matrix}\right|=(z^2-3-0)\bold{\hat{x}}-(0-2x)\bold{\hat{y}}+(1-0)\bold{\hat{z}}$$
-        $$\text{curl}(\vec{v})=\langle z^2-3,2x,1\rangle$$
+        $$\iiint \vec{\nabla}\cdot\vec{N}\,d\tau=\iint\vec{v}\cdot d\vec{a}$$
 
         Furthermore, because the surface is in the $xy$ plane, and the flux we want to find is in the $\bold{\hat{z}}$ direction, we know:
 
         $$d\vec{a}=dx\,dy\,\bold{\hat{z}}$$
 
-      \item 
+        Combining the two, and drawing from the flux in the $\bold{\hat{z}}$ direction, we obtain:
+
+        $$\int_0^2\int_0^2 (yz^2-3y)\,dx\,dy\Big|_{z=0}\Rightarrow\int_0^2\int_0^2 (3y)\,dx\,dy$$
+        $$\boxed{2\int_0^2 (3y)\,dy=3y^2\Big|_0^2=12}$$
+
+      \item Both surfaces have the same boundary. In this case, does the flux depend on the surface, or just the boundary? Explain.
 
     \end{enumerate}
 
-  \item 
+  \item Consider a vector field $\vec{v}=r\cos(\theta)\bold{\hat{r}}+r\sin(\theta)\bold{\hat{\theta}}+r\sin(\theta)\cos(\theta)\bold{\hat{\phi}}$
 
     \begin{enumerate}
 
-      \item 
+      \item Calculate the outward flux of $\vec{v}$ through a closed hemispherical surface of radius $R$ shown in the figure\footnote{figure omitted in this document}
 
-      \item 
+        First and foremost, we know:
 
-      \item 
+        $$d\vec{a}=\bold{\hat{r}}\,d\theta\,d\phi$$
 
-      \item 
+        We also know the bounds of $\theta$ and $\phi$:
+
+        $$\left\{\begin{array}{l} 0\leq\theta\leq2\pi\\0\leq\phi\leq\frac{\pi}{2}\end{array}$$
+
+          This yields:
+
+          $$\int_0^{\frac{\pi}{2}}\int_0^{2\pi} r\cos(\theta)\,d\theta\,d\phi\Big|_{r=R}\Rightarrow\frac{\pi R}{2}\int_0^{2\pi} \cos(\theta)\,d\theta=0$$
+
+      \item Calculate the divergence of $\vec{v}$
+
+        $$\frac{\partial}{\partial r}(r\cos(\theta))+\frac{\partial}{\partial \theta}(r\sin(\theta))+\frac{\partial}{\partial \phi}(r\sin(\theta)\cos(\theta))=\cos(\theta)+r\cos(\theta)$$
+
+      \item Check the divergence theorem by comparing the flux integral from (a) with the volume integral of the divergence.
+
+        For the hemisphere itself, we know the following:
+
+        $$\left\{\begin{array}{l} 0\leq r\leq R\\0\leq\theta\leq 2\pi\\0\leq\phi\leq \frac{\pi}{2}\end{array}$$
+
+        Then taking the boundaries defined above, we obtain the following integral expression:
+
+        $$\int_0^{\frac{\pi}{2}}\int_0^{2\pi}\int_0^R(\cos(\theta)+r\cos(\theta))(r^2\sin(\theta))\,dr\,d\theta\,d\phi\Rightarrow $$
+        $$\frac{\pi}{2}\int_0^{2\pi}\int_0^R(r^2\sin(\theta)\cos(\theta)+r^3\sin(\theta)\cos(\theta))\,dr\,d\theta\Rightarrow$$
+        $$\frac{\pi}{2}\int_0^{2\pi}\frac{R^3}{3}\sin(\theta)\cos(\theta)+\frac{R^4}{4}\sin(\theta)\cos(\theta)\,d\theta\Rightarrow$$
+        $$\frac{\pi}{2}\left( \frac{4R^3+3R^4}{12} \right)\underbrace{\int_0^{2\pi}\sin(\theta)\cos(\theta)\,d\theta}_{\text{0}}=0$$
+
+        Then we need to find the flux through the bottom circle:
 
     \end{enumerate}
 
