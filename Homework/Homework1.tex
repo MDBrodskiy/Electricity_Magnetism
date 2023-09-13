@@ -164,7 +164,7 @@
 
       \item Find the upward flux through the bottom surface, i.e.\ the square surface in the $xy$-plane bounded by the points (0,0,0), (2,0,0), (2,2,0), (0,2,0).
 
-        According to Green's Theorem, we know:
+        According to Gauss's Theorem, we know:
 
         $$\iiint \vec{\nabla}\cdot\vec{N}\,d\tau=\iint\vec{v}\cdot d\vec{a}$$
 
@@ -179,6 +179,12 @@
 
       \item Both surfaces have the same boundary. In this case, does the flux depend on the surface, or just the boundary? Explain.
 
+        In this case, the flux depends on the surface, not just the boundary. If we take, for example, the top square — that is, the one bounded by $(0, 0, 2), (0, 2, 2), (2, 2, 2),$ and $(2, 0, 2)$, the integration would be consequently different. The boundary itself is the same; however, the flux is different. This occurs because $v_z$ is dependent on $z$; though the constraints on integration are the same, the following happens:
+
+        $$\int_0^2\int_0^2(yz^2-3y)\,dx\,dy\Big|_{z=2}=\int_0^2\int_0^2(4y-3y)\,dx\,dy=4$$
+
+        Thus, we see that, despite having the same boundary, the two surfaces yield a different flux.
+
     \end{enumerate}
 
   \item Consider a vector field $\vec{v}=r\cos(\theta)\bold{\hat{r}}+r\sin(\theta)\bold{\hat{\theta}}+r\sin(\theta)\cos(\theta)\bold{\hat{\phi}}$
@@ -189,44 +195,80 @@
 
         First and foremost, we know:
 
-        $$d\vec{a}=\bold{\hat{r}}\,d\theta\,d\phi$$
+        $$d\vec{a}=\bold{\hat{r}}(r^2\sin(\theta))\,d\theta\,d\phi$$
 
         We also know the bounds of $\theta$ and $\phi$:
 
-        $$\left\{\begin{array}{l} 0\leq\theta\leq2\pi\\0\leq\phi\leq\frac{\pi}{2}\end{array}$$
+        $$\left\{\begin{array}{l} 0\leq\theta\leq\frac{\pi}{2}\\0\leq\phi\leq2\pi\end{array}$$
 
           This yields:
 
-          $$\int_0^{\frac{\pi}{2}}\int_0^{2\pi} r\cos(\theta)\,d\theta\,d\phi\Big|_{r=R}\Rightarrow\frac{\pi R}{2}\int_0^{2\pi} \cos(\theta)\,d\theta=0$$
+          $$\int_0^{2\pi}\int_0^{\frac{\pi}{2}} r^3\sin(\theta)\cos(\theta)\,d\theta\,d\phi\Big|_{r=R}\Rightarrow2\pi R^3\underbrace{\int_0^{\frac{\pi}{2}} \sin(\theta)\cos(\theta)\,d\theta}_{\frac{1}{2}}=\pi R^3$$
+
+          Thus, the top part contributes a flux of $\pi R^3$. The bottom circle is constrained as follows:
+
+          $$d\vec{a}=\bold{\hat{\theta}}r\,dr\,d\phi$$
+          $$\left\{\begin{array}{l} \theta = \frac{\pi}{2}\\ 0\leq \phi\leq 2\pi\end{array}$$
+
+            This yields:
+
+            $$\int_0^{2\pi}\int_0^R r^2\sin(\theta)\,dr\,d\phi\Big|_{\theta=\frac{\pi}{2}}\Rightarrow 2\pi\int_0^Rr^2\,dr=2\pi \frac{R^3}{3}$$
+
+            Summing the two together we get the flux as:
+
+            $$\boxed{\frac{5\pi}{3}R^3}$$
 
       \item Calculate the divergence of $\vec{v}$
 
-        $$\frac{\partial}{\partial r}(r\cos(\theta))+\frac{\partial}{\partial \theta}(r\sin(\theta))+\frac{\partial}{\partial \phi}(r\sin(\theta)\cos(\theta))=\cos(\theta)+r\cos(\theta)$$
+        $$\frac{1}{r^2}\frac{\partial}{\partial r}(r^3\cos(\theta))+\frac{1}{r\sin(\theta)}\frac{\partial}{\partial \theta}(r\sin^2(\theta))+\frac{1}{r\sin(\theta)}\frac{\partial}{\partial \phi}(r\sin(\theta)\cos(\theta))\Rightarrow$$
+        $$3\cos(\theta)+2\cos(\theta)+0=\boxed{5\cos(\theta)}$$
 
       \item Check the divergence theorem by comparing the flux integral from (a) with the volume integral of the divergence.
 
         For the hemisphere itself, we know the following:
 
-        $$\left\{\begin{array}{l} 0\leq r\leq R\\0\leq\theta\leq 2\pi\\0\leq\phi\leq \frac{\pi}{2}\end{array}$$
+        $$\left\{\begin{array}{l} 0\leq r\leq R\\0\leq\theta\leq \frac{\pi}{2}\\0\leq\phi\leq 2\pi\end{array}$$
 
         Then taking the boundaries defined above, we obtain the following integral expression:
 
-        $$\int_0^{\frac{\pi}{2}}\int_0^{2\pi}\int_0^R(\cos(\theta)+r\cos(\theta))(r^2\sin(\theta))\,dr\,d\theta\,d\phi\Rightarrow $$
-        $$\frac{\pi}{2}\int_0^{2\pi}\int_0^R(r^2\sin(\theta)\cos(\theta)+r^3\sin(\theta)\cos(\theta))\,dr\,d\theta\Rightarrow$$
-        $$\frac{\pi}{2}\int_0^{2\pi}\frac{R^3}{3}\sin(\theta)\cos(\theta)+\frac{R^4}{4}\sin(\theta)\cos(\theta)\,d\theta\Rightarrow$$
-        $$\frac{\pi}{2}\left( \frac{4R^3+3R^4}{12} \right)\underbrace{\int_0^{2\pi}\sin(\theta)\cos(\theta)\,d\theta}_{\text{0}}=0$$
+        $$\int_0^{2\pi}\int_0^{\frac{\pi}{2}}\int_0^R(5\cos(\theta))(r^2\sin(\theta))\,dr\,d\theta\,d\phi\Rightarrow $$
+        $$2\pi\int_0^{\frac{\pi}{2}}\int_0^R(5r^2\cos(\theta)\sin(\theta))\,dr\,d\theta\Rightarrow$$
+        $$\frac{10\pi R^3}{3}\int_0^{\frac{\pi}{2}}\sin(\theta)\cos(\theta)\,d\theta\Rightarrow$$
+        $$\frac{1}{2}\left( \frac{10\pi R^3}{3} \right)=\boxed{\frac{5\pi}{3}R^3}$$
 
-        Then we need to find the flux through the bottom circle:
+        Thus, the volume integral and flux integral are both $\frac{5\pi}{3}R^3$
 
     \end{enumerate}
 
-  \item 
+  \item Start with these three expressions that relate rectangular coordinates to cylindrical coordinates: $x=s\cos(\phi), y=s\sin(\phi), z=z$
 
     \begin{enumerate}
 
-      \item 
+      \item Derive the expressions for the unit vectors $\bold{\hat{s}},\bold{\hat{\phi}}, \bold{\hat{z}}$ in terms of $\bold{\hat{x}},\bold{\hat{y}},$ and $\bold{\hat{z}}$
 
-      \item 
+        $$\bold{\hat{s}}=\frac{\frac{\partial}{\partial s}(s\cos(\phi))\bold{\hat{x}}+\frac{\partial}{\partial s}(s\sin(\phi))\bold{\hat{y}}+\frac{\partial}{\partial s}(z)\bold{\hat{z}}}{\sqrt{\cos^2(\phi)+\sin^2(\phi)}}=\cos(\phi)\bold{\hat{x}}+\sin(\phi)\bold{\hat{y}}$$
+          $$\hat{\phi}=\frac{\frac{\partial}{\partial \phi}(s\cos(\phi))\bold{\hat{x}}+\frac{\partial}{\partial \phi}(s\sin(\phi))\bold{\hat{y}}+\frac{\partial}{\partial \phi}(z)\bold{\hat{z}}}{\sqrt{s^2\sin^2(\phi)+s^2\cos^2(\phi)}}=-\sin(\phi)\bold{\hat{x}}+\cos(\phi)\bold{\hat{y}}$$
+          $$\bold{\hat{z}}=\frac{\frac{\partial}{\partial z}(s\cos(\phi))\bold{\hat{x}}+\frac{\partial}{\partial z}(s\sin(\phi))\bold{\hat{y}}+\frac{\partial}{\partial z}(z)\bold{\hat{z}}}{\sqrt{0^2+0^2+1^1}}=\bold{\hat{z}}$$
+
+          Thus, we see the values as follows:
+
+          $$\boxed{\left\{\begin{array}{l l l} \bold{\hat{s}} & = & \cos(\phi)\bold{\hat{x}}+\sin(\phi)\bold{\hat{y}}\\\bold{\hat{\phi}} & = & -\sin(\phi)\bold{\hat{x}}+\cos(\phi)\bold{\hat{y}}\\ \bold{\hat{z}} & = & \bold{\hat{z}}\end{array}}$$
+
+          \item Confirm that $\bold{\hat{s}}, \bold{\hat{\phi}},$ and $\bold{\hat{z}}$ are mutually orthogonal and are normalized to unity\\
+
+            We can check for orthogonality by applying the dot product; because $\bold{\hat{s}}$ and $\bold{\hat{\phi}}$ both only have components in the $\bold{\hat{x}}$ and $\bold{\hat{y}}$ directions, they are orthogonal to the $z$ component. As such, we need only check $\bold{\hat{s}}$ against $\bold{\hat{\phi}}$:
+
+            $$\bold{\hat{s}}\cdot\bold{\hat{\phi}}=(\cos(\phi))(-\sin(\phi))+(\sin(\phi))(\cos(\phi))=0$$
+
+            Thus, they are mutually orthogonal. To check for normalization, we must see whether the magnitude of each is equal to 1:
+
+            $$\bold{\hat{s}}=\sqrt{\cos^2(\phi)+\sin^2(\phi)}=1$$
+            $$\bold{\hat{\phi}}=\sqrt{\sin^2(\phi)+\cos^2(\phi)}=1$$
+            $$\bold{\hat{z}}=\sqrt{1^2}=1$$
+
+            $$\boxed{\text{As such, $\bold{\hat{s}}$, $\bold{\hat{\phi}}$, and $\bold{\hat{z}}$ are mutually orthogonal and normalized to unity}}$$
+
+            In this manner, they make up a coordinate system.
 
     \end{enumerate}
 
@@ -257,6 +299,29 @@
         \end{itemize}
 
       \item 
+
+        \begin{itemize}
+
+          \item For $\vec{v}=x^2\bold{\hat{z}}$:
+
+            Assuming $v_y\rightarrow 0$, we obtain:
+
+            $$\int x^2\,dz=x^2z+g(x)\Rightarrow \frac{\partial}{\partial x}(x^2z+g(x))=2xz+g'(x)=0$$
+            $$g'(x)=-2xz\Rightarrow \int-2xz\,dx=-x^2z$$
+
+            Thus, because this leaves us with simply $f(y)=0$, we see that a gradient representation is not possible.
+
+          \item For $\vec{w}=\vec{r}$:
+
+            $$\int x\,dx=\frac{x^2}{2}+f(y)+g(z)\Rightarrow \frac{\partial}{\partial y}\left( \frac{x^2}{2}+f(y)+g(z) \right)=f'(y)$$
+            $$f'(y)=y\Rightarrow \int f'(y)\,dy=\frac{x^2}{2}+\frac{y^2}{2}+g(z)\Rightarrow\frac{\partial}{\partial z}\left(\frac{1}{2}\left( x^2+y^2+g(z) \right)\right)=g'(z)$$
+            $$g'(z)=z\Rightarrow \int g'(z)\,dz=\frac{z^2}{2}+c$$
+
+            Thus, the final expression for $g(x,y,z)$ becomes:
+
+            $$\boxed{g_{\vec{w}}(x,y,z)=\frac{1}{2}\left( x^2+y^2+z^2 \right) + c}$$
+
+        \end{itemize}
 
       \item 
 
