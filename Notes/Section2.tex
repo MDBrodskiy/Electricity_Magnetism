@@ -1,0 +1,111 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Written By Michael Brodskiy
+% Class: Electricity & Magnetism
+% Professor: D. Wood
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\include{Includes.tex}
+
+\title{Electrostatics}
+\date{\today}
+\author{Michael Brodskiy\\ \small Professor: D. Wood}
+
+\begin{document}
+
+\maketitle
+
+\begin{itemize}
+
+  \item In this section, we focus on electrostatics
+
+    \begin{itemize}
+
+      \item Not doing (for now):
+
+        \begin{itemize}
+
+          \item Magnetic field
+
+          \item Forces on moving charges
+
+          \item Finite of propagation
+
+        \end{itemize}
+
+    \end{itemize}
+
+  \item Coulomb's Law
+
+    \begin{itemize}
+
+      \item Given a source charge, $q$, and a test charge, $Q$, with $\vec{R}$ as the difference between their positions ($\vec{r}-\vec{r}'$), we can generate Coulomb's Law:
+
+        $$F=\frac{qQ\bold{\hat{R}}}{4\pi\varepsilon_oR^2}$$
+
+        \begin{itemize}
+
+          \item $\varepsilon_o$ is known as the permittivity of free space
+
+          \item $\varepsilon_o=8.85\cdot10^{-12}\left[\frac{\si{\coulomb}}{\si{\newton\meter\squared}}\right]$
+
+        \end{itemize}
+
+      \item A Coulomb is defined as an Amp\`ere per second
+
+    \end{itemize}
+
+  \item Superposition
+
+    \begin{itemize}
+
+      \item A force per charge  ($q$) can be calculated and then summed to find the total force on a test charge ($Q$)
+
+        $$\vec{F}=\sum_n\frac{Q}{4\pi\varepsilon_o}\frac{q_n\bold{\hat{R}}_n}{R_n^2}$$
+
+        $$\vec{F}=Q\vec{E}\Rightarrow \vec{E}=\frac{1}{4\pi\varepsilon_o}\sum_n\frac{q_n\bold{\hat{R}}_n}{R_n^2}$$
+
+    \end{itemize}
+
+  \item Continuous
+
+    $$q_n\rightarrow dq=\rho(\vec{r\prime})\,d\tau$$
+    $$\vec{E}=\frac{1}{4\pi\varepsilon_o}\int\frac{1}{R^2}\bold{\hat{R}}\,dq=\frac{1}{4\pi\varepsilon_o}\int \frac{\rho(\vec{r\prime})\,d\tau'}{R^2}\bold{\hat{R}}$$
+
+  \item For various shapes:
+
+    \begin{itemize}
+
+      \item Volume: $dq=\rho\,d\tau$
+
+      \item Line: $dq=\lambda\,dl$
+
+      \item Surface: $dq=\sigm\,da$
+
+    \end{itemize}
+
+  \item Electric Potential — $V$ (volts)
+
+      $$\vec{E}=-\vec{\nabla}V \Longleftrightarrow V_b-V_a=-\int_a^b \vec{E}\cdot d\vec{l}$$
+
+    \begin{itemize}
+
+      \item Note: $V$ is a scalar function
+
+      \item For a charge $q$ and some reference radius, $r$:
+
+        $$V(r)-V_{ref}=-\int_{r_{ref}}^r \vec{E}\cdot d\vec{r\prime}$$
+
+      \item This yields
+
+        $$V(r)=\frac{q}{4\pi\varepsilon_o r}$$
+
+      \item With multiple charges:
+
+        $$V(r)=\frac{1}{4\pi\varepsilon_o}\sum_n\frac{q_n}{R_n}$$
+
+    \end{itemize}
+
+\end{itemize}
+
+\end{document}
+
