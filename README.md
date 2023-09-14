@@ -20,7 +20,8 @@
 ## Table of Contents
 
 * [**Notes**](https://github.com/MDBrodskiy/Electricity_Magnetism/tree/master/Notes/)
-  * [**Section 1**](https://github.com/MDBrodskiy/Electricity_Magnetism/tree/master/Notes/Section1.pdf)
+  * [**Vector Calculus**](https://github.com/MDBrodskiy/Electricity_Magnetism/tree/master/Notes/Section1.pdf)
+  * [**Electrostatics**](https://github.com/MDBrodskiy/Electricity_Magnetism/tree/master/Notes/Section2.pdf)
 * [**Homework**](https://github.com/MDBrodskiy/Electricity_Magnetism/tree/master/Homework/)
   * [**Homework 1**](https://github.com/MDBrodskiy/Electricity_Magnetism/tree/master/Homework/Homework1.pdf)
 * [**Exams**](https://github.com/MDBrodskiy/Electricity_Magnetism/tree/master/Exams/)
