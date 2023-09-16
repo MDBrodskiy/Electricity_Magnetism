@@ -179,11 +179,11 @@
 
       \item Both surfaces have the same boundary. In this case, does the flux depend on the surface, or just the boundary? Explain.
 
-        In this case, the flux depends on the surface, not just the boundary. If we take, for example, the top square — that is, the one bounded by $(0, 0, 2), (0, 2, 2), (2, 2, 2),$ and $(2, 0, 2)$, the integration would be consequently different. The boundary itself is the same; however, the flux is different. This occurs because $v_z$ is dependent on $z$; though the constraints on integration are the same, the following happens:
+        In this case, the flux depends on the surface, not just the boundary. If we take, for example, the solved cube with the same boundary — that is, the one bounded by $0\leq x,y,z\leq 2$, the integration would be consequently different. The boundary itself is the same; however, the flux is different. We can see this because of the value given to us from the problem:
 
-        $$\int_0^2\int_0^2(yz^2-3y)\,dx\,dy\Big|_{z=2}=\int_0^2\int_0^2(4y-3y)\,dx\,dy=4$$
+        $$12\neq20$$
 
-        Thus, we see that, despite having the same boundary, the two surfaces yield a different flux.
+      \underline{Thus, we see that, despite having the same boundary, the two surfaces yield a}\\\underline{ different flux.}
 
     \end{enumerate}
 
@@ -298,7 +298,8 @@
 
         \end{itemize}
 
-      \item 
+      \item Can $\vec{v}$ or $\vec{w}$ be written as the gradient of a scalar function $g(x,y,z)$? If either case is possible, find
+such a function $g$. The answer should be unique aside from an arbitrary constant.
 
         \begin{itemize}
 
@@ -309,7 +310,7 @@
             $$\int x^2\,dz=x^2z+g(x)\Rightarrow \frac{\partial}{\partial x}(x^2z+g(x))=2xz+g'(x)=0$$
             $$g'(x)=-2xz\Rightarrow \int-2xz\,dx=-x^2z$$
 
-            Thus, because this leaves us with simply $f(y)=0$, we see that a gradient representation is not possible.
+          Thus, because this leaves us with simply $f(y)=0$, \underline{we see that a gradient}\\\underline{ representation is not possible.}
 
           \item For $\vec{w}=\vec{r}$:
 
@@ -323,7 +324,58 @@
 
         \end{itemize}
 
-      \item 
+      \item Can $\vec{v}$ or $\vec{w}$ be written as the curl of a vector function $\vec{u}(x, y, z)$? If either case is possible, find such a function $\vec{u}$. The answer is not unique, but it is sufficient to find one function that gives the desired curl.
+
+        \begin{enumerate}
+
+          \item For $\vec{v}=x^2\bold{\hat{z}}$:
+
+            Per the definition of curl, we know:
+
+            $$\left|\begin{matrix} \bold{\hat{x}} & \bold{\hat{y}} & \bold{\hat{z}}\\ \frac{\partial}{\partial x} & \frac{\partial}{\partial y} & \frac{\partial}{\partial z}\\  u_x & u_y & u_z\end{matrix}\right|\rightarrow \left( \frac{\partial u_z}{\partial y}-\frac{\partial u_y}{\partial z} \right)\bold{\hat{x}}+\left( \frac{\partial u_x}{\partial z}-\frac{\partial u_z}{\partial x} \right)\bold{\hat{y}}+\left( \frac{\partial u_y}{\partial x}-\frac{\partial u_x}{\partial y} \right)\bold{\hat{z}}$$
+
+            This implies:
+
+            $$\left\{\begin{array}{l l l} \displaystyle\frac{\partial u_z}{\partial y}-\frac{\partial u_y}{\partial z} & = & 0 \\\\\displaystyle\frac{\partial u_x}{\partial z}-\frac{\partial u_z}{\partial x} & = & 0 \\\\\displaystyle\frac{\partial u_y}{\partial x}-\frac{\partial u_x}{\partial y} & = & x^2  \end{array}$$
+
+              Let us assume that $u_z=0$, since both terms equal zero. We can then take $u_x=0$ to try and find a function:
+
+              $$\int\partial u_y=\int x^2\,\partial x$$
+
+              Solving, we obtain the vector function $\vec{u}$ as:
+
+              $$\vec{u}=0\bold{\hat{x}}+\left(\frac{x^3}{3}+c\right)\bold{\hat{y}}+0\bold{\hat{z}}$$
+
+              We then need to check the curl once more to confirm this works for $\vec{u}$ (using $c=0$):
+
+              $$\left\{\begin{array}{l l l l} \displaystyle\frac{\partial u_z}{\partial y}-\frac{\partial u_y}{\partial z} & = & 0 & \textcolor{green}{\checkmark} \\\\\displaystyle\frac{\partial u_x}{\partial z}-\frac{\partial u_z}{\partial x} & = & 0 & \textcolor{green}{\checkmark} \\\\\displaystyle\frac{\partial u_y}{\partial x}-\frac{\partial u_x}{\partial y} & = & x^2  & \textcolor{green}{\checkmark} \end{array}$$
+
+                As such, a possible solution for $\vec{u}$ is:
+
+                $$\boxed{\vec{u}=0\bold{\hat{x}}+\left(\frac{x^3}{3}\right)\bold{\hat{y}}+0\bold{\hat{z}}}$$
+
+          \item For $\vec{w}=\vec{r}$:
+
+            Again, per the definition of curl, we find:
+
+            $$\left\{\begin{array}{l l l} \displaystyle\frac{\partial u_z}{\partial y}-\frac{\partial u_y}{\partial z} & = & x \\\\\displaystyle\frac{\partial u_x}{\partial z}-\frac{\partial u_z}{\partial x} & = & y \\\\\displaystyle\frac{\partial u_y}{\partial x}-\frac{\partial u_x}{\partial y} & = & z \end{array}$$
+
+              We can see from this that, to be a possible solution, $\frac{\partial u_z}{\partial y}$ needs to take the form $cx$, where $c$ is a constant. This would mean $\frac{\partial u_y}{\partial z}$ would have to take the form $dx$, where $d=c-1$. This would mean $u_z$ would be of the form $u_z=cxy$ and $u_y=dxz$.
+
+              Continuing down, this would mean that $\frac{\partial u_z}{\partial x}$ would be of the form $cy$, meaning that $\frac{\partial u_x}{\partial z}$ would be of the form $ey$, where $c=e-1$. This leaves us with:
+
+              $$\left\{\begin{array}{l} u_x=eyz\\u_y=dxz\\u_z=cxy\end{array}$$
+
+                This can be written in terms of $c$:
+
+                $$\left\{\begin{array}{l} u_x=(c+1)yz\\u_y=(c-1)xz\\u_z=cxy\end{array}$$
+                  Incorportating this into the last equation, we get:
+
+                  $$(c-1)z-(c+1)z=z$$
+
+                This can never be correct, as, for any constant $c$, the left side would always produce $-2z$. Thus, because of this ``round-about'' result, \underline{$\vec{v}$ can not be represented}\\\underline{ as the curl of a function $\vec{u}$}
+
+        \end{enumerate}
 
     \end{enumerate}
 
