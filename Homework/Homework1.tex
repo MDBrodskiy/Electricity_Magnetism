@@ -25,12 +25,12 @@
         We know $r=\sqrt{x^2+y^2+z^2}$. Converting and applying the chain rule, we get:
 
         $$\frac{\partial}{\partial x}\left( x^2+y^2+z^2\right)^{-\frac{1}{2}}\bold{\hat{x}}+\frac{\partial}{\partial y}\left( x^2+y^2+z^2\right)^{-\frac{1}{2}}\bold{\hat{y}}+\frac{\partial}{\partial z}\left( x^2+y^2+z^2\right)^{-\frac{1}{2}}\bold{\hat{z}}$$
-        $$(x^2+y^2+z^2)^{-\frac{3}{2}}(x\bold{\hat{x}}+y\bold{\hat{y}}=z\bold{\hat{z}})$$
+        $$-(x^2+y^2+z^2)^{-\frac{3}{2}}(x\bold{\hat{x}}+y\bold{\hat{y}}=z\bold{\hat{z}})$$
         $$\frac{x\bold{\hat{x}}+y\bold{\hat{y}}+z\bold{\hat{z}}}{r^3}$$
 
         We also know that $\vec{r}=x\bold{\hat{x}}+y\bold{\hat{y}}+z\bold{\hat{z}}$, and that $r\bold{\hat{r}}=\vec{r}$. Thus, we get:
 
-        $$\boxed{\vec{\nabla}\left( \frac{1}{r} \right)=\frac{\vec{r}}{r^3}\rightarrow\frac{\bold{\hat{r}}}{r^2}}$$
+        $$\boxed{\vec{\nabla}\left( \frac{1}{r} \right)=-\frac{\vec{r}}{r^3}\rightarrow-\frac{\bold{\hat{r}}}{r^2}}$$
 
       \item $\vec{\nabla}\cdot\bold{\hat{x}}$
 
@@ -141,20 +141,24 @@
 
       \item $(\vec{r}\cdot\vec{\nabla})\vec{r}$
 
-        $$(\vec{r}\cdot\vec{\nabla})=\frac{\partial}{\partial x}(x\bold{\hat{x}})+\frac{\partial}{\partial y} (y\bold{\hat{y}})+\frac{\partial}{\partial z}(z\bold{\hat{z}})=1+1+1=3$$
-        $$\boxed{(\vec{r}\cdot\vec{\nabla})\vec{r}=3\vec{r}=3x\bold{\hat{x}}+3y\bold{\hat{y}}+3z\bold{\hat{z}}}$$
+        $$\left(\vec{r}\cdot\vec{\nabla}\right)\vec{r}=\left(x\frac{\partial}{\partial x}+y\frac{\partial}{\partial y}+z\frac{\partial}{\partial z}\right)\left( x\bold{\hat{x}}+y\bold{\hat{y}}+z\bold{\hat{z}} \right)$$
+        $$\left(x\frac{\partial}{\partial x}(x\bold{\hat{x}})+y\frac{\partial}{\partial y}(y\bold{\hat{y}})+z\frac{\partial}{\partial z}(z\bold{\hat{z}})\right)=x\bold{\hat{x}}+y\bold{\hat{y}}+z\bold{\hat{z}}$$
+        $$\boxed{(\vec{r}\cdot\vec{\nabla})\vec{r}=x\bold{\hat{x}}+y\bold{\hat{y}}+z\bold{\hat{z}}=\vec{r}}$$
 
       \item $(\bold{\hat{r}}\cdot\vec{\nabla})r$
 
-        From Problem \textbf{1c}, we know the value of $(\bold{\hat{r}}\cdot\vec{\nabla})$, which gives us:
+        Within the parentheses, the problem is similar, except that we divide by $r$ because $r\bold{\hat{r}}=\vec{r}$:
 
-        $$\boxed{\left( \frac{2}{r} \right)r=2}$$
+        $$\left(\bold{\hat{r}}\cdot\vec{\nabla}\right)r=\left(\frac{x}{r}\frac{\partial}{\partial x}+\frac{y}{r}\frac{\partial}{\partial y}+\frac{z}{r}\frac{\partial}{\partial z}\right)\left( \sqrt{x^2+y^2+z^2}\right)$$
+        $$\left(x\frac{\partial}{\partial x}(r)+y\frac{\partial}{\partial y}(r)+z\frac{\partial}{\partial z}(r)\right)=\frac{2x}{2r}\frac{x}{r}+\frac{2y}{2r}\frac{y}{r}+\frac{2z}{2r}\frac{z}{r}$$
+        $$\boxed{(\bold{\hat{r}}\cdot\vec{\nabla})r=\frac{x^2+y^2+z^2}{r^2}=1}$$
 
       \item $(\bold{\hat{r}}\cdot\vec{\nabla})\bold{\hat{r}}$
 
-        Again, employing what we know from Problem \textbf{1c}, we get:
-
-        $$\boxed{\left( \frac{2}{r} \right)\bold{\hat{r}}=\frac{2\bold{\hat{r}}}{r}}$$
+        $$\left(\bold{\hat{r}}\cdot\vec{\nabla}\right)\bold{\hat{r}}=\left(\frac{x}{r}\frac{\partial}{\partial x}+\frac{y}{r}\frac{\partial}{\partial y}+\frac{z}{r}\frac{\partial}{\partial z}\right)\left( \bold{\hat{r}}\right)$$
+        $$\left(\frac{x}{r}\frac{\partial}{\partial x}+\frac{y}{r}\frac{\partial}{\partial y}+\frac{z}{r}\frac{\partial}{\partial z}\right)\left( \frac{x\bold{\hat{x}}+y\bold{\hat{y}}+z\bold{\hat{z}}}{\sqrt{x^2+y^2+z^2}}\right)\Rightarrow$$
+        $$\frac{x}{r}\left( \frac{y^2+z^2}{r^3} \right)\bold{\hat{x}}+\frac{y}{r}\left( \frac{x^2+z^2}{r^3} \right)\bold{\hat{y}}+\frac{z}{r}\left( \frac{x^2+y^2}{r^3} \right)\bold{\hat{z}}$$
+      $$(\bold{\hat{r}}\cdot\vec{\nabla})\bold{\hat{r}}=\left(\frac{xy^2+xz^2}{(x^2+y^2+z^2)^2} \right)\bold{\hat{x}}+\left( \frac{yx^2+yz^2}{(x^2+y^2+z^2)^2} \right)\bold{\hat{y}}+\left( \frac{zx^2+zy^2}{(x^2+y^2+z^2)^2} \right)\bold{\hat{z}}$$
 
     \end{enumerate}
 
@@ -174,14 +178,14 @@
 
         Combining the two, and drawing from the flux in the $\bold{\hat{z}}$ direction, we obtain:
 
-        $$\int_0^2\int_0^2 (yz^2-3y)\,dx\,dy\Big|_{z=0}\Rightarrow\int_0^2\int_0^2 (3y)\,dx\,dy$$
-        $$\boxed{2\int_0^2 (3y)\,dy=3y^2\Big|_0^2=12}$$
+        $$\int_0^2\int_0^2 (yz^2-3y)\,dx\,dy\Big|_{z=0}\Rightarrow\int_0^2\int_0^2 (-3y)\,dx\,dy$$
+        $$\boxed{2\int_0^2 (-3y)\,dy=-3y^2\Big|_0^2=-12}$$
 
       \item Both surfaces have the same boundary. In this case, does the flux depend on the surface, or just the boundary? Explain.
 
         In this case, the flux depends on the surface, not just the boundary. If we take, for example, the solved cube with the same boundary — that is, the one bounded by $0\leq x,y,z\leq 2$, the integration would be consequently different. The boundary itself is the same; however, the flux is different. We can see this because of the value given to us from the problem:
 
-        $$12\neq20$$
+        $$-12\neq20$$
 
       \underline{Thus, we see that, despite having the same boundary, the two surfaces yield a}\\\underline{ different flux.}
 
@@ -305,12 +309,7 @@ such a function $g$. The answer should be unique aside from an arbitrary constan
 
           \item For $\vec{v}=x^2\bold{\hat{z}}$:
 
-            Assuming $v_y\rightarrow 0$, we obtain:
-
-            $$\int x^2\,dz=x^2z+g(x)\Rightarrow \frac{\partial}{\partial x}(x^2z+g(x))=2xz+g'(x)=0$$
-            $$g'(x)=-2xz\Rightarrow \int-2xz\,dx=-x^2z$$
-
-          Thus, because this leaves us with simply $f(y)=0$, \underline{we see that a gradient}\\\underline{ representation is not possible.}
+            From the textbook, we know that, if a vector function has a non-zero curl, it can not be written as the gradient of a scalar function. Thus, this is not possible for $\vec{v}$.
 
           \item For $\vec{w}=\vec{r}$:
 
@@ -373,7 +372,7 @@ such a function $g$. The answer should be unique aside from an arbitrary constan
 
                   $$(c-1)z-(c+1)z=z$$
 
-                This can never be correct, as, for any constant $c$, the left side would always produce $-2z$. Thus, because of this ``round-about'' result, \underline{$\vec{v}$ can not be represented}\\\underline{ as the curl of a function $\vec{u}$}
+                  This can never be correct, as, for any constant $c$, the left side would always produce $-2z$. Thus, because of this ``round-about'' result, \underline{$\vec{v}$ can not be represented}\\\underline{ as the curl of a function $\vec{u}$}\footnote{Also, this is not possible by the theorem from the textbook stating that, with a non-zero divergence, the function can not be written as the curl of a vector function.} 
 
         \end{enumerate}
 
