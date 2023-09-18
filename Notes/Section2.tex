@@ -105,6 +105,43 @@
 
     \end{itemize}
 
+  \item Taylor Series Expansions
+
+    \begin{itemize}
+
+      \item We can write the expression $\frac{1}{x-L}$, where $\frac{L}{x}<<1$, as:
+
+        $$\frac{1}{x-L}=\frac{1}{x}\left( 1-\frac{L}{x} \right)^{-1}\approx\frac{1}{x}+\frac{L}{x^2}+\ldots$$
+
+        This means:
+
+        $$\frac{1}{x-L}-\frac{1}{x}\approx\frac{L}{x^2}$$
+
+    \end{itemize}
+
+  \item Coulomb's Law with Gauss's Theorem
+
+    \begin{itemize}
+
+      \item Develops into Gauss's Law
+
+
+        $$\oint_S\vec{E}\cdot d\vec{a}=\int_V\vec{\nabla}\cdot\vec{E}\cdot d\tau$$
+        $$\oint\vec{E}\cdot d\vec{a}=\sum\underbrace{\int_V \frac{q_n}{\varepsilon_o}\delta^3(R_n)}_{\text{enc charge over $\varepsilon_o$}}$$
+        $$\oint\vec{E}\cdot d\vec{a}=\frac{q_{enc}}{\varepsilon_o}$$
+
+      \item Gauss's Law:
+
+        \begin{itemize}
+
+          \item Exploit symmetry
+
+          \item Large or small distance to approximate symmetry
+            
+        \end{itemize}
+
+    \end{itemize}
+
 \end{itemize}
 
 \end{document}
