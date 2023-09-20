@@ -142,6 +142,43 @@
 
     \end{itemize}
 
+  \item Potential Energy
+
+    \begin{itemize}
+
+      \item The potential required to bring in a new charge to a configuration can be calculated using:
+
+        $$\sum_jq_j\sum_{i<j}\frac{q_i}{4\pi\varepsilon_oR_{ij}}=\sum_j\sum_{i<j}\frac{q_iq_j}{4\pi\varepsilon_oR_{ij}}$$
+        $$W_{tot}=\frac{1}{2}\sum_j\sum_{i\neq j}\frac{q_iq_j}{4\pi\varepsilon_oR_{ij}}$$
+
+        when $i=j$ this is ``self-energy'' of a particle
+
+        $$W=\frac{1}{2}\int\rho V\,d\tau$$
+
+        Using the definition $\vec{\nabla}\cdot\vec{E}=\frac{\rho}{\varepsilon_o}$, we get:
+
+        $$W=\frac{1}{2}\oint \varepsilon_o V\vec{E}\cdot d\tau$$
+        $$W=\frac{1}{2}\oint \varepsilon_o V\vec{E}\cdot d\vec{a}\underbrace{-\frac{1}{2}\int\varepsilon_o \vec{E}\vec{W}\cdot d\tau}_{\displaystyle \int \frac{\varepsilon_oE^2}{2}d\tau}$$
+        $$W=\frac{1}{2}\int \frac{\varepsilon_oE^2}{2}d\tau$$
+
+      \item The term of integration is known as the energy density, $u=\dfrac{\varepsilon_oE^2}{2}$
+
+        \begin{itemize}
+
+          \item This means electric fields themselves carry energy
+
+        \end{itemize}
+
+    \end{itemize}
+
+  \item Conductors
+
+    \begin{itemize}
+
+      \item $\vec{E}=0$ inside the material of a conductor (if there is a cavity, there may be a field)
+
+    \end{itemize}
+
 \end{itemize}
 
 \end{document}
