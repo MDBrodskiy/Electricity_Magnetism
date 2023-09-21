@@ -24,6 +24,7 @@
   * [**Electrostatics**](https://github.com/MDBrodskiy/Electricity_Magnetism/tree/master/Notes/Section2.pdf)
 * [**Homework**](https://github.com/MDBrodskiy/Electricity_Magnetism/tree/master/Homework/)
   * [**Homework 1**](https://github.com/MDBrodskiy/Electricity_Magnetism/tree/master/Homework/Homework1.pdf)
+  * [**Homework 2**](https://github.com/MDBrodskiy/Electricity_Magnetism/tree/master/Homework/Homework2.pdf)
 * [**Exams**](https://github.com/MDBrodskiy/Electricity_Magnetism/tree/master/Exams/)
 
 <!--
