@@ -25,7 +25,44 @@
         \label{fig:1}
       \end{figure}
     \end{center}
-    
+
+    We know, by definition, that $\vec{F}=\vec{E}q$. Using the concepts we know about force, we know the following charges cancel out each other, as they are symmetric about the test charge at the origin:
+
+    \begin{figure}[H]
+      \centering
+      \include{Figures/Figure2-1.tex}
+      \caption{The Opposite Forces Negate Each Other}
+      \label{fig:3}
+    \end{figure}
+
+    \begin{figure}[H]
+      \centering
+      \include{Figures/Figure2-2.tex}
+      \caption{The Opposite Forces Negate Each Other}
+      \label{fig:4}
+    \end{figure}
+
+    Thus, we need only consider the effects of these charges:
+
+    \begin{figure}[H]
+      \centering
+      \include{Figures/Figure2-3.tex}
+      \caption{These Charges Remain Relevant}
+      \label{fig:5}
+    \end{figure}
+
+    Using superposition, we know that the two charges can be summed, and they produce a force equal to $-3q$ at an angle of $\frac{\pi}{4}$ radians with respect to the $x$-axis. Decomposing this, we know the force can be expressed, with $Q$ as the test charge, as:
+
+    $$F_Q=\frac{(Q)(-3q)}{4\pi\varepsilon_o R^2}\cos\left( \frac{\pi}{4} \right)\bold{\hat{x}}+\frac{(Q)(-3q)}{4\pi\varepsilon_o R^2}\sin\left( \frac{\pi}{4} \right)\bold{\hat{y}}$$
+
+    To find the electric field, we can simply divide by the test charge:
+
+    $$E_Q=-\frac{3q}{4\pi\varepsilon_o R^2}\cos\left( \frac{\pi}{4} \right)\bold{\hat{x}}-\frac{3q}{4\pi\varepsilon_o R^2}\sin\left( \frac{\pi}{4} \right)\bold{\hat{y}}$$
+
+    Additionally, we know that $R=\sqrt{\left( \frac{L}{2} \right)^2+\left( \frac{L}{2} \right)^2}=\sqrt{\frac{L^2}{2}}=\frac{L}{\sqrt{2}}$. This gives us:
+
+    $$\boxed{E_Q=-\frac{3\sqrt{2}q}{4\pi\varepsilon_o L^2}\bold{\hat{x}}-\frac{3\sqrt{2}q}{4\pi\varepsilon_o L^2}\bold{\hat{y}}}$$
+
   \item A uniformly charged rod of length $L$ and charge $q$ is placed along the $x$-axis with its center at $x=a$. Find the $x$-component of the electric field at a point on the $z$ axis. (Hint: use $R$ as the variable of integration.) Check your expression in the following limit: $z=0$ and $a>>L$.
 
     \begin{center}
