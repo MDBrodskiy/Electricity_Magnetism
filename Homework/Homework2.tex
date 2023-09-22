@@ -19,9 +19,9 @@
   \item Six charges are arranged along the sides and corners of a square with sides of length L as shown. Calculate the magnitude and direction of the electric field at the origin. Use symmetry and superposition to make the calculation simple.
 
     \begin{center}
-      \begin{figure}[h]
+      \begin{figure}[H]
         \centering
-        \includegraphics[width=.4\textwidth]{Figures/Figure2-1.png}
+        \includegraphics[width=.3\textwidth]{Figures/Figure2-1.png}
         \label{fig:1}
       \end{figure}
     \end{center}
@@ -51,29 +51,120 @@
       \label{fig:5}
     \end{figure}
 
-    Using superposition, we know that the two charges can be summed, and they produce a force equal to $-3q$ at an angle of $\frac{\pi}{4}$ radians with respect to the $x$-axis. Decomposing this, we know the force can be expressed, with $Q$ as the test charge, as:
+    Using superposition, we know that the two charges can be summed, and they produce a horizontal force proportional to $3q$ at an angle of $\frac{\pi}{4}$ radians with respect to the $x$-axis. Decomposing this, we know the force can be expressed, with $Q$ as the test charge, as:
 
-    $$F_Q=\frac{(Q)(-3q)}{4\pi\varepsilon_o R^2}\cos\left( \frac{\pi}{4} \right)\bold{\hat{x}}+\frac{(Q)(-3q)}{4\pi\varepsilon_o R^2}\sin\left( \frac{\pi}{4} \right)\bold{\hat{y}}$$
-
-    To find the electric field, we can simply divide by the test charge:
-
-    $$E_Q=-\frac{3q}{4\pi\varepsilon_o R^2}\cos\left( \frac{\pi}{4} \right)\bold{\hat{x}}-\frac{3q}{4\pi\varepsilon_o R^2}\sin\left( \frac{\pi}{4} \right)\bold{\hat{y}}$$
+    $$E_Q=\frac{(3q)}{4\pi\varepsilon_o R^2}\cos\left( \frac{\pi}{4} \right)\bold{\hat{x}}+\frac{(3q)}{4\pi\varepsilon_o R^2}\sin\left( \frac{\pi}{4} \right)\bold{\hat{y}}$$
 
     Additionally, we know that $R=\sqrt{\left( \frac{L}{2} \right)^2+\left( \frac{L}{2} \right)^2}=\sqrt{\frac{L^2}{2}}=\frac{L}{\sqrt{2}}$. This gives us:
 
-    $$\boxed{E_Q=-\frac{3\sqrt{2}q}{4\pi\varepsilon_o L^2}\bold{\hat{x}}-\frac{3\sqrt{2}q}{4\pi\varepsilon_o L^2}\bold{\hat{y}}}$$
+    $$\boxed{E_Q=\frac{3\sqrt{2}q}{4\pi\varepsilon_o L^2}\bold{\hat{x}}+\frac{3\sqrt{2}q}{4\pi\varepsilon_o L^2}\bold{\hat{y}}}$$
+
+    It can also be said that the field, in the direction of the $-2q$ charge, is:
+
+    $$\boxed{E_Q=\frac{3q}{2\pi\varepsilon_o L^2}\bold{\hat{-2q}}}$$
 
   \item A uniformly charged rod of length $L$ and charge $q$ is placed along the $x$-axis with its center at $x=a$. Find the $x$-component of the electric field at a point on the $z$ axis. (Hint: use $R$ as the variable of integration.) Check your expression in the following limit: $z=0$ and $a>>L$.
 
     \begin{center}
-      \begin{figure}[h]
+      \begin{figure}[H]
         \centering
         \includegraphics[width=.4\textwidth]{Figures/Figure2-2.png}
         \label{fig:2}
       \end{figure}
     \end{center}
+
+    We know the rod is length $L$, with charge $Q$. This means the linear charge density can be defined as:
+
+    $$\lambda=\frac{Q}{L}$$
+
+    Furthermore, we can refer to the angle between the test charge and point on the rod as $\theta$, measured in the counter-clockwise direction, and the distance from said point on the rod to the test charge can be called $R$. This yields us the following expression for the $x$-axis:
+
+    $$E_x=-\int \frac{\sin(\theta)}{4\pi\varepsilon_oR^2}\,dQ$$
+
+    We can express $dq\rightarrow \lambda\,dx$, which gives us:
+
+    $$E_x=-\int \frac{\lambda\sin(\theta)}{4\pi\varepsilon_oR^2}\,dx$$
+
+    Then, if we were to assume $x$ as the horizontal distance from the test charge to the rod, and $z$ as the vertical distance from the test charge to the rod, we may see that: 
+
+    $$\tan(\theta)=\frac{x}{z}$$
+    $$z\tan(\theta)=x$$
+    $$z\sec^2(\theta)\,d\theta=dx$$
+
+    Taking $R$ into account, we can further simplify our calculation:
+
+    $$\frac{dx}{R^2}=\frac{z\,d\theta}{R^2\cos^2(\theta)}$$
+
+    Again referring to our set up, we know $\cos(\theta)=\dfrac{z}{R}$:
+
+    $$dx=\frac{d\theta}{z}$$
+
+    Finally, we can use this:
+
+    $$E_x=-\frac{\lambda}{4\pi\varepsilon_o z}\int_{\theta_{a-\frac{L}{2}}}^{\theta_{a+\frac{L}{2}}} \sin(\theta)\,d\theta$$
+    $$\frac{\lambda}{4\pi\varepsilon_o z}\left[ \cos(\theta) \right]\Big|_{\theta_{a-\frac{L}{2}}}^{\theta_{a+\frac{L}{2}}}$$
+
+    We can once again refer to the set-up, finding that:
+
+    $$\left\{\begin{array}{l c c}\cos(\theta_{a-\frac{L}{2}})=\frac{z}{\sqrt{z^2+(a-L/2)^2}}\\\cos(\theta_{a+\frac{L}{2}})=\frac{z}{\sqrt{z^2+(a+L/2)^2}}\\\end{array}$$
+
+      Substituting this into our final expression, we get:
+
+      $$\boxed{\frac{\lambda}{4\pi\varepsilon_o}\left( \frac{1}{\sqrt{z^2+(a+L/2)^2}}-\frac{1}{\sqrt{z^2+(a-L/2)^2}} \right)}$$
+
+      \textsc{$z=0$ case:}
+
+      $$\frac{\lambda}{4\pi\varepsilon_o}\left( \frac{1}{a+L/2}-\frac{1}{a-L/2} \right)$$
+      $$\frac{\lambda}{4\pi\varepsilon_o}\left( \frac{a-L/2-(a+L/2)}{a^2-(L/2)^2} \right)$$
+      $$-\frac{\lambda L}{(4\pi\varepsilon_o)(a^2-(L/2)^2)}$$
+      $$-\frac{Q}{(4\pi\varepsilon_o)(a^2-(L/2)^2)}$$
+
+      \textsc{$a>>L$ case:}
+
+      $$\frac{\lambda}{4\pi\varepsilon_o}\left( \frac{1}{\sqrt{z^2+(a+L/2)^2}}-\frac{1}{\sqrt{z^2+(a-L/2)^2}} \right);\quad a\pm L\to 0$$
+      $$\frac{\lambda}{4\pi\varepsilon_o}\cancel{\left( \frac{1}{\sqrt{z^2+a^2}}-\frac{1}{\sqrt{z^2+a^2}} \right)}=0$$
+
+      This makes sense, as, logically, if the rod were centered at a point very far away from the test charge, there would be no significant electric field.
     
   \item Calculate the electric potential on the $z$-axis due to a uniformly charged annulus in the $xy$-plane centered at the origin with inner radius $a$ and outer radius $b$. Then find the electric field from the gradient of the potential.
+
+    Let us assume the annulus holds a charge of $q$, with an area $A$. This defines the charge density as:
+
+    $$\sigma=\frac{q}{A}$$
+
+    This gives us:
+
+    $$dq=\sigma dA$$
+
+    If we assume that $i$ and $j$ are the horizontal and vertical distances, respectively, to the test charge from any point on the annulus, and $r=\sqrt{i^2+j^2}$ is the radial distance from the test charge to any point, then we can express the above as:
+
+    $$dq=\sigma (2\pi i\,di)$$
+
+    We can then define the voltage as:
+
+    $$V=\frac{q}{4\pi\varepsilon_o r}$$
+    $$dV=\frac{dq}{4\pi\varepsilon_o r}$$
+    $$dV=\frac{\sigma i\,di}{2\varepsilon_o\sqrt{i^2+j^2}}$$
+
+    We can then integrate to find the voltage expression:
+
+    $$V=\frac{\sigma}{2\varepsilon_o}\int_a^b\frac{i}{\sqrt{i^2+j^2}}\,di$$
+
+    Using $u$ substitution, with $u=i^2+j^2$, we get:
+
+    $$V=\frac{\sigma}{\varepsilon_o}\int_{a^2+j^2}^{b^2+j^2}\frac{1}{\sqrt{u}}\,du$$
+    $$V=\frac{\sigma}{\varepsilon_o}\left(  \frac{\sqrt{u}}{2}\right)\Big|_{a^2+j^2}^{b^2+j^2}$$
+    $$V=\frac{\sigma}{2\varepsilon_o}\left(  \sqrt{j^2+b^2}-\sqrt{j^2+a^2}\right)$$
+
+    We can then find the electric field using the gradient formula:
+
+    $$\vec{E}=-\vec{\nabla}V$$
+    $$\vec{E}=-\vec{\nabla}\left(  \frac{\sigma}{2\varepsilon_o}\left(  \sqrt{j^2+b^2}-\sqrt{j^2+a^2}\right) \right)$$
+    $$\boxed{\vec{E}=\langle 0, 0, \frac{\sigma}{4\varepsilon_o}\left( \frac{j}{\sqrt{j^2+a^2}}-\frac{j}{\sqrt{j^2+b^2}} \right)\rangle}$$
+
+    Because $j$ simply indicates the $z$ direction, and the vector above is with respect to the $i,j,k$ vectors, we can rewrite this as:
+
+    $$\boxed{\vec{E}=\frac{\sigma}{4\varepsilon_o}\left( \frac{z}{\sqrt{z^2+a^2}}-\frac{z}{\sqrt{z^2+b^2}} \right)\bold{\hat{k}}}$$
     
   \item Consider an infinitely long uniformly-charged solid cylinder of radius $a$ and charge per unit volume $\rho$ surrounded by a coaxial cylindrical shell of radius $b$ and charge per unit area of $\sigma$. Take the axis of the cylinders as the $z$-axis.
 
