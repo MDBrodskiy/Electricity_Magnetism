@@ -1,0 +1,73 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Written By Michael Brodskiy
+% Class: Electricity & Magnetism
+% Professor: D. Wood
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\include{Includes.tex}
+
+\title{Potentials}
+\date{\today}
+\author{Michael Brodskiy\\ \small Professor: D. Wood}
+
+\begin{document}
+
+\maketitle
+
+\begin{itemize}
+
+    $$\oint\vec{E}\cdot d\vec{a}=\frac{q_{enc}}{\varepsilon_o}\Leftrightarrow \vec{\nabla}\cdot\vec{E}=\frac{\rho}{\varepsilon_o}$$
+
+  \item This means that, in a region with no charge, $\vec{\nabla}\cdot\vec{E}=0$, which also means $\nabla^2V=0$ (the Laplacian)
+
+  \item Rectangular Coordinates:
+
+    $$\nabla^2V=0\quad\quad \frac{\partial^2V}{\partial x^2}+\frac{\partial^2V}{\partial y^2}+\frac{\partial^2V}{\partial z^2}=0$$
+
+    $$V(x,y,z)=X(x)Y(y)Z(z)\Rightarrow \frac{\partial^2X}{\partial x^2}YZ+\frac{\partial^2Y}{\partial y^2}XZ+\frac{\partial^2Z}{\partial z^2}XY=0$$
+
+  \item If we divide by the respective functions, we get:
+
+    $$\frac{\partial^2}{\partial x^2}\frac{1}{X}+\frac{\partial^2}{\partial y^2}\frac{1}{Y}+\frac{\partial^2}{\partial z^2}\frac{1}{Z}=0$$
+    $$\frac{d^2X}{dx^2}=c_1X(x)\Rightarrow c_1>0:$$
+    $$X(x)=\left\{\begin{array}{l r} Ae^{\pm kx} & c_1=k^2\\A\sin(kx) & c_1=-k^2\\A\cos(kx) & c_1=-k^2\end{array}$$
+
+      \begin{itemize}
+
+        \item Repeating this for each variable, we find
+
+          $$\frac{d^2Y}{dy^2}=c_2Y(y)\quad\quad\frac{d^2Z}{dz^2}=c_2Z(z)$$
+          $$c_1+c_2+c_3=0$$
+
+      \end{itemize}
+
+    \item Fourier Inversion
+
+      $$\int_0^a\sin\left( \frac{n\pi y}{a} \right)\sin\left( \frac{m\pi y}{a} \right)\,dy=\frac{a}{2}\delta_{nm}$$
+
+      This is used to define the terms for Fourier analysis
+
+    \item A semi-infinite square tube, with the four walls grounded:
+
+      \begin{itemize}
+
+        \item The boundary conditions are (with $V=0$) given by:
+
+          $$\left\{\begin{array}{l l} x=0, & 0<y<b\\x=a, & 0<y<b\\ y=0, & 0<x<a\\y=b, & 0<x<a\end{array}$$
+
+          \item This would mean:
+
+            $$X=\sin\left( \frac{n\pi x}{a} \right)\quad\quad Y\propto\sin\left( \frac{m\pi y}{b} \right)\quad\quad Z=e^{-k_zz}$$
+            $$V=\sum B_{n,m}e^{-k_zz}\sin\left( \frac{n\pi x}{a} \right)\sin\left( \frac{m\pi y}{b} \right)$$
+
+          \item Because we know $c_1+c_2+c_3=0$, we know:
+
+            $$-\left( \frac{n\pi}{a} \right)^2-\left( \frac{m\pi}{b} \right)+k_z^2=0$$
+            $$k_z=\sqrt{\left( \frac{n\pi}{a} \right)^2+\left( \frac{m\pi}{b} \right)^2}$$
+
+      \end{itemize}
+
+\end{itemize}
+
+\end{document}
+
