@@ -181,6 +181,29 @@
     $$\left\{\begin{array}{c c} 0, & r<a\\ \bold{\hat{r}}A_1/r^2, & a< r< b\\ \bold{\hat{r}}A_2/r^2, & r>b \end{array}$$
 
       Where $A_1=5\times 10^6\left[ \frac{\si{\newton\meter\squared}}{\si{\coulomb}} \right]$, $A_2=-3\times10^6\left[ \frac{\si{\newton\meter\squared}}{\si{\coulomb}} \right]$, $a=.25[\si{\meter}]$, and $b=.45[\si{\meter}]$. Find the surface charge densities $\sigma_a$ and $\sigma_b$ on the two shells.
+
+      First and foremost, we know:
+
+      $$\sigma_a=\frac{4q_a}{\pi}\quad\text{and}\quad\sigma_b=\frac{q_b}{4\pi(.45)^2}$$
+
+      To find the enclosed charge, we can use the definition:
+
+      $$\vec{\nabla}\cdot\vec{E}=\frac{q_{enc}}{\varepsilon_o}$$
+
+      This gives us:
+
+      $$\frac{q_{enc}}{\varepsilon_o}=\left\{\begin{array}{l c}0, & r<a\\-2A_1/r^3, & a<r<b\\ -2A_2/r^3, & r>b\end{array}$$
+      $$q_{enc}=\left\{\begin{array}{l c}0, & r<a\\-2A_1\varepsilon_o/r^3, & a<r<b\\ -2A_2\varepsilon_o/r^3, & r>b\end{array}$$
+
+        To get the respective charges, we need to do the following:
+
+        $$q_a=\frac{-2A_1\varepsilon_o}{(.25)^3}=-5.664\cdot10^{-3}$$
+        $$q_b=\frac{-2A_2\varepsilon_o}{(.45)^3}-\frac{2A_1\varepsilon_o}{(.25)^3}=-5.0813\cdot10^{-3}$$
+
+        We can then find the charge densities:
+
+        $$\boxed{\sigma_a=\frac{4\cdot|(-5.664\cdot10^{-3})|}{\pi}=6.4697\cdot10^{-3}}$$
+        $$\boxed{\sigma_b=\frac{|(-5.0813\cdot10^{-3})|}{4\pi(.45)^2}=1.9968\cdot10^{-3}}$$
     
 \end{enumerate}
 
