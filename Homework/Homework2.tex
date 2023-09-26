@@ -53,15 +53,15 @@
 
     Using superposition, we know that the two charges can be summed, and they produce a horizontal force proportional to $3q$ at an angle of $\frac{\pi}{4}$ radians with respect to the $x$-axis. Decomposing this, we know the force can be expressed, with $Q$ as the test charge, as:
 
-    $$E_Q=\frac{(3q)}{4\pi\varepsilon_o R^2}\cos\left( \frac{\pi}{4} \right)\bold{\hat{x}}+\frac{(3q)}{4\pi\varepsilon_o R^2}\sin\left( \frac{\pi}{4} \right)\bold{\hat{y}}$$
+    $$E_Q=-\frac{(3q)}{4\pi\varepsilon_o R^2}\cos\left( \frac{\pi}{4} \right)\bold{\hat{x}}-\frac{(3q)}{4\pi\varepsilon_o R^2}\sin\left( \frac{\pi}{4} \right)\bold{\hat{y}}$$
 
     Additionally, we know that $R=\sqrt{\left( \frac{L}{2} \right)^2+\left( \frac{L}{2} \right)^2}=\sqrt{\frac{L^2}{2}}=\frac{L}{\sqrt{2}}$. This gives us:
 
-    $$\boxed{E_Q=\frac{3\sqrt{2}q}{4\pi\varepsilon_o L^2}\bold{\hat{x}}+\frac{3\sqrt{2}q}{4\pi\varepsilon_o L^2}\bold{\hat{y}}}$$
+    $$\boxed{E_Q=-\frac{3\sqrt{2}q}{4\pi\varepsilon_o L^2}\bold{\hat{x}}-\frac{3\sqrt{2}q}{4\pi\varepsilon_o L^2}\bold{\hat{y}}}$$
 
-    It can also be said that the field, in the direction of the $-2q$ charge, is:
+    It can also be said that the field, in the direction of the bottom left $+q$ charge, is:
 
-    $$\boxed{E_Q=\frac{3q}{2\pi\varepsilon_o L^2}\bold{\hat{-2q}}}$$
+    $$\boxed{E_Q=\frac{3q}{2\pi\varepsilon_o L^2}\bold{\hat{q}}}$$
 
   \item A uniformly charged rod of length $L$ and charge $q$ is placed along the $x$-axis with its center at $x=a$. Find the $x$-component of the electric field at a point on the $z$ axis. (Hint: use $R$ as the variable of integration.) Check your expression in the following limit: $z=0$ and $a>>L$.
 
@@ -194,39 +194,39 @@
 
             First, we must find the electric field inside of the cylinder, since we can not assume it is a cylinder. We do this with the following set up:
 
-            $$\int E(r)\cdot dA=\frac{q_{enc}}{\varepsilon_o}$$
+            $$\int \vec{E}\cdot dA=\frac{q_{enc}}{\varepsilon_o}$$
 
             Since the electric field is a function of $r$, it can be removed from the integral:
 
-            $$E\int dA=\frac{q_{enc}}{\varepsilon_o}$$
+            $$\vec{E}\int dA=\frac{q_{enc}}{\varepsilon_o}$$
 
             The area integral, with $l$ being the length of the cylinder, gives us:
 
-            $$E(2\pi rl)=\frac{q_{enc}}{\varepsilon_o}$$
+            $$\vec{E}(2\pi rl)=\frac{q_{enc}}{\varepsilon_o}$$
 
             The charge enclosed is simply the charge density of the cylinder is the charge density multiplied by the volume:
 
-            $$E(2\pi rl)=\frac{\rho(4\pi r^2l)}{\varepsilon_o}$$
+            $$\vec{E}(2\pi rl)=\frac{\rho(\pi r^2l)}{\varepsilon_o}$$
 
             We then divide over to get:
 
-            $$E=\frac{2\rho r}{\varepsilon_o}$$
+            $$\boxed{\vec{E}=\frac{\rho r}{2\varepsilon_o}}$$
 
           \item The radius $a<r<b$ (that is, in between the cylinder and shell)
 
             We can find the electric field in a similar process to the above:
 
-            $$E\int dA=\frac{q_{enc}}{\varepsilon_o}$$
-            $$E(2\pi rl)=\frac{\rho(4\pi a^2 l)}{\varepsilon_o}$$
-            $$E=\frac{2\rho a^2}{r\varepsilon_o}$$
+            $$\vec{E}\int dA=\frac{q_{enc}}{\varepsilon_o}$$
+            $$\vec{E}(2\pi rl)=\frac{\rho(\pi a^2 l)}{\varepsilon_o}$$
+            $$\boxed{\vec{E}=\frac{\rho a^2}{2r\varepsilon_o}}$$
 
           \item The radius $r>b$ (that is, outside of the coaxial cable)
 
             Again, we repeat a similar process:
 
-            $$E\int dA=\frac{q_{enc}}{\varepsilon_o}$$
-            $$E(2\pi rl)=\frac{\rho(4\pi a^2l)+\sigma(2\pi bl)}{\varepsilon_o}$$
-            $$E=\frac{2\rho a^2+b\sigma}{r\varepsilon_o}$$
+            $$\vec{E}\int dA=\frac{q_{enc}}{\varepsilon_o}$$
+            $$\vec{E}(2\pi rl)=\frac{\rho(\pi a^2l)+\sigma(2\pi bl)}{\varepsilon_o}$$
+            $$\boxed{\vec{E}=\frac{\rho a^2+2b\sigma}{2r\varepsilon_o}}$$
 
         \end{enumerate}
 
@@ -238,21 +238,29 @@
 
           \item $r<a$
 
-            $$V=-\int \frac{2\rho r}{\varepsilon_o}\,dr$$
-            $$=-\frac{2\rho}{\varepsilon_o}\int r\,dr$$
-            $$=-\frac{r^2\rho}{\varepsilon_o}+V_{ref}$$
+            $$V=-\int \frac{\rho r}{2\varepsilon_o}\,dr$$
+            $$=-\frac{\rho}{\varepsilon_o}\int r\,dr$$
+            $$\boxed{V_{r<a}=-\frac{r^2\rho}{4\varepsilon_o}}$$
 
           \item $a<r<b$
 
-            $$V=-\int \frac{2\rho a^2}{r\varepsilon_o}\,dr$$
-            $$=-\frac{2\rho a^2}{\varepsilon_o}\int r^{-1}\,dr$$
-            $$=-\frac{2\rho a^2}{\varepsilon_o}\ln(r)+V_{ref}$$
+            $$V=-\int \frac{\rho a^2}{2r\varepsilon_o}\,dr$$
+            $$=-\frac{\rho a^2}{2\varepsilon_o}\int_a^r r^{-1}\,dr$$
+            $$=-\frac{\rho a^2}{2\varepsilon_o}\ln\left(\frac{r}{a}\right)$$
+
+            We then need to add the previous voltage:
+
+            $$\boxed{V_{a<r<b}=-\frac{\rho a^2}{2\varepsilon_o}\ln(\frac{r}{a})-\frac{\rho a^2}{4\varepsilon_o}}$$
 
           \item $r>b$
 
-            $$V=-\int \frac{2\rho a^2+b\sigma}{r\varepsilon_o}\,dr$$
-            $$=-\frac{2\rho a^2+b\sigma}{\varepsilon_o}\int r^{-1}\,dr$$
-            $$=-\frac{2\rho a^2+b\sigma}{\varepsilon_o}\ln(r)+V_{ref}$$
+            $$V=-\int \frac{\rho a^2+2b\sigma}{2r\varepsilon_o}\,dr$$
+            $$=-\frac{\rho a^2+2b\sigma}{2\varepsilon_o}\int_b^r r^{-1}\,dr$$
+            $$=-\frac{\rho a^2+2b\sigma}{2\varepsilon_o}\ln\left( \frac{r}{b} \right)$$
+
+            We then need to add the previous voltage:
+
+            $$\boxed{V_{r>b}=-\frac{\rho a^2+2b\sigma}{2\varepsilon_o}\ln(\frac{r}{b})-\frac{\rho a^2}{2\varepsilon_o}\ln(\frac{b}{a})-\frac{\rho a^2}{4\varepsilon_o}}$$
 
         \end{enumerate}
 
@@ -264,28 +272,33 @@
 
       Where $A_1=5\times 10^6\left[ \frac{\si{\newton\meter\squared}}{\si{\coulomb}} \right]$, $A_2=-3\times10^6\left[ \frac{\si{\newton\meter\squared}}{\si{\coulomb}} \right]$, $a=.25[\si{\meter}]$, and $b=.45[\si{\meter}]$. Find the surface charge densities $\sigma_a$ and $\sigma_b$ on the two shells.
 
-      First and foremost, we know:
+    We can apply Gauss's law to help us find the electric field:
 
-      $$\sigma_a=\frac{4q_a}{\pi}\quad\text{and}\quad\sigma_b=\frac{q_b}{4\pi(.45)^2}$$
+    \begin{enumerate}
 
-      To find the enclosed charge, we can use the definition:
+      \item $r<a$
 
-      $$\vec{\nabla}\cdot\vec{E}=\frac{q_{enc}}{\varepsilon_o}$$
+        $$\vec{E}(4\pi r^2)=\frac{4\pi r^2\sigma_a}{\varepsilon_o}$$
+        $$\sigma_a=\varepsilon_o\vec{E}$$
 
-      This gives us:
+        $\vec{E}=0$ in this case, so it does not provide enough information.
 
-      $$\frac{q_{enc}}{\varepsilon_o}=\left\{\begin{array}{l c}0, & r<a\\-2A_1/r^3, & a<r<b\\ -2A_2/r^3, & r>b\end{array}$$
-      $$q_{enc}=\left\{\begin{array}{l c}0, & r<a\\-2A_1\varepsilon_o/r^3, & a<r<b\\ -2A_2\varepsilon_o/r^3, & r>b\end{array}$$
+      \item $a<r<b$
 
-        To get the respective charges, we need to do the following:
+        $$\vec{E}(4\pi r^2)=\frac{4\pi a^2\sigma_a}{\varepsilon_o}$$
+        $$\sigma_a=\vec{E}\frac{r^2}{a^2}\varepsilon_o$$
+        $$=\frac{A_1}{a^2}\varepsilon_o$$
+        $$=\frac{5\cdot10^6}{(.25)^2}(8.85\cdot10^{-12})$$
+        $$\boxed{\sigma_a=7.08\cdot10^{-4}\left[ \frac{\si{\coulomb}}{\si{\meter\squared}} \right]}$$
 
-        $$q_a=\frac{-2A_1\varepsilon_o}{(.25)^3}=-5.664\cdot10^{-3}$$
-        $$q_b=\frac{-2A_2\varepsilon_o}{(.45)^3}-\frac{2A_1\varepsilon_o}{(.25)^3}=-5.0813\cdot10^{-3}$$
+      \item $r>b$
 
-        We can then find the charge densities:
+        $$\vec{E}(4\pi r^2)=\frac{4\pi a^2\sigma_a+4\pi b^2\sigma_b}{\varepsilon_o}$$
+        $$\vec{E}=\frac{a^2\sigma_a+b^2\sigma_b}{r^2\varepsilon_o}$$
+        $$\sigma_b=\frac{A_2\varepsilon_o-a^2\sigma_a}{b^2}$$
+        $$\boxed{\sigma_b=-3.496\cdot10^{-4}\left[ \frac{\si{\coulomb}}{\si{\meter\squared}} \right]}$$
 
-        $$\boxed{\sigma_a=\frac{4\cdot|(-5.664\cdot10^{-3})|}{\pi}=6.4697\cdot10^{-3}}$$
-        $$\boxed{\sigma_b=\frac{|(-5.0813\cdot10^{-3})|}{4\pi(.45)^2}=1.9968\cdot10^{-3}}$$
+    \end{enumerate}
     
 \end{enumerate}
 
