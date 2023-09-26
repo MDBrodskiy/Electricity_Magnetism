@@ -77,7 +77,14 @@
 
     $$\lambda=\frac{Q}{L}$$
 
-    Furthermore, we can refer to the angle between the test charge and point on the rod as $\theta$, measured in the counter-clockwise direction, and the distance from said point on the rod to the test charge can be called $R$. This yields us the following expression for the $x$-axis:
+    Furthermore, we can refer to the angle between the test charge and point on the rod as $\theta$, and the distance from said point on the rod to the test charge can be called $R$. This yields us the following expression for the $x$-axis:
+
+    \begin{figure}[H]
+      \centering
+      \include{Figures/ExDiagram}
+      \caption{Supporting Diagram — Problem 2}
+      \label{fig:3}
+    \end{figure}
 
     $$E_x=-\int \frac{\sin(\theta)}{4\pi\varepsilon_oR^2}\,dQ$$
 
@@ -97,7 +104,7 @@
 
     Again referring to our set up, we know $\cos(\theta)=\dfrac{z}{R}$:
 
-    $$dx=\frac{d\theta}{z}$$
+    $$\frac{dx}{R^2}=\frac{d\theta}{z}$$
 
     Finally, we can use this:
 
@@ -138,6 +145,13 @@
 
     If we assume that $i$ and $j$ are the horizontal and vertical distances, respectively, to the test charge from any point on the annulus, and $r=\sqrt{i^2+j^2}$ is the radial distance from the test charge to any point, then we can express the above as:
 
+    \begin{figure}[H]
+      \centering
+      \include{Figures/annulus}
+      \caption{Supporting Diagram — Problem 3}
+      \label{fig:4}
+    \end{figure}
+
     $$dq=\sigma (2\pi i\,di)$$
 
     We can then define the voltage as:
@@ -160,11 +174,11 @@
 
     $$\vec{E}=-\vec{\nabla}V$$
     $$\vec{E}=-\vec{\nabla}\left(  \frac{\sigma}{2\varepsilon_o}\left(  \sqrt{j^2+b^2}-\sqrt{j^2+a^2}\right) \right)$$
-    $$\boxed{\vec{E}=\langle 0, 0, \frac{\sigma}{4\varepsilon_o}\left( \frac{j}{\sqrt{j^2+a^2}}-\frac{j}{\sqrt{j^2+b^2}} \right)\rangle}$$
+    $$\boxed{\vec{E}=\langle 0, 0, \frac{\sigma}{2\varepsilon_o}\left( \frac{j}{\sqrt{j^2+a^2}}-\frac{j}{\sqrt{j^2+b^2}} \right)\rangle}$$
 
     Because $j$ simply indicates the $z$ direction, and the vector above is with respect to the $i,j,k$ vectors, we can rewrite this as:
 
-    $$\boxed{\vec{E}=\frac{\sigma}{4\varepsilon_o}\left( \frac{z}{\sqrt{z^2+a^2}}-\frac{z}{\sqrt{z^2+b^2}} \right)\bold{\hat{k}}}$$
+    $$\boxed{\vec{E}=\frac{\sigma}{2\varepsilon_o}\left( \frac{z}{\sqrt{z^2+a^2}}-\frac{z}{\sqrt{z^2+b^2}} \right)\bold{\hat{k}}}$$
     
   \item Consider an infinitely long uniformly-charged solid cylinder of radius $a$ and charge per unit volume $\rho$ surrounded by a coaxial cylindrical shell of radius $b$ and charge per unit area of $\sigma$. Take the axis of the cylinders as the $z$-axis.
 
@@ -172,7 +186,75 @@
 
       \item Calculate the electric field everywhere in space
 
+        We must calculate the electric field in three different cases:
+
+        \begin{enumerate}
+
+          \item The radius $r<a$ (that is, in the cylinder)
+
+            First, we must find the electric field inside of the cylinder, since we can not assume it is a cylinder. We do this with the following set up:
+
+            $$\int E(r)\cdot dA=\frac{q_{enc}}{\varepsilon_o}$$
+
+            Since the electric field is a function of $r$, it can be removed from the integral:
+
+            $$E\int dA=\frac{q_{enc}}{\varepsilon_o}$$
+
+            The area integral, with $l$ being the length of the cylinder, gives us:
+
+            $$E(2\pi rl)=\frac{q_{enc}}{\varepsilon_o}$$
+
+            The charge enclosed is simply the charge density of the cylinder is the charge density multiplied by the volume:
+
+            $$E(2\pi rl)=\frac{\rho(4\pi r^2l)}{\varepsilon_o}$$
+
+            We then divide over to get:
+
+            $$E=\frac{2\rho r}{\varepsilon_o}$$
+
+          \item The radius $a<r<b$ (that is, in between the cylinder and shell)
+
+            We can find the electric field in a similar process to the above:
+
+            $$E\int dA=\frac{q_{enc}}{\varepsilon_o}$$
+            $$E(2\pi rl)=\frac{\rho(4\pi a^2 l)}{\varepsilon_o}$$
+            $$E=\frac{2\rho a^2}{r\varepsilon_o}$$
+
+          \item The radius $r>b$ (that is, outside of the coaxial cable)
+
+            Again, we repeat a similar process:
+
+            $$E\int dA=\frac{q_{enc}}{\varepsilon_o}$$
+            $$E(2\pi rl)=\frac{\rho(4\pi a^2l)+\sigma(2\pi bl)}{\varepsilon_o}$$
+            $$E=\frac{2\rho a^2+b\sigma}{r\varepsilon_o}$$
+
+        \end{enumerate}
+
       \item Also calculate the potential as a function of the distance from the axis, taking the potential to be zero on the $z$-axis.
+
+        To find the voltage, we must integrate the three above cases:
+
+        \begin{enumerate}
+
+          \item $r<a$
+
+            $$V=-\int \frac{2\rho r}{\varepsilon_o}\,dr$$
+            $$=-\frac{2\rho}{\varepsilon_o}\int r\,dr$$
+            $$=-\frac{r^2\rho}{\varepsilon_o}+V_{ref}$$
+
+          \item $a<r<b$
+
+            $$V=-\int \frac{2\rho a^2}{r\varepsilon_o}\,dr$$
+            $$=-\frac{2\rho a^2}{\varepsilon_o}\int r^{-1}\,dr$$
+            $$=-\frac{2\rho a^2}{\varepsilon_o}\ln(r)+V_{ref}$$
+
+          \item $r>b$
+
+            $$V=-\int \frac{2\rho a^2+b\sigma}{r\varepsilon_o}\,dr$$
+            $$=-\frac{2\rho a^2+b\sigma}{\varepsilon_o}\int r^{-1}\,dr$$
+            $$=-\frac{2\rho a^2+b\sigma}{\varepsilon_o}\ln(r)+V_{ref}$$
+
+        \end{enumerate}
 
     \end{enumerate}
     
