@@ -67,6 +67,91 @@
 
       \end{itemize}
 
+    \item Poisson's Equation
+
+      $$\nabla^2V=-\frac{\rho}{\varepsilon_o}$$
+
+      \begin{itemize}
+
+        \item When the charge density is zero, we get Laplace's Equation:
+
+          $$\nabla^2V=0$$
+
+      \end{itemize}
+
+    \item Given a box in three dimensions with lengths $a,b,c$, we know:
+
+      $$c_1+c_2+c_3=0\longrightarrow\left\{\begin{array}{c c}c>0, & \text{Exponential}\\c<0, & \text{Sinusoidal}\end{array}$$
+
+      \begin{itemize}
+
+        \item We know the voltage is of the form
+
+          $$V=f(z)\sin\left( \frac{n\pi x}{a} \right)\sin\left( \frac{m\pi y}{a} \right)$$
+
+        \item The function, $f(z)$, must then be of the form:
+
+          $$f(z)=Ae^{kz}+Be^{-kz}$$
+
+        \item If $V=0$, then $z=0$, so:
+
+          $$A+B=0\rightarrow A=-B$$
+          $$f(z)=Ae^{kz}-Ae^{-kz}$$
+          $$=A(e^{kz}-e^{-kz})$$
+          $$=2A\sinh(kz)$$
+
+        \item Thus, we can set up the function as:
+
+          $$V(x,y,z)=\sum_{m,n} c_{m,n}\sin\left( \frac{n\pi x}{a} \right)\sin\left( \frac{m\pi y}{b} \right)\sinh(kz)$$
+
+      \end{itemize}
+
+    \item Spherical Coordinates
+
+      $$\nabla^2V=\frac{1}{r^2}\frac{\partial}{\partial r}\left( r^2\frac{\partial V}{\partial r^2} \right)+\frac{1}{r^2\sin(\theta)}\frac{\partial}{\partial \theta}\left( \sin(\theta)\frac{\partial V}{\partial \theta} \right)=0$$
+
+      \begin{itemize}
+
+        \item In Quantum Mechanics, we have spherical harmonics:
+
+          $$Y_{lm}(\theta,\phi)=P_l(\cos(\theta))f_{ml}(\phi)$$
+
+        \item For our purposes, we can find:
+
+          $$V(r,\theta)=\sum_{l=0,1,\ldots}\left( A_lr^l+\frac{B_l}{r^{l+1}} \right)P_e(\cos(\theta))$$
+
+        \item A typical problem for this would be:
+
+          \begin{itemize}
+
+            \item Given some potential, $V(\theta)$ on a spherical surface, find $V_{in}$ and $V_{out}$
+
+              $$R_e(r)=A_lr^l+\frac{B_l}{r^{l+1}}$$
+              $$V_{in}=A_lr^lP_l(\cos(\theta))$$
+              $$V_{out}=\frac{B_l}{r^{l+1}}P_l(\cos(\theta))$$
+
+            \item We know the following boundary conditions:
+
+              $$r\to\infty,V\to0$$
+
+            \item We can integrate the function:
+
+              $$\int_{-1}^1 V(R,\theta)P_l(\cos(\theta))d(\cos(\theta))=\frac{2R^lA_l}{2l+1}$$
+
+          \end{itemize}
+
+        \item Example: Given $V(R,\theta)=E_oR\cos(\theta)=E_oRP_1(\cos(\theta))$
+
+          \begin{itemize}
+
+            \item This gives us:
+
+              $$\left\{\begin{array}{l l}\text{Inside: } & V=A_1r^2\cos(\theta)\\\text{Outside: } & V=\frac{B_1}{r^2}P_1(\cos(\theta))\end{array}$$
+
+          \end{itemize}
+
+      \end{itemize}
+
 \end{itemize}
 
 \end{document}
