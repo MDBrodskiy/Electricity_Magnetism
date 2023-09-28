@@ -152,6 +152,50 @@
 
       \end{itemize}
 
+    \item For a sphere
+
+      \begin{itemize}
+
+        \item We find $E_oR\cos(\theta)$:
+
+          $$\left\{\begin{array}{l l}\text{Inside: } & V=E_or\cos(\theta)=E_oz\\\text{Outside: } & V=\dfrac{E_oR^3}{r^2}(\cos(\theta))\end{array}$$
+
+        \item We know:
+
+          $$\vec{E}_{in}=-\vec{\nabla}V_{in}=-\frac{\partial V}{\partial z}\bold{\hat{z}}=-E_o\bold{\hat{z}}=E_o(-\cos(\theta)\bold{\hat{r}}+\sin(\theta)\hat{\theta})$$
+          $$\vec{E}_{out}=-\vec{\nabla}V_{out}=-\frac{\partial V}{\partial r}\bold{\hat{r}}=-\frac{1}{r}\frac{\partial V_{out}}{\partial\theta}=\frac{E_oR^3}{r^3}(2\cos(\theta)\bold{\hat{r}}+\sin(\theta)\hat{\theta})$$
+
+        \item To confirm our calculation, we can take the partial derivative with respect to the angle:
+
+          $$E_{in_{\theta}}(R)=E_o\sin(\theta)$$
+          $$E_{out_{\theta}}(R)=E_o\cos(\theta)$$
+
+        \item We can then use Gauss's law:
+
+          $$\frac{\sigma A}{\varepsilon_o}=A(E_{out_r}-E_{in_r})$$
+          $$\sigma=\varepsilon_o(E_{out}(R,\theta)-E_{in}(R,\theta))$$
+          $$\sigma=3\varepsilon_o(E_o\cos(\theta))$$
+
+        \item This implies there is a positive charge at the north pole, a negative charge at the south pole, and no charge at the equator
+
+        \item To find the total charge we can do the following:
+
+          $$Q=\int_0^{\pi}R^2\sin(\theta)\,d\theta(3\varepsilon_oE_o\cos(\theta))=0$$
+
+      \end{itemize}
+
+    \item Poles:
+
+      \begin{itemize}
+
+        \item We can determine that:
+
+          $$\left\{\begin{array}{l l}\text{Monopole: } & V\propto\frac{1}{r}\\\text{Dipole: } & V\propto\frac{1}{r^2}\\\text{Quadrupole: } & V\propto\frac{1}{r^3}\\\text{Octopole: } & V\propto\frac{1}{r^4}\end{array}$$
+
+          \item The arrangement increases in dimension each time we go up an order; that, is, the shape is a single point charge for monopole, two equal but opposite charges along a line for dipole, a square with aggregate charge of zero for quadrupole, and a cube with aggregate charge zero for octopole
+
+      \end{itemize}
+
 \end{itemize}
 
 \end{document}
