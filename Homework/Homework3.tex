@@ -1,0 +1,108 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Written By Michael Brodskiy
+% Class: Electricity & Magnetism
+% Professor: D. Wood
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\include{Includes.tex}
+
+\title{Homework 3}
+\date{October 5, 2023}
+\author{Michael Brodskiy\\ \small Professor: D. Wood}
+
+\begin{document}
+
+\maketitle
+
+\begin{enumerate}
+
+  \item In the popular novel ``Angels and Demons'' by Dan Brown, some magnetic traps containing antimatter are stolen from CERN. This sets off a race to find the antimatter before the batteries of the traps die and the antimatter is freed to interact and annihilate with matter. The antimatter is in the form of positrons. A positron is the antimatter partner of the electron and thus is positively charged with a charge of $1.6\cdot10^{-19}[\si{\coulomb}]$ each and a mass of $9.1\cdot10^{−31}[\si{\kilo\gram}]$ each. Assume that the positrons in the trap form a spherical shell (why?) of radius $1[\si{\milli\meter}]$ and have a total mass of one nano-gram.
+
+    \begin{enumerate}
+
+      \item Find the pressure that the trap must exert on the surface of the sphere to keep it from expanding
+
+      \item Calculate 
+
+        \begin{enumerate}
+
+          \item the electrostatic energy of the trapped positrons and
+
+          \item the energy that would be released by antimatter annihilation (twice the rest energy of the positrons)
+
+        \end{enumerate} 
+
+    \end{enumerate}
+
+  \item For a particular configuration of charges, the potential is given by $V(r)=A\frac{e^{-\lambda r}}{r}$, where $A$ is a constant with units $[\si{\volt\meter}]$ and $\lambda$ is a constant with units $[\si{\per\meter}]$.
+
+    \begin{enumerate}
+
+      \item Find the electric field $\vec{E}(r)$
+
+        We know that the electric field may be expressed as:
+
+        $$\vec{E}=-\vec{\nabla}V$$
+
+        We can then take the gradient to find the electric field as:
+
+        $$\vec{E}=Ae^{-\lambda r}\frac{\partial}{\partial r}\left( \frac{1}{r} \right)+\frac{A}{r}\frac{\partial}{\partial r}\left( e^{-\lambda r}\right)$$
+        $$=-\frac{Ae^{-\lambda r}}{r^2} \right)+\frac{-\lambda Ae^{-\lambda r}}{r}$$
+
+      \item Show that the charge density is given by $\rho(r)=\varepsilon_oA\left( 4\pi\delta^3(\vec{r})-\frac{\lambda^2e^{-\lambda r}}{r} \right)$
+
+      \item Find the total integrated charge $Q$
+
+    \end{enumerate}
+
+  \item A metal sphere of radius $R$ is given a total charge $Q$. Find the force between two hemispheres.
+
+    First, we need to average the electric field about the sphere:
+
+    $$\frac{1}{2}\left( \vec{E}_{in}+\vec{E}_{out} \right)=\frac{1}{2}\frac{Q}{4\pi\varepsilon_oR^2}$$
+
+    Due to symmetry, we can cancel horizontal components, thus meaning only the $z$ components are important. We then find the force per unit area:
+
+    $$F_z=\sigma \vec{E}$$
+
+    Then using spherical coordinates and only taking the $z$-direction force, we get:
+
+    $$\int_0^{2\pi}\int_0^{\frac{\pi}{2}}\sigma \vec{E}R^2\sin(\theta)\cos(\theta)\,d\theta\,d\phi=\int_0^{2\pi}\int_0^{\frac{\pi}{2}}\frac{Q}{4\pi R^2}\cdot\frac{1}{2}\cdot\frac{Q}{4\pi\varepsilon_oR^2} R^2\sin(\theta)\cos(\theta)\,d\theta\,d\phi$$
+
+    We can then simplify using trigonometric identities:
+
+    $$\frac{Q^2}{32\pi^2 \varepsilon_oR^2}\int_0^{2\pi}\int_0^{\frac{\pi}{2}}\sin(\theta)\cos(\theta)\,d\theta\,d\phi\rightarrow\frac{Q^2}{64\pi^2 \varepsilon_oR^2}\int_0^{2\pi}\int_0^{\frac{\pi}{2}}\sin(2\theta)\,d\theta\,d\phi$$
+    $$\boxed{\frac{Q^2}{32\pi \varepsilon_oR^2}\int_0^{\frac{\pi}{2}}\sin(2\theta)\,d\theta=\frac{Q^2}{32\pi \varepsilon_oR^2}}$$
+
+  \item Two spherical cavities of radii $a$ and $b$, are hollowed out from the interior of a (neutral) conducting sphere of radius $R$.  At the center of each cavity a point charge is placed — call these charges $q_a$ and $q_b$.
+
+    \begin{enumerate}
+
+      \item Find the surface charge densities $\sigma_a$, $\sigma_b$, and $\sigma_R$
+
+      \item What is the field outside the conductor?
+
+      \item What is the field within each cavity?
+
+      \item What is force on $q_a$ and $q_b$?
+
+      \item Which of these answers would change if a third charge, $q_c$, were brought near the conductor?
+
+    \end{enumerate}
+
+  \item Consider an infinitely long conducting cylinder of radius $a$ surrounded by a coaxial conducting cylindrical shell of inner radius $b$. Assume there is no material between the two conductors.  (This is a basic coaxial cable, except that the space between would typically be filled with an insulating material.)
+
+    \begin{enumerate}
+
+      \item Calculate the capacitance per unit length in terms of $a$ and $b$.
+
+      \item For $a=1.0[\si{\milli\meter}]$, $b=1.2[\si{\milli\meter}]$ find the capacitance in $\left[ \frac{\si{\nano\farad}}{\si{\meter}} \right]$.
+
+      \item What happens to the capacitance if both $a$ and $b$ are increased by a factor of 10?
+
+    \end{enumerate}
+
+\end{enumerate}
+
+\end{document}
+
