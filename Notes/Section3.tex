@@ -196,6 +196,46 @@
 
       \end{itemize}
 
+    \item The energy per positron may be expressed as $E_{e^+}=2m_ec^2$
+
+    \item Multipole Expansion
+
+      $$V(\vec{r})=\frac{1}{4\pi\varepsilon_o}\sum_{n=0}^{\infty} \frac{1}{r^{n+1}}\int P_n(\cos(\alpha))(r')^n\rho(\vec{r}')\,d\tau'$$
+
+      \begin{itemize}
+
+        \item For a sphere, the surface charge may be distributed according to:
+
+          $$\sigma=\sigma_o\left( 1-\cos(\theta) \right)^2$$
+          $$\int\rho(\vec{r}')\,d\vec{\tau}\right\int\sigma(R,\theta)\,da'$$
+
+          where
+
+          $$da'=r'\sin(\theta')\,d\theta'\,d\phi'=2\pi r'\sin(\theta')\,dr'\,d\theta'$$
+
+          can be made easier with
+
+          $$\int_0^\pi \sin(\theta')\,d\theta'\longleftrightarrow\int_{-1}^1\,d(\cos(\theta'))$$
+
+      \end{itemize}
+
+    \item Electric Field of a Dipole
+
+      $$\vec{E}=-\vec{\nabla}V=-\vec{\nabla}\left(  \frac{\p\cos(\theta)}{4\pi\varepsilon_o r^2}\right)$$
+
+      \begin{itemize}
+
+        \item This assumes the $z$-axis is aligned with $\vec{p}$
+
+          $$\vec{E}_r=\frac{p\cos(\theta)}{2\pi\varepsilon_o r^3}$$
+          $$\vec{E}_{\theta}=\frac{p\sin(\theta)}{4\pi\varepsilon_o r^3}$$
+
+        \item Thus, we get:
+
+          $$\vec{E}=\frac{p}{4\pi\varepsilon_or^3}\left( 2\cos(\theta)\bold{\hat{r}}+\sin(\theta)\hat{\theta} \right)$$
+
+      \end{itemize}
+
 \end{itemize}
 
 \end{document}
