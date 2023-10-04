@@ -1,0 +1,80 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Written By Michael Brodskiy
+% Class: Electricity & Magnetism
+% Professor: D. Wood
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\include{Includes.tex}
+
+\title{Electric Fields in Matter}
+\date{\today}
+\author{Michael Brodskiy\\ \small Professor: D. Wood}
+
+\begin{document}
+
+\maketitle
+
+\begin{itemize}
+
+  \item Hydrogen Atom
+
+    \begin{itemize}
+
+      \item The charge density for a hydrogen atom would be:
+
+        $$\rho(r)=\frac{q}{4\pi a^3}e^{-\frac{2r}{a}}$$
+
+        when $r<<a$:
+
+        $$\rho(r)\approx\frac{q}{4\pi a^3}$$
+
+      \item Using Gauss's law, we can find the electric field:
+
+        $$\vec{E}(4\pi r^2)=\frac{\rho(\frac{4}{3}\pi r^3)}{\varepsilon_o}$$
+        $$\vec{E}=\frac{\rho r}{3\varepsilon_o}$$
+
+      \item From here, the force on the charges become:
+
+        $$F=q\vec{E}=-\frac{q\rho r}{3\varepsilon_o}$$
+
+    \end{itemize}
+
+  \item Molecule of Water
+
+    \begin{itemize}
+
+      \item Since the hydrogens pull in different directions, we can describe the torque as:
+
+        $$\vec{N}=\frac{d}{2}\sin(\theta)\vec{E}q+\frac{d}{2}\sin(\theta)\vec{E}q=d\sin(\theta)\vec{E}q$$
+        $$\vec{N}=\vec{p}\times\vec{E}$$
+
+      \item The net force can be described as:
+
+        $$F=q\vec{E}\left(\vec{r}+\frac{\vec{d}}{2}\right)-q\vec{E}\left( \vec{r}-\frac{\vec{d}}{2} \right)$$
+        $$F_x\approx q\left( E_x(\vec{r})+\frac{\vec{d}}{2}\vec{\nabla}E_x \right)-q\left( \vec{E}(r)-\frac{\vec{d}}{2}\vec{\nabla} E_x \right)$$
+        $$F_x=q\vec{\nabla}E_x\cdot\vec{d}=\vec{p}\cdot\vec{\nabla}E_x$$
+        $$\vec{F}=(\vec{p}\cdot\vec{\nabla})\vec{E}$$
+
+    \end{itemize}
+
+  \item Polarized material
+
+    $$\vec{P}=\frac{\text{dipole moment}}{\text{volume}}$$
+
+    \begin{itemize}
+
+      \item Units:
+
+        $$\frac{\si{\coulomb}}{\si{\meter\squared}}\quad\text{ like }\sigma$$
+
+      \item Potential due to a neutral polarized object
+
+        $$V(\vec{r})=\frac{1}{4\pi\varepsilon_o}\int\frac{\bold{\hat{R}}\cdot P(\vec{r}\prime)}{R^2}\,d\tau'$$
+        $$V(\vec{r})=-\frac{1}{4\pi\varepsilon_o}\int\frac{1}{R'}\vec{\nabla}\cdotP(\vec{r}\prime)\,d\tau'$$
+
+    \end{itemize}
+
+\end{itemize}
+
+\end{document}
+
