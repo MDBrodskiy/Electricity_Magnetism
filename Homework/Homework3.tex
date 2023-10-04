@@ -16,11 +16,31 @@
 
 \begin{enumerate}
 
-  \item In the popular novel ``Angels and Demons'' by Dan Brown, some magnetic traps containing antimatter are stolen from CERN. This sets off a race to find the antimatter before the batteries of the traps die and the antimatter is freed to interact and annihilate with matter. The antimatter is in the form of positrons. A positron is the antimatter partner of the electron and thus is positively charged with a charge of $1.6\cdot10^{-19}[\si{\coulomb}]$ each and a mass of $9.1\cdot10^{−31}[\si{\kilo\gram}]$ each. Assume that the positrons in the trap form a spherical shell (why?) of radius $1[\si{\milli\meter}]$ and have a total mass of one nano-gram.
+  \item In the popular novel ``Angels and Demons'' by Dan Brown, some magnetic traps containing antimatter are stolen from CERN. This sets off a race to find the antimatter before the batteries of the traps die and the antimatter is freed to interact and annihilate with matter. The antimatter is in the form of positrons. A positron is the antimatter partner of the electron and thus is positively charged with a charge of $1.6\cdot10^{-19}[\si{\coulomb}]$ each and a mass of $9.1\cdot10^{-31}[\si{\kilo\gram}]$ each. Assume that the positrons in the trap form a spherical shell (why?) of radius $1[\si{\milli\meter}]$ and have a total mass of one nano-gram.
 
     \begin{enumerate}
 
       \item Find the pressure that the trap must exert on the surface of the sphere to keep it from expanding
+
+        We know the following:
+
+        $$dF=\frac{(E_{in}+E_{out})}{2}\sigma\,dA$$
+
+        The internal electric field, $E_{in}=0$ because the charges cancel each other out. The external electric field, $E_{out}$, can be defined in terms of the charge density as $\frac{\sigma}{\varepsilon_o}$. This can be substituted in to get:
+
+        $$\frac{dF}{dA}=\frac{\sigma^2}{2\varepsilon_o}$$
+
+        We can find the value of sigma by finding the amount of charges present:
+
+        $$\frac{1[\si{\nano\gram}]}{9.1\cdot10^{-31}[\si{\kilo\gram}]}=1.0989\cdot10^{18}[\text{positrons}]$$
+
+        For the charge density, we then get:
+
+        $$\sigma=\frac{\left(1.0989\cdot10^{18}\right)\left( 1.6\cdot10^{-19} \right)}{4\pi(.001)^2}=1.4\cdot10^{4}\left[ \frac{\si{\coulomb}}{\si{\meter\squared}} \right]$$
+
+        For the differential we then get:
+
+        $$\boxed{\frac{dF}{dA}=\frac{(1.4\cdot10^4)^2}{2\cdot8.85\cdot10^{-12}}=1.106\cdot10^{19}\left[ \frac{\si{\newton}}{\si{\meter\squared}} \right]}$$
 
       \item Calculate 
 
@@ -28,7 +48,32 @@
 
           \item the electrostatic energy of the trapped positrons and
 
+            We can find the energy in the following way:
+
+            $$U=\frac{1}{2}\int_r^\infty\varepsilon_oE^2\,d\tau$$
+
+            We then break off the area term of $\tau$:
+
+            $$U=\frac{1}{2}\int_r^\infty\varepsilon_o\left( \frac{Q}{4\pi\varepsilon_o r^2} \right)^2(4\pi r^2)\,dr$$
+            $$U=\frac{Q^2}{8\pi\varepsilon_o}\int_r^\infty \frac{1}{r^2}\,dr$$
+            $$U=\frac{Q^2}{8\pi\varepsilon_o}\left( -\frac{1}{r} \right)\Big|_r^\infty$$
+            $$U=\frac{Q^2}{8\pi\varepsilon_or}$$
+
+            We then substitute the values we know:
+
+            $$U=\frac{\left(  .1758\right)^2}{4\pi\varepsilon_o(.001)}$$
+            $$\boxed{U=1.3895\cdot10^{11}[\si{\joule}]}$$
+
           \item the energy that would be released by antimatter annihilation (twice the rest energy of the positrons)
+
+            This would produce twice the rest energy of the positrons. This can be calculated using:
+
+            $$E=2m_ec^2$$
+            $$=2(9.1\cdot10^{-31})(3\cdot10^{8})^2$$
+            $$=1.638\cdot10^{-13}[\si{\joule}]$$
+            $$\boxed{=1.022[\si{\mega\eV}]}$$
+
+            This makes sense, as it is twice the rest mass of electrons.
 
         \end{enumerate} 
 
@@ -134,7 +179,7 @@
 
         As we know the total charge on the surface of the conductor, the electric field is given as:
 
-        $$\vec{E}=\frac{q_a+q_b}{4\pi\varepsilon_o r^2}\bold{\hat{r}}$$
+        $$\boxed{\vec{E}=\frac{q_a+q_b}{4\pi\varepsilon_o r^2}\bold{\hat{r}}}$$
 
         where $r$ is the radially outwards direction.
 
