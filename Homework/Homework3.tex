@@ -47,11 +47,49 @@
         We can then take the gradient to find the electric field as:
 
         $$\vec{E}=Ae^{-\lambda r}\frac{\partial}{\partial r}\left( \frac{1}{r} \right)+\frac{A}{r}\frac{\partial}{\partial r}\left( e^{-\lambda r}\right)$$
-        $$=-\frac{Ae^{-\lambda r}}{r^2} \right)+\frac{-\lambda Ae^{-\lambda r}}{r}$$
+      $$=-\left( -\frac{Ae^{-\lambda r}}{r^2}+\frac{-\lambda Ae^{-\lambda r}}{r}\right)$$
+      $$\boxed{\vec{E}=\left(\frac{Ae^{-\lambda r}}{r^2}+\frac{\lambda Ae^{-\lambda r}}{r}\right)\bold{\hat{r}}}$$
 
       \item Show that the charge density is given by $\rho(r)=\varepsilon_oA\left( 4\pi\delta^3(\vec{r})-\frac{\lambda^2e^{-\lambda r}}{r} \right)$
 
+        By Poisson's formula:
+
+        $$\vec{\nabla}\cdot\vec{E}=\frac{\rho}{\varepsilon_o}\rightarrow\varepsilon_o\vec{\nabla}\cdot\vec{E}=\rho$$
+
+        Thus, we take the differential of the above once more:
+
+        $$A\frac{\partial}{\partial r}\left( \frac{\bold{\hat{r}}}{r^2}(1+\lambda r)e^{-\lambda r}\right)$$
+
+        By the product rule, we get:
+
+      $$A\frac{\partial}{\partial r}\left( \frac{\bold{\hat{r}}}{r^2}\right)(1+\lambda r)e^{-\lambda r}+\frac{A}{r^2}\frac{\partial}{\partial r}\left((1+\lambda r)e^{-\lambda r}\right)$$
+
+      We know 
+
+      $$\vec{\nabla}\left(\frac{\bold{\hat{r}}}{r^2}\right)=4\pi\delta^3(\vec{r})$$
+
+      Which then gives us:
+
+      $$4A\pi\delta^3(\vec{r})(1+\lambda r)e^{-\lambda r}+\frac{A}{r^2}\left(\lambda e^{-\lambda r}-\lambda(1+\lambda r)e^{-\lambda r}\right)$$
+
+      All of the terms dependent on $r$ and multiplied by the $\delta$ function can be ignored, as they would only be important when $r=0$, which would make them equal to 1 anyway. Doing so, and simplifying, we get:
+
+      $$4A\pi\delta^3(\vec{r})-\frac{A\lambda^2e^{-\lambda r}}{r}$$
+
+      Then multiplying by $\varepsilon_o$, we finally get:
+
+      $$\boxed{\rho(r)=\varepsilon_oA\left( 4\pi\delta^3(\vec{r})-\frac{\lambda^2e^{-\lambda r}}{r} \right)}$$
+
       \item Find the total integrated charge $Q$
+
+        To find the charge, we may integrate over the entire volume:
+
+        $$\int\rho(r)\,dV=\varepsilon_oA\int\left( 4\pi\delta^3(\vec{r})-\frac{\lambda^2e^{-\lambda r}}{r} \right)\,dV$$
+        $$4\pi\varepsilon_oA\underbrace{\int\delta^3(\vec{r})\,dV}_{1}-\varepsilon_oA\int\frac{\lambda^2e^{-\lambda r}}{r}\,dr\,dA$$
+        $$4\pi\varepsilon_oA-\varepsilon_oA\int4\pi r\lambda^2e^{-\lambda r}\,dr$$
+        $$4\pi\varepsilon_oA-4\pi\varepsilon_oA\lambda^2\int_0^\infty re^{-\lambda r}\,dr$$
+        $$4\pi\varepsilon_oA-4\pi\varepsilon_oA\lambda^2\left( \frac{1}{\lambda^2} \right)$$
+        $$\boxed{Q=0}$$
 
     \end{enumerate}
 
@@ -80,13 +118,39 @@
 
       \item Find the surface charge densities $\sigma_a$, $\sigma_b$, and $\sigma_R$
 
+        A surface charge density is simply the charge per unit area. This can be expressed for \underline{the point charges} $q_a$ and $q_b$:
+
+        $$\sigma_{a'}=\frac{q_a}{4\pi a^2}\quad\text{ and }\quad\sigma_{b'}=\frac{q_b}{4\pi b^2}$$
+
+        The surface of the cavities, would, however, have an equal but opposite charge, meaning they would be defined as:
+
+        $$\boxed{\sigma_a=-\frac{q_a}{4\pi a^2}\quad\text{ and }\quad\sigma_b=-\frac{q_b}{4\pi b^2}}$$
+
+        The gathering of the negative charge on the inside of the conductor would create an equal but opposite charge on the surface of the sphere; applying similar logic, we find:
+
+        $$\boxed{\sigma_R=\frac{q_a+q_b}{4\pi R^2}}$$
+
       \item What is the field outside the conductor?
+
+        As we know the total charge on the surface of the conductor, the electric field is given as:
+
+        $$\vec{E}=\frac{q_a+q_b}{4\pi\varepsilon_o r^2}\bold{\hat{r}}$$
+
+        where $r$ is the radially outwards direction.
 
       \item What is the field within each cavity?
 
+        The two cavities have similar electric fields, found in a process similar to the field outside of the conductor. That is, the fields may be described by the charge contained:
+
+        $$\boxed{\vec{E}_a=\frac{q_a}{4\pi\varepsilon_o r^2}\bold{\hat{r}}\quad\text{ and }\quad\vec{E}_b=\frac{q_b}{4\pi\varepsilon_o r^2}\bold{\hat{r}}}$$
+
       \item What is force on $q_a$ and $q_b$?
 
+        The force on both should be equal to \underline{zero}. This occurs because we know the electric field through a conductor is zero. Thus, the only force acting on the charge itself would be its equal and opposite counterpart on the surface of the cavity. Since this equal and opposite charge is evenly distributed in a radial distribution, it would cancel out. Thus, the force is \underline{zero}.
+
       \item Which of these answers would change if a third charge, $q_c$, were brought near the conductor?
+
+        Anything inside of the conductor, or $\sigma_a$, $\sigma_b$, $\vec{E}_a$, $\vec{E}_b$, and the force on both charges, would not change, as the charge outside of the conductor does not change the electric field through the conductor itself (as it would still be zero). The quantities associated with the outside of the conductor, or $\sigma_R$ and $\vec{E}$ would change, as the addition of a new charge would change the distribution of charge on the surface, and modify the electrical field.
 
     \end{enumerate}
 
@@ -96,9 +160,48 @@
 
       \item Calculate the capacitance per unit length in terms of $a$ and $b$.
 
+        We can define the capacitance per unit length using the following formula:
+
+        $$\frac{C}{l}=\frac{q}{l\Delta V}$$
+
+        We can use Gauss's law to write:
+
+        $$\int \vec{E}\cdot dl=\frac{q}{\varepsilon_o}$$
+
+        Since $\vec{E}$ is independent of the length, we get:
+
+        $$\vec{E}\int\,dl=\frac{q}{\varepsilon_o}$$
+        $$\vec{E}(2\pi r l)=\frac{q}{\varepsilon_o}$$
+        $$\vec{E}=\frac{q}{2\pi r l\varepsilon_o}$$
+
+        We can write the $\frac{q}{l}$ term as $\lambda$, the charge density per unit length, which will be the same for both lines due to it being a capacitor:
+
+        $$\vec{E}=\frac{\lambda}{2\pi r\varepsilon_o}$$
+
+        We then find the voltage:
+
+        $$\Delta V=\int\vec{E}\,dr$$
+        $$\Delta V=\int_a^b\frac{\lambda}{2\pi r\varepsilon_o}\,dr$$
+        $$\Delta V=\frac{\lambda}{2\pi\varepsilon_o}\ln(\frac{b}{a})$$
+
+        Now plugging into the above equation for capacitance per unit length, we get:
+
+        $$\frac{C}{l}=\frac{2q\pi\varepsilon_o}{\lambda l\ln\left( \frac{b}{a} \right)}$$
+        $$\boxed{\frac{C}{l}=\frac{2\pi\varepsilon_o}{\ln\left( \frac{b}{a} \right)}}$$
+
       \item For $a=1.0[\si{\milli\meter}]$, $b=1.2[\si{\milli\meter}]$ find the capacitance in $\left[ \frac{\si{\nano\farad}}{\si{\meter}} \right]$.
 
+        Using the equation above, we can get:
+
+        $$\frac{2\pi\cdot8.85\cdot10^{-12}}{\ln(1.2)}=3.05\cdot10^{-10}$$
+
+        Now converting to nano-Farads, we get:
+
+        $$\boxed{\frac{C}{l}=.305\left[ \frac{\si{\nano\farad}}{\si{\meter}} \right]}$$
+
       \item What happens to the capacitance if both $a$ and $b$ are increased by a factor of 10?
+
+      Since the function depends on a ratio of $b$ to $a$, \underline{increasing both by a factor of 10}\\\underline{\textbf{makes no difference}}
 
     \end{enumerate}
 
