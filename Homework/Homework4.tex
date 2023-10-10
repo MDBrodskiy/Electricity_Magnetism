@@ -18,7 +18,55 @@
 
   \item Consider an infinite grounded conducting plane bent at a $90^{\circ}$ angle between the $yz$ and $xz$ planes as shown, with a charge placed at $x = 4a$, $y = a$. Use appropriate image charge(s) to find an expression for the potential $V(x,y,z)$ in the region $x > 0$, $y > 0$.
 
-  \item The boundary at $x = 0$ consists of two metal strips: one, from $y = 0$ to $y = a/2$ is held at a constant potential $+V_0$ and the other, from $y = 2/a$ to $y = a$ is held at a constant potential of $−V_0$ . Solve for the potential $V(x,y,z)$ inside the slot. Feel free to use the relevant results from Example 3.3 or from lecture as a starting point.
+    First, we know that the image charges assume the following layout:
+
+    \begin{figure}[H]
+      \centering
+      \include{Figures/Figure4-1.tex}
+      \caption{The Layout of Image Charges}
+      \label{fig:1}
+    \end{figure}
+
+    By the principle of superposition, we know that the voltage at a point will simply be the sum of all voltages. Thus, we can assign each charge, starting with the top left, a distance $d_1-d_4$. We can find the following:
+
+    $$d_1=\sqrt{(x+4a)^2+(y-a)^2+z^2}=\sqrt{x^2+y^2+z^2+17a^2+8ax-2ay}$$
+    $$d_2=\sqrt{(x-4a)^2+(y-a)^2+z^2}=\sqrt{x^2+y^2+z^2+17a^2-8ax-2ay}$$
+    $$d_3=\sqrt{(x+4a)^2+(y+a)^2+z^2}=\sqrt{x^2+y^2+z^2+17a^2+8ax+2ay}$$
+    $$d_4=\sqrt{(x-4a)^2+(y+a)^2+z^2}=\sqrt{x^2+y^2+z^2+17a^2-8ax+2ay}$$
+
+    We can then write the voltage as:
+
+    $$V=V_1+V_2+V_3+V_4$$
+    $$=\frac{q}{4\pi\varepsilon_o}\left[  -\frac{1}{d_1}+\frac{1}{d_2}+\frac{1}{d_3}-\frac{1}{d_4}\right]$$
+
+    This gives us the final expression:
+
+    $$V(x,y,z)=\frac{q}{4\pi\varepsilon_o}\left[ \frac{1}{\sqrt{(x-4a)^2+(y-a)^2+z^2}}+\frac{1}{\sqrt{(x+4a)^2+(y+a)^2+z^2}}$$
+    $$\left -\frac{1}{\sqrt{(x+4a)^2+(y-a)^2+z^2}}-\frac{1}{\sqrt{(x-4a)^2+(y+a)^2+z^2}} \right]$$
+
+  \item The boundary at $x = 0$ consists of two metal strips: one, from $y = 0$ to $y = a/2$ is held at a constant potential $+V_0$ and the other, from $y = a/2$ to $y = a$ is held at a constant potential of $−V_0$ . Solve for the potential $V(x,y,z)$ inside the slot. Feel free to use the relevant results from Example 3.3 or from lecture as a starting point.
+
+    We can first write the Laplace equation:
+
+    $$\frac{\partial^2V}{\partial x^2}+\frac{\partial^2V}{\partial y^2}=0$$
+
+    Given the boundary conditions, we may write:
+
+    $$V(x,y)=\sum_{n=1}^\infty c_ne^{-\frac{n\pi x}{a}}\sin\left( \frac{n\pi y}{a} \right)$$
+
+    We find the value of $c_n$ by rearranging:
+
+    $$c_n=\frac{2}{a}\left[\int_0^{\frac{a}{2}}V_o\sin\left( \frac{n\pi y}{a} \right)\,dy-\int_{\frac{a}{2}}^{a}V_o\sin\left( \frac{n\pi y}{a} \right)\,dy\right]$$
+    $$c_n=\frac{2V_oa}{an\pi}\left[\left( -\cos\left( \frac{n\pi y}{a} \right)\Big|_0^{\frac{a}{2}} \right)+\left( \cos\left( \frac{n\pi y}{a} \right)\Big|_{\frac{a}{2}}^{a} \right)\right]$$
+    $$c_n=\frac{2V_o}{n\pi}\left[1+\cos(n\pi)-2\cos\left( \frac{n\pi}{2} \right)\right]$$
+
+    From this, we can see that $c_n=0$ for any odd values of $n$. Furthermore, if $n$ is a multiple of $4$, $c_n=0$ as well. Thus, we can see that $c_n$ is non-zero only for $n=2,6,10,\ldots$ for which:
+
+    $$c_n=\frac{8V_o}{n\pi}$$
+
+    We can now substitute into our previous equation to obtain:
+
+    $$\boxed{V(x,y)=\frac{8V_o}{\pi}\sum_{n=1}^\infty\frac{e^{-\frac{n\pi x}{a}\sin\left( \frac{n\pi y}{a} \right)}}{n}}$$
 
   \item Consider a long (semi-infinite) rectangular conducting pipe oriented $V_0$ parallel to the $z$-axis, with dimensions $a\times b$ in the $xy$-plane. The pipe itself is grounded, and the rectangle at the closed end is at a constant potential $V_0$ . Find an expression for the potential everywhere inside the pipe (for $z > 0$).
 
