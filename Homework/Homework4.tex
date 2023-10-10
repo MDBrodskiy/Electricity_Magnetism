@@ -22,6 +22,81 @@
 
   \item Consider a long (semi-infinite) rectangular conducting pipe oriented $V_0$ parallel to the $z$-axis, with dimensions $a\times b$ in the $xy$-plane. The pipe itself is grounded, and the rectangle at the closed end is at a constant potential $V_0$ . Find an expression for the potential everywhere inside the pipe (for $z > 0$).
 
+    For this problem, we must apply a three dimensional Laplace equation, with boundary conditions:
+
+    $$\frac{\partial^2 V}{\partial x^2}+\frac{\partial^2V}{\partial y^2}+\frac{\partial^2V}{\partial z^2}=0\Rightarrow \left\{\begin{array}{c c}V=0, & \left[\begin{array}{c} x=0\\x=a\\y=0\\y=b\end{array}\\V=V_o, & z=0\\V\to0, & z\to\infty\end{array}$$
+
+        We can then divide the equation by $V(x,y,z)$ to obtain:
+
+        $$\underbrace{\frac{1}{V_x}\frac{\partial^2V_x}{\partial x^2}}_{-A^2}+\underbrace{\frac{1}{V_y}\frac{\partial^2V_y}{\partial y^2}}_{-B^2}+\underbrace{\frac{1}{V_z}\frac{\partial^2V_z}{\partial z^2}}_{C^2}=0$$
+
+        Note: the $z^2$ term will be positive to guarantee at least one exponentially decaying solution. This gives us:
+
+        $$C^2=A^2+B^2$$
+        $$\frac{\partial^2V_x}{\partial x^2}=-A^2V_x\quad\quad\frac{\partial^2V_y}{\partial y^2}=-B^2V_y\quad\quad\frac{\partial^2V_z}{\partial z^2}=(A^2+B^2)V_z$$
+
+        Given this form, we know the solutions will be of form:
+
+        $$V_x=P\sin(Ax)+Q\cos(Ax)$$
+        $$V_y=R\sin(Bx)+S\cos(Bx)$$
+        $$V_z=Te^{\sqrt{A^2+B^2}z}+Ue^{-\sqrt{A^2+B^2}z}$$
+
+        To simplify, we can now apply some of our boundary conditions from above. Let us first apply the last condition ($V_z\to0$ as $z\to\infty$). This gives us $S=0$:
+
+        $$V_x=P\sin(Ax)+Q\cos(Ax)$$
+        $$V_y=R\sin(Bx)+S\cos(Bx)$$
+        $$V_z=Ue^{-\sqrt{A^2+B^2}z}$$
+
+        Now, by conditions one and three, we know that, when $V=0$, $x=0$ and $y=0$, giving $Q=0$ and $T=0$:
+
+        $$V_x=P\sin(Ax)$$
+        $$V_y=R\sin(Bx)$$
+        $$V_z=Ue^{-\sqrt{A^2+B^2}z}$$
+
+        From conditions two and four, we know that, when $V=0$, $x=a$ and $y=b$, which gives us:
+
+        $$V_x=P\sin\left( \frac{m\pi x}{a} \right)$$
+        $$V_y=R\sin\left( \frac{n\pi y}{b} \right)$$
+        $$V_z=Ue^{-\pi\sqrt{\frac{m^2}{a^2}+\frac{n^2}{b^2}}z}$$
+
+        Thus, we get $V(x,y,z)$:
+
+        $$V(x,y,z)=PRU\sin\left( \frac{m\pi x}{a} \right)\sin\left( \frac{n\pi y}{b} \right)e^{-\pi\sqrt{\frac{m^2}{a^2}+\frac{n^2}{b^2}}z}$$
+
+        We can assume $PRU$ is some constant, which will be expressed as $M$:
+
+        $$V(x,y,z)=M\sin\left( \frac{m\pi x}{a} \right)\sin\left( \frac{n\pi y}{b} \right)e^{-\pi\sqrt{\frac{m^2}{a^2}+\frac{n^2}{b^2}}z}$$
+
+        We can find all values of $M$ by summing and replacing $M$ with $M_{mn}$:
+
+        $$V(x,y,z)=\sum_{m=1}^\infty\sum_{n=1}^\infty M_{mn}\sin\left( \frac{m\pi x}{a} \right)\sin\left( \frac{n\pi y}{b} \right)e^{-\pi\sqrt{\frac{m^2}{a^2}+\frac{n^2}{b^2}}z}$$
+
+        Applying the final boundary condition, or $V=V_o$ when $z=0$, we can obtain:
+
+        $$V_o=\sum_{m=1}^\infty\sum_{n=1}^\infty M_{mn}\sin\left( \frac{m\pi x}{a} \right)\sin\left( \frac{n\pi y}{b} \right)$$
+
+        Now, we multiply both sides by $\sin\left( \frac{m'\pi x}{a} \right)$ and $\sin\left( \frac{n'\pi y}{b} \right)$ and integrate to get:
+
+        $$\sum_{m=1}^\infty\sum_{n=1}^\infty M_{mn}\int_0^a\int_0^b\sin\left( \frac{m\pi x}{a} \right)\sin\left( \frac{n\pi y}{b} \right)\sin\left( \frac{m'\pi x}{a} \right)\sin\left( \frac{n'\pi y}{b} \right)\,dx\,dy$$
+        $$=\int_0^a\int_0^b V_o\sin\left( \frac{m'\pi x}{a} \right)\sin\left( \frac{n'\pi y}{b} \right)\,dx\,dy$$
+
+        Then we get:
+
+        $$M_{mn}\frac{a}{2}\delta_{mm'}\frac{b}{2}\delta_{nn'}=\int_0^a\int_0^b V_o\sin\left( \frac{m'\pi x}{a} \right)\sin\left( \frac{n'\pi y}{b} \right)\,dx\,dy$$
+        $$M_{m'n'}=\frac{4}{ab}\int_0^a\int_0^b V_o\sin\left( \frac{m'\pi x}{a} \right)\sin\left( \frac{n'\pi y}{b} \right)\,dx\,dy$$
+
+        We can replace all of the $m'$ and $n'$ by $m$ and $n$ again, since we effectively removed all of the $m$ and $n$'s from the equation:
+
+        $$M_{mn}=\frac{4V_o}{ab}\int_0^a\int_0^b\sin\left( \frac{m\pi x}{a} \right)\sin\left( \frac{n\pi y}{b} \right)\,dx\,dy$$
+
+        Analyzing the equations, we can see that, when $m$ or $n$ is odd, $M_{mn}=0$, and, if $m$ and $n$ are both even, then:
+
+        $$M_{mn}=\frac{16V_o}{\pi^2mn}$$
+
+        Thus, the final solution, for $z>0$, becomes:
+
+        $$\boxed{V(x,y,z)=\frac{16V_o}{\pi^2}\sum_{m,n=1,3,5,\ldots}^{\infty}\frac{1}{mn}\sin\left( \frac{m\pi x}{a} \right)\sin\left( \frac{n\pi y}{b} \right)e^{-\pi\sqrt{\frac{m^2}{a^2}+\frac{n^2}{b^2}}z}}$$
+
   \item Consider an empty spherical shell of charge of radius $R$ where the potential on the surface is given by $V(R, \theta) = V_o\sin^2(\theta)$.
 
     Hint: Express $\sin^2(\theta)$ as a polynomial function of $\cos(\theta)$.
