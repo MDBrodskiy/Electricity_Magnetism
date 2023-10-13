@@ -66,7 +66,7 @@
 
     We can now substitute into our previous equation to obtain:
 
-    $$\boxed{V(x,y)=\frac{8V_o}{\pi}\sum_{n=1}^\infty\frac{e^{-\frac{n\pi x}{a}\sin\left( \frac{n\pi y}{a} \right)}}{n}}$$
+    $$\boxed{V(x,y)=\frac{8V_o}{\pi}\sum_{n=2,6,10,\ldots}^\infty\frac{e^{-\frac{n\pi x}{a}\sin\left( \frac{n\pi y}{a} \right)}}{n}}$$
 
   \item Consider a long (semi-infinite) rectangular conducting pipe oriented $V_0$ parallel to the $z$-axis, with dimensions $a\times b$ in the $xy$-plane. The pipe itself is grounded, and the rectangle at the closed end is at a constant potential $V_0$ . Find an expression for the potential everywhere inside the pipe (for $z > 0$).
 
@@ -188,7 +188,12 @@
 
         Finally, we get:
 
-      $$\boxed{\vec{E}(R,\theta)=\frac{2V_0r}{3R^2}[3\cos^2(\theta)-1] \right]\bold{\hat{r}}-\frac{V_0r}{R^2}\sin(2\theta) \bold{\hat{\theta}}}$$
+      $$\vec{E}(r,\theta)=\frac{2V_0r}{3R^2}[3\cos^2(\theta)-1] \right]\bold{\hat{r}}-\frac{V_0r}{R^2}\sin(2\theta) \bold{\hat{\theta}}$$
+
+      Upon plugging in $R$, we obtain:
+
+      $$\boxed{\vec{E}(R,\theta)=\frac{2V_0}{3R}[3\cos^2(\theta)-1] \right]\bold{\hat{r}}-\frac{V_0}{R}\sin(2\theta) \bold{\hat{\theta}}}$$
+
 
       \item Find $V(r, \theta)$ out of the shell.
 
@@ -217,7 +222,11 @@
 
           Finally, we obtain:
 
-          $$\boxed{\vec{E}(R,\theta)=\left(\frac{2V_0R}{3r^2}-\frac{V_0R^3}{r^4}[3\cos^2(\theta)-1]\right)\bold{\hat{r}}-\frac{V_0R^3}{r^4}\sin(2\theta)\bold{\hat{\theta}}}$$
+          $$\vec{E}(R,\theta)=\left(\frac{2V_0R}{3r^2}-\frac{V_0R^3}{r^4}[3\cos^2(\theta)-1]\right)\bold{\hat{r}}-\frac{V_0R^3}{r^4}\sin(2\theta)\bold{\hat{\theta}}$$
+
+          Evaluating at $r=R$, we get:
+
+          $$\boxed{\vec{E}(R,\theta)=\left(\frac{2V_0}{3R}-\frac{V_0}{R}[3\cos^2(\theta)-1]\right)\bold{\hat{r}}-\frac{V_0}{R}\sin(2\theta)\bold{\hat{\theta}}}$$
 
       \item Find $\sigma(R, \theta)$ on the shell. [answer: $\sigma = \frac{V_o\varepsilon_o}{3R}(7 - 15\cos^2(\theta))$]
 
@@ -286,6 +295,8 @@
             $$V(R,0)=\frac{3}{2}V_0-\frac{7}{16}V_0(2)$$
             $$\boxed{V(R,0)=\frac{5}{8}V_0}$$
 
+            Since this is in the upper hemisphere, it makes sense that it should be positive; however, it is not equal to simply $V_0$ as expected. Given that this is an approximation with only two terms, this difference is logical.
+
           \item At $\theta=\frac{\pi}{4}$:
 
             $$V\left( R,\frac{\pi}{4} \right)=\frac{3\sqrt{2}}{4}V_0-\frac{7}{16}V_0\left( \frac{5(2)^{\frac{3}{2}}}{8}-\frac{3\sqrt{2}}{2} \right)$$
@@ -293,12 +304,16 @@
             $$=\frac{3\sqrt{2}}{4}V_0+\frac{7\sqrt{2}}{64}V_0$$
             $$\boxed{V\left( R,\frac{\pi}{4} \right)=\frac{55\sqrt{2}}{64}V_0}$$
 
+            Still in the upper hemisphere, the value is still positive as expected; however, the factor is a bit above one (approximately 1.215), which means that this approximation is a bit greater than the true value, $V_0$.
+
           \item At $\theta=\frac{3\pi}{4}$
 
             $$V\left( R,\frac{3\pi}{4} \right)=-\frac{3\sqrt{2}}{4}V_0-\frac{7}{16}V_0\left( -\frac{5(2)^{\frac{3}{2}}}{8}+\frac{3\sqrt{2}}{2} \right)$$
             $$=-\frac{3\sqrt{2}}{4}V_0-\frac{7}{16}V_0\left( -\frac{5\sqrt{2}}{4}+\frac{3\sqrt{2}}{2} \right)$$
             $$=-\frac{3\sqrt{2}}{4}V_0-\frac{7\sqrt{2}}{64}V_0$$
             $$\boxed{V\left( R,\frac{3\pi}{4} \right)=-\frac{55\sqrt{2}}{64}V_0}$$
+
+            Now in the lower hemisphere, we can see that the value is now negative. Similar to the $\pi$-fourths angle, we find a value slightly above (in magnitude) than we expected, as it should be $-V_0$
 
         \end{itemize}
 
