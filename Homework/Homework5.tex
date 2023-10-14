@@ -1,0 +1,59 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Written By Michael Brodskiy
+% Class: Electricity & Magnetism
+% Professor: D. Wood
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\include{Includes.tex}
+
+\title{Homework 5}
+\date{October 19, 2023}
+\author{Michael Brodskiy\\ \small Professor: D. Wood}
+
+\begin{document}
+
+\maketitle
+
+\begin{enumerate}
+
+  \item Four point charges are located a distance $a$ from the origin on the $y$ and $z$ axes as shown.  Find the approximate expression for the electric \textbf{potential} far from the charges.  Use spherical coordinates and retain the only the \textbf{first} non-vanishing terms in the multipole expansion. [Hint: consider breaking down the distribution into a superposition of individual dipoles.]
+
+  \item Three point charges are located a distance $a$ from the origin on the $y$ and $z$ axes as shown.  Find the approximate expression for the electric \textbf{field} far from the charges.  Use spherical coordinates and retain the \textbf{first two} non-vanishing terms in the multipole expansion.
+
+  \item For the charged spherical shell in Problem 4 of Assignment 4 (the one with $V(R,\theta)=V_o\sin^2(\theta)$ and $\sigma=\frac{V_o\varepsilon_o}{3R}(7-15\cos^2(\theta)$), find the monopole and dipole moments.
+
+  \item A thin rod on the $z$-axis goes from $z=-a$to $z=+a$ and carries a linear charge density of $\lambda(z)$. Find the leading term in the multipole expansion for:
+
+    \begin{enumerate}
+
+      \item $\lambda(z)=\lambda_o\cos\left( \frac{\pi z}{a} \right)$
+
+        We can write the formula for the multipole expansion as:
+
+        $$V=\frac{1}{4\pi\varepsilon_o}\sum_{n=0}^\infty \frac{P_n(\cos(\theta))}{r^{n+1}}\int_{-a}^az^n\lambda(z)\,dz$$
+
+        For the $n=0$ case, we can write:
+
+        $$V=\frac{1}{4\pi\varepsilon_or}\int_{-a}^a \lambda(z)\,dz$$
+
+        From this, we can see that the integral expression would evaluate to zero, meaning we have to try the next term. At $n=1$, we get:
+
+        $$V=\frac{\cos(\theta)}{4\pi\varepsilon_or^2}\int_{-a}^a z\lambda(z)\,dz$$
+        $$V=\frac{\lambda_o\cos(\theta)}{4\pi\varepsilon_or^2}\int_{-a}^a z\cos\left( \frac{\pi z}{a} \right)\,dz$$
+        $$V=\frac{\lambda_o\cos(\theta)}{4\pi\varepsilon_or^2}\left(\underbrace{ \cancel{\frac{a}{\pi}z\sin\left( \frac{\pi z}{a} \right)}}_{0}+\frac{a^2}{\pi^2}\cos\left( \frac{\pi z}{a} \right) \right)\Big|_{-a}^a$$
+        $$V=\frac{\lambda_o\cos(\theta)}{4\pi\varepsilon_or^2}\left(\frac{2a^2}{\pi^2}\right)$$
+
+        Thus, we see from the first non-zero term multipole expansion, we get:
+
+        $$\boxed{V(r,\theta)\approx\frac{2\lambda_o\cos(\theta)a^2}{4\pi^3\varepsilon_o r^2}}$$
+
+      \item $\lambda(z)=\lambda_1\cos\left( \frac{\pi z}{2a} \right)$
+
+        where $\lambda_o$ and $\lambda_1$ are constants.
+
+    \end{enumerate}
+
+\end{enumerate}
+
+\end{document}
+
