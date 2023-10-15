@@ -18,11 +18,65 @@
 
   \item Four point charges are located a distance $a$ from the origin on the $y$ and $z$ axes as shown.  Find the approximate expression for the electric \textbf{potential} far from the charges.  Use spherical coordinates and retain the only the \textbf{first} non-vanishing terms in the multipole expansion. [Hint: consider breaking down the distribution into a superposition of individual dipoles.]
 
+    We can write the dipole moment from the configuration of charges:
+
+    $$p=-2q(-a_y)+3q(a_z)-2q(a_y)+q(-a_z)$$
+    $$=\cancel{2qaa_y}+3qaa_z\cancel{-2qa(a_y)}-aqa_z$$
+    $$=2qa_z$$
+
+    We know that:
+
+    $$V_{mon}(r)=\frac{Q}{4\pi\varepsilon_o r^2}=0$$
+    $$V_{dip}(r)=\frac{\vec{p}\bold{\hat{r}}}{4\pi\varepsilon_o r^2}$$
+
+    Thus, we may write the dipole as:
+
+    $$V_{dip}(r)=\frac{2qa_z\bold{\hat{r}}}{4\pi\varepsilon_o r^2}$$
+
+    This can finally be written in spherical coordinates using:
+
+    $$\boxed{V_{dip}(r,\theta)\approx\frac{qa\cos(\theta)}{2\pi\varepsilon_o r^2}}$$
+
   \item Three point charges are located a distance $a$ from the origin on the $y$ and $z$ axes as shown.  Find the approximate expression for the electric \textbf{field} far from the charges.  Use spherical coordinates and retain the \textbf{first two} non-vanishing terms in the multipole expansion.
+
+    We begin by working from the lowest order up, which is the monopole. First we find the aggregate charge:
+
+    $$Q=-q+q-q=-q$$
+
+    This can simply be plugged into the formula:
+
+    $$V_{mon}(r)=-\frac{q}{4\pi\varepsilon_o r}$$
+
+    We then find the dipole contribution, beginning with the moment:
+
+    $$p=-q(-a_y)+q(a_z)-q(a_y)$$
+    $$=\cancel{qa_y}+qa_z\cancel{-qa_y}$$
+    $$=qa_z$$
+
+    We then use the formula:
+
+    $$V_{dip}(r)=\frac{\vec{p}\bold{\hat{r}}}{4\pi\varepsilon_o r^2}$$
+    $$V_{dip}(r)=\frac{qa_z\bold{\hat{r}}}{4\pi\varepsilon_o r^2}$$
+    $$V_{dip}(r,\theta)=\frac{qa\cos(\theta)}{4\pi\varepsilon_o r^2}$$
+
+    Summing the two contributions, we get:
+
+    $$V(r,\theta)\approx-\frac{q}{4\pi\varepsilon_o r}+\frac{qa\cos(\theta)}{4\pi\varepsilon_or^2}$$
+
+    We now use the formula:
+
+    $$\vec{E}=-\vec{\nabla}V$$
+    $$\vec{E}=\vec{\nabla}\left(  \frac{q}{4\pi\varepsilon_or}-\frac{qa\cos(\theta)}{4\pi\varepsilon_or^2}\right)$$
+    $$\vec{E}=\frac{\partial}{\partial r}\left(  \frac{q}{4\pi\varepsilon_or}-\frac{qa\cos(\theta)}{4\pi\varepsilon_or^2}\right)+\frac{1}{r}\frac{\partial}{\partial\theta}\left(-\frac{qa\cos(\theta)}{4\pi\varepsilon_or^2}\right)$$
+    $$\vec{E}=\left(  -\frac{q}{4\pi\varepsilon_or^2}+\frac{qa\cos(\theta)}{2\pi\varepsilon_or^3}\right)\bold{\hat{r}}+\left(\frac{qa\sin(\theta)}{4\pi\varepsilon_or^3}\right)\bold{\hat{\theta}}$$
+
+    Finally, this yields:
+
+    $$\boxed{\vec{E}(r,\theta)=\frac{q}{2\pi\varepsilon_or^2}\left[ \left( -\frac{1}{2}+\frac{a\cos(\theta)}{r} \right)\bold{\hat{r}} +\left( \frac{a\sin(\theta)}{2r} \right)\bold{\hat{\theta}}\right]}$$
 
   \item For the charged spherical shell in Problem 4 of Assignment 4 (the one with $V(R,\theta)=V_o\sin^2(\theta)$ and $\sigma=\frac{V_o\varepsilon_o}{3R}(7-15\cos^2(\theta)$), find the monopole and dipole moments.
 
-  \item A thin rod on the $z$-axis goes from $z=-a$to $z=+a$ and carries a linear charge density of $\lambda(z)$. Find the leading term in the multipole expansion for:
+  \item A thin rod on the $z$-axis goes from $z=-a$ to $z=+a$ and carries a linear charge density of $\lambda(z)$. Find the leading term in the multipole expansion for:
 
     \begin{enumerate}
 
@@ -34,22 +88,50 @@
 
         For the $n=0$ case, we can write:
 
-        $$V=\frac{1}{4\pi\varepsilon_or}\int_{-a}^a \lambda(z)\,dz$$
+        $$V=\frac{1}{4\pi\varepsilon_o r}\int_{-a}^a \lambda(z)\,dz$$
+        $$V=\frac{\lambda_0}{4\pi\varepsilon_o r}\int_{-a}^a \cos\left( \frac{\pi z}{a} \right)\,dz$$
 
         From this, we can see that the integral expression would evaluate to zero, meaning we have to try the next term. At $n=1$, we get:
 
         $$V=\frac{\cos(\theta)}{4\pi\varepsilon_or^2}\int_{-a}^a z\lambda(z)\,dz$$
         $$V=\frac{\lambda_o\cos(\theta)}{4\pi\varepsilon_or^2}\int_{-a}^a z\cos\left( \frac{\pi z}{a} \right)\,dz$$
         $$V=\frac{\lambda_o\cos(\theta)}{4\pi\varepsilon_or^2}\left(\underbrace{ \cancel{\frac{a}{\pi}z\sin\left( \frac{\pi z}{a} \right)}}_{0}+\frac{a^2}{\pi^2}\cos\left( \frac{\pi z}{a} \right) \right)\Big|_{-a}^a$$
-        $$V=\frac{\lambda_o\cos(\theta)}{4\pi\varepsilon_or^2}\left(\frac{2a^2}{\pi^2}\right)$$
+        $$V=\frac{\lambda_o\cos(\theta)}{4\pi\varepsilon_or^2}\left( \frac{a^2}{\pi^2}\cos\left( \frac{\pi z}{a} \right) \right)\Big|_{-a}^a$$
 
-        Thus, we see from the first non-zero term multipole expansion, we get:
+        Once again, we see that the integral expression evaluates to zero. Thus, we move up another order to $n=2$:
 
-        $$\boxed{V(r,\theta)\approx\frac{2\lambda_o\cos(\theta)a^2}{4\pi^3\varepsilon_o r^2}}$$
+        $$V_{quad}(r,\theta)=\frac{1}{4\pi\varepsilon_o}\frac{3\cos^2(\theta)-1}{2r^3}\int_{-a}^a z^2\lambda(z)\,dz$$
+        $$V_{quad}(r,\theta)=\frac{\lambda_o}{4\pi\varepsilon_o}\frac{3\cos^2(\theta)-1}{2r^3}\int_{-a}^a z^2\cos\left( \frac{\pi z}{a} \right)\,dz$$
+
+        Using a numerical solver, we calculate the integral:
+
+        $$V_{quad}(r,\theta)=\frac{\lambda_o}{4\pi\varepsilon_o}\frac{3\cos^2(\theta)-1}{2r^3}\underbrace{\left(\frac{z^2a}{\pi}\sin\left( \frac{\pi z}{a} \right)+\frac{2a^2z}{\pi^2}\cos\left( \frac{\pi z}{a} \right)-\frac{2a^3}{\pi^2}\sin\left( \frac{\pi z}{a} \right) \right)\right\Big|_{-a}^a}_{-\dfrac{4a^3}{\pi^2}}$$
+
+        Thus, the leading term becomes:
+
+        $$\boxed{V_{quad}(r,\theta)=-\frac{a^3\lambda_o\left( 3\cos^2(\theta)-1 \right)}{2\pi^3\varepsilon_or^3}}$$
 
       \item $\lambda(z)=\lambda_1\cos\left( \frac{\pi z}{2a} \right)$
 
         where $\lambda_o$ and $\lambda_1$ are constants.
+
+        For $\lambda(z)=\lambda_1\cos\left( \frac{\pi z}{2a} \right)$, we can begin by finding the first term, according to the formula from (a), at $n=0$:
+
+        $$V_{mon}=\frac{1}{4\pi\varepsilon_o}\frac{1}{r}\int_{-a}^a\lambda(z)\,dz$$
+        $$V_{mon}=\frac{1}{4\pi\varepsilon_o}\frac{\lambda_1}{r}\int_{-a}^a\cos\left( \frac{\pi z}{2a} \right)\,dz$$
+
+        We can then evaluate the integral:
+
+        $$\int_{-a}^a\cos\left( \frac{\pi z}{2a} \right)\,dz=\frac{2a}{\pi}\sin\left( \frac{\pi z}{2a} \right)\Big|_{-a}^{a}$$
+        $$=\frac{4a}{\pi}$$
+
+        Which then becomes:
+
+        $$\frac{\lambda_1}{4\pi\varepsilon_o r}\left( \frac{4a}{\pi} \right)$$
+
+        And finally:
+
+        $$\boxed{V_{mon}(r)=\frac{a\lambda_1}{\pi^2\varepsilon_or}}$$
 
     \end{enumerate}
 
