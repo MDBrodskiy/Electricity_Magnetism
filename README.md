@@ -24,6 +24,7 @@
   * [**Electrostatics**](https://github.com/MDBrodskiy/Electricity_Magnetism/tree/master/Notes/Section2.pdf)
   * [**Potentials**](https://github.com/MDBrodskiy/Electricity_Magnetism/tree/master/Notes/Section3.pdf)
   * [**Electric Fields in Matter**](https://github.com/MDBrodskiy/Electricity_Magnetism/tree/master/Notes/Section4.pdf)
+  * [**Magnetostatics**](https://github.com/MDBrodskiy/Electricity_Magnetism/tree/master/Notes/Section5.pdf)
 * [**Homework**](https://github.com/MDBrodskiy/Electricity_Magnetism/tree/master/Homework/)
   * [**Homework 1**](https://github.com/MDBrodskiy/Electricity_Magnetism/tree/master/Homework/Homework1.pdf)
   * [**Homework 2**](https://github.com/MDBrodskiy/Electricity_Magnetism/tree/master/Homework/Homework2.pdf)
