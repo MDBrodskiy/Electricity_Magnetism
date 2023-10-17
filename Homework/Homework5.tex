@@ -76,6 +76,46 @@
 
   \item For the charged spherical shell in Problem 4 of Assignment 4 (the one with $V(R,\theta)=V_o\sin^2(\theta)$ and $\sigma=\frac{V_o\varepsilon_o}{3R}(7-15\cos^2(\theta)$), find the monopole and dipole moments.
 
+      First, we compute the monopole moment. This is done by first finding the total charge:
+
+      $$q_{tot}=\int\sigma(R,\theta)\,da$$
+      $$da'=2\pi R^2\sin(\theta)\,d\theta$$
+
+      We can then compute the integral:
+
+      $$q=\int_0^\pi\frac{V_o\varepsilon_o}{3R}[7-15\cos^2(\theta)](2\pi R^2\sin(\theta))\,d\theta$$
+      $$q=\frac{2V_o\varepsilon_o\pi R}{3}\int_0^\pi 7\sin(\theta)-15\sin(\theta)\cos^2(\theta)\,d\theta$$
+      $$q=\frac{2V_o\varepsilon_o\pi R}{3}\int_0^\pi -8\sin(\theta)+15\sin^3(\theta)\,d\theta$$
+
+      Using a numerical solver, we obtain:
+
+      $$q=\frac{2V_o\varepsilon_o\pi R}{3}\left( -7\cos(\theta)+5\cos^3(\theta)\right)\Big|_0^\pi$$
+      $$q=\frac{4V_o\varepsilon_o\pi R}{3}-\left( -\frac{4V_o\varepsilon_o\pi R}{3} \right)$$
+
+      And finally, we find:
+
+      $$\boxed{q_{tot}=\frac{8V_o\varepsilon_o\pi R}{3}}$$
+
+      Now, we find the dipole moment. The integral set-up becomes very similar, except that:
+
+      $$\vec{p}=p\bold{\hat{z}}=\int\vec{r}\bold{\hat{z}}\sigma\,da$$
+
+      This can be converted to:
+
+      $$p\bold{\hat{z}}=\int_0^\pi\frac{V_o\varepsilon_o}{3R}[7-15\cos^2(\theta)](2\pi R^2\sin(\theta))(R\cos(\theta))\,d\theta$$
+      $$=\frac{2V_o\varepsilon_o R^2\pi}{3}\int_0^\pi[7-15\cos^2(\theta)](\sin(\theta))(\cos(\theta))\,d\theta$$
+      $$=\frac{V_o\varepsilon_o R^2\pi}{3}\int_0^\pi 7\sin(2\theta)-15\sin(2\theta)\cos^2(\theta)\,d\theta$$
+
+      Again implementing a numerical solver, we obtain:
+
+      $$=\frac{V_o\varepsilon_o R^2\pi}{3}\left( -\frac{7}{2}\cos(2\theta)+\frac{15}{2}\cos^4(\theta)\right)\Big|_0^\pi$$
+      $$=\frac{V_o\varepsilon_o R^2\pi}{3}\left( -\frac{7}{2}+\frac{15}{2}-\left[ -\frac{7}{2}+\frac{15}{2} \right]\right)$$
+      $$=0$$
+
+      Thus, we see:
+
+      $$\boxed{\left\{\begin{array}{l}\vec{p}_{mon}=\dfrac{8V_o\varepsilon_o\pi R}{3}\\\vec{p}_{dip}=0\end{array}}$$
+
   \item A thin rod on the $z$-axis goes from $z=-a$ to $z=+a$ and carries a linear charge density of $\lambda(z)$. Find the leading term in the multipole expansion for:
 
     \begin{enumerate}
