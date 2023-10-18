@@ -37,6 +37,86 @@
         $$qB=\frac{p}{R}$$
         $$R=\frac{p}{qB}$$
 
+      \item The frequency of rotation may be written:
+
+        $$\omega=\frac{qB}{m}$$
+
+      \item Total force may be written as:
+
+        $$\vec{F}=q\vec{E}+q\vec{v}\times\vec{B}=q(\vec{E}+\vec{v}\times\vec{B})$$
+
+        \begin{itemize}
+
+          \item Special Case: $\vec{F}=0$
+
+            $$\vec{E}+\vec{v}\times\vec{B}=0$$
+
+          \item Given $\vec{E}=E_o\bold{\hat{z}}$ and $\vec{B}=B_o\bold{\hat{x}}$, we would get:
+
+            $$E_o\bold{\hat{z}}+v_zB_o\bold{\hat{y}}-v_yB_o\bold{\hat{z}}=0$$
+
+          \item From this, we get $v_z=0$ and $v_y=\frac{E_o}{B_o}$
+
+          \item This can be used to construct a velocity selector
+
+          \item In the event that $\vec{E}\parallel\vec{B}$, an expand or contracting helix about the fields as a pole would be constructed
+
+        \end{itemize}
+
+      \item We now go back to a general case: $\vec{E}\perp\vec{B}$, $\vec{F}_{net}\neq0$, $\vec{E}=E\bold{\hat{z}}$, and $\vec{B}=B\bold{\hat{x}}$
+
+        $$\frac{1}{m}\frac{d\vec{v}}{dt}=q(\vec{E}+\vec{v}\times\vec{B})$$
+
+        \begin{itemize}
+
+          \item The solutions for this would look as follows:
+
+            $$y(t)=c_1\cos(\omega t)+c_2\sin(\omega t)+\frac{E}{B}t+c_3$$
+            $$z(t)=c_2\cos(\omega t)+c_1\sin(\omega t)+c_4$$
+            $$\omega=\frac{qB}{m}$$
+
+          \item This shape is known as a cycloid
+
+          \item Special case: starting from rest at (0,0); this would give us:
+
+            $$c_1=0\quad\quad c_2=-\frac{E}{\omega B}\quad\quad c_3=-c_1\quad\quad c_4=-c_2$$
+            $$y(t)=-\frac{E}{\omega B}\sin(\omega t)+\frac{E}{B}t=R(\omega t-\sin(\omega t))$$
+            $$z(t)=R(1-\cos(\omega t))$$
+            $$\vec{v}_{cent}=\left( \frac{\vec{E}\times\vec{B}}{B^2} \right)$$
+
+          \item Work:
+
+            $$dW=\vec{F}\cdot d\vec{l}=(q\vec{v}\times\vec{B})\cdot \vec{v}\,dt=q\,dt(\vec{v}\times\vec{B})\cdot\vec{v}=0$$
+
+          \item Critical note: magnetic fields \underline{do no work}
+
+          \item Magnetic fields may induce electric fields to do work, but \underline{do not do work themselves}
+
+        \end{itemize}
+
+    \end{itemize}
+
+  \item Continuous Systems
+
+    \begin{itemize}
+
+      \item Given a wire in space, with a bit of charge, $dq$, moving with velocity $\vec{v}$ shaped in rectangle, and placed in a magnetic field $\vec{B}=\frac{A}{z}\bold{\hat{x}}:
+
+        $$dq\,\vec{v}=I\,d\vec{l}$$
+        $$d\vec{F}=I\,d\vec{l}\times\vec{B}$$
+        $$\vec{F}_{mag}=\int I\,d\vec{l}\times\vec{B}$$
+
+      \item Solving would give us:
+
+        $$F_{tot}=-IL\left( \frac{A}{a} \right)\bold{\hat{z}}+\bold{\hat{y}}\int_a^b\frac{A}{z}\,dz+\bold{\hat{z}}IL\left( \frac{A}{b} \right)-\bold{\hat{y}}I\int_a^b\frac{A}{z}\,dz$$
+        $$=-\bold{\hat{z}}ILA\left( \frac{1}{a}-\frac{1}{b} \right)$$
+
+      \item There are several types of densities:
+
+        $$\text{Linear:}\quad I\,d\vec{l}$$
+        $$\text{Surface:}\quad \vec{K}\,da$$
+        $$\text{Bulk:}\quad \vec{J}\,d\tau$$
+
     \end{itemize}
 
 \end{itemize}
