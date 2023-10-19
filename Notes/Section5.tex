@@ -100,7 +100,7 @@
 
     \begin{itemize}
 
-      \item Given a wire in space, with a bit of charge, $dq$, moving with velocity $\vec{v}$ shaped in rectangle, and placed in a magnetic field $\vec{B}=\frac{A}{z}\bold{\hat{x}}:
+      \item Given a wire in space, with a bit of charge, $dq$, moving with velocity $\vec{v}$ shaped in rectangle, and placed in a magnetic field $\vec{B}=\frac{A}{z}\bold{\hat{x}}$:
 
         $$dq\,\vec{v}=I\,d\vec{l}$$
         $$d\vec{F}=I\,d\vec{l}\times\vec{B}$$
@@ -116,6 +116,52 @@
         $$\text{Linear:}\quad I\,d\vec{l}$$
         $$\text{Surface:}\quad \vec{K}\,da$$
         $$\text{Bulk:}\quad \vec{J}\,d\tau$$
+
+    \end{itemize}
+
+  \item The following is an important continuity equation:
+
+    $$\vec{\nabla}\cdot\vec{J}+\frac{\partial\rho}{\partial t}=0$$
+
+    \begin{itemize}
+
+      \item This is another form of charge conservation
+
+    \end{itemize}
+
+  \item The Biot-Savart law is akin to Coulomb's law, but for magnetism:
+
+    $$d\vec{B}=\frac{\mu_oI d\vec{l}\times \bold{\hat{R}}}{4\pi R^2}$$
+
+    \begin{itemize}
+
+      \item Not the expression can be modified:
+
+        $$I\,d\vec{l}\Longleftrightarrow\vec{K}\,da\Longleftrightarrow\vec{J}\,d\tau$$
+
+      \item The magnetic permeability of free space is:
+
+        $$\mu_o=4\pi\cdot10^{-7}\left[ \frac{\si{\newton}}{\si{\ampere\squared}} \right]$$
+
+        \begin{itemize}
+
+          \item This term ``defines the amp'', and the current then ``defines the coulomb''
+
+          \item Also note: the magnetic field is defined in Newtons per amp-meter
+
+        \end{itemize}
+
+    \end{itemize}
+
+  \item Amp\`ere's Law
+
+    $$\vec{\nabla}\times\vec{B}=\mu_oJ\Longleftrightarrow\vec{B}=\frac{\mu_o}{4\pi}\int\frac{\vec{J}\times\bold{\hat{R}}\,d\tau}{R^2}$$
+
+    \begin{itemize}
+
+      \item Notice, we can then use Stokes' Theorem to write:
+
+        $$\oint\vec{B}\,dl=\int_V (\vec{\nabla}\times\vec{B})\,d\vec{a}=\int\mu_oJ^2\cdot\,d\vec{a}=\mu_oI_{enc}$$
 
     \end{itemize}
 
