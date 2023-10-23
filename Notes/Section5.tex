@@ -165,6 +165,58 @@
 
     \end{itemize}
 
+  \item Vector Potential
+
+    \begin{itemize}
+
+      \item We already know:
+
+        $$\vec{E}=-\vec{\nabla}V$$
+
+      \item We can derive a magnetic counterpart as:
+
+        $$\vec{B}=\vec{\nabla}\times\vec{A}$$
+
+      \item By definition, we know:
+
+        $$\vec{\nabla}\times(\vec{A}+\vec{\nabla}t)=\vec{\nabla}\times\vec{A}+\underbrace{\vec{\nabla}\times\vec{\nabla}t}_{0}$$
+
+        \begin{itemize}
+
+          \item This is known as ``choice of gauge'' — we can expand upon this using:
+
+        \end{itemize}
+
+        $$\vec{\nabla}\cdot\vec{A}=\vec{\nabla}\cdot(\vec{A}+\vec{\nabla}t)=\vec{\nabla}\cdot\vec{A}+\nabla^2t$$
+        $$\vec{\nabla}\cdot\vec{A}=0\to \nabla^2t=-\vec{\nabla}\cdot\vec{A}\prime$$
+
+        \begin{itemize}
+
+          \item This is known as the ``Coulomb gauge''
+
+        \end{itemize}
+
+      \item If we assume $\vec{\nabla}=0$ and use Amp\`ere's Law, we get:
+
+        $$\vec{\nabla}\times\vec{B}=\mu_o\vec{J}$$
+        $$\vec{\nabla}\times(\vec{\nabla}\times\vec{A})=\mu_o\vec{J}$$
+
+        \begin{itemize}
+
+          \item This then becomes
+
+        \end{itemize}
+
+        $$\vec{\nabla}\underbrace{(\vec{\nabla}\cdot\vec{A})}_{0}-\nabla^2\vec{A}=\mu_o\vec{J}$$
+        $$\nabla^2\vec{A}=-\mu_o\vec{J}$$
+
+      \item From the definition in electrostatics, we can obtain a definition for magnetostatics:
+
+        $$V(\vec{r})=\frac{1}{4\pi\varepsilon_o}\int\frac{\rho(\vec{r}\prime)}{R}\,d\tau'$$
+        $$\vec{A}(\vec{r})=\frac{\mu_o}{4\pi}\int\frac{\vec{J}(\vec{r}\prime)}{R}\,d\tau'$$
+
+    \end{itemize}
+
 \end{itemize}
 
 \end{document}
