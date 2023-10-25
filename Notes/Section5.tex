@@ -217,6 +217,46 @@
 
     \end{itemize}
 
+  \item Multipole Expansion
+
+    $$\vec{A}(\vec{r})=\frac{\mu_o}{4\pi}\int\frac{\vec{J}}{R}\,d\tau$$
+
+    \begin{itemize}
+
+      \item Where
+
+        $$\frac{1}{R}=\frac{1}{r}\sum_n\left( \frac{r'}{r} \right)^nP_n(\cos(\alpha))$$
+
+      \item This gives us:
+
+        $$\vec{A}(\vec{r})=\frac{\mu_o}{4\pi}\sum_{n=0}^\infty \frac{1}{r^{n+1}}\int r^nP_n(\cos(\alpha))\vec{J}\,d\tau$$
+
+      \item We can see that magnetic monopoles in current loops do not exist (Note: this does \underline{not} mean that magnetic monopoles don't exist at all)
+
+      \item Note: another difference in magnetism is that integration occurs over a vector (vector current, vector current density, etc.), and there is no ``dot'' component
+
+    \end{itemize}
+
+  \item Magnetic Dipole Moments:
+
+    $$\vec{m}=I\vec{a}$$
+
+    \begin{itemize}
+
+      \item For a dipole field, we know:
+
+        $$\vec{B}=\vec{\nabla}\times\vec{A}_1\quad\text{ and }\quad\vec{m}=m\bold{\hat{z}}$$
+
+      \item This gives us:
+
+        $$\vec{A}(\vec{r})=\frac{\mu_o\vec{m}\times\bold{\hat{r}}}{4\pi r^2}=\frac{\mu_om\bold{\hat{z}}\times\bold{\hat{r}}}{4\pi r^2}$$
+
+      \item We can then take:
+
+        $$\vec{B}=\vec{\nabla}\times\vec{A}_1=\frac{\mu_om}{4\pi r^3}(2\cos(\theta)\bold{\hat{r}}+\sin(\theta)\hat{\theta})$$
+
+    \end{itemize}
+
 \end{itemize}
 
 \end{document}
