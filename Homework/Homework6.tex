@@ -18,6 +18,32 @@
 
   \item A point charge of charge $q$ is located a distance $d$ from a neutral atom with polarizability $\alpha$.  The field from the point charge will induce a dipole moment in the atom, resulting in a force between the two objects.  Find the magnitude of the force and indicate if it is attractive or repulsive.
 
+    We know that the electric field due to the point charge may be expressed as:
+
+    $$\vec{E}_q=\frac{q}{4\pi\varepsilon_o r^2}\bold{\hat{r}}$$
+
+    The induced dipole moment may be defined as:
+
+    $$\vec{p}=\alpha\vec{E}_q=\frac{\alpha q}{4\pi\varepsilon_o r^2}\bold{\hat{r}}$$
+
+    The electric field as a result of the dipole then becomes:
+
+    $$\vec{E}_{\vec{p}}=\frac{\vec{p}}{4\pi\varepsilon_o d^3}$$
+
+    Since we know $d\to r$, we can simplify:
+
+    $$\vec{E}_{\vec{p}}=\frac{1}{4\pi\varepsilon_o r^3}\left( \frac{\alpha q}{4\pi\varepsilon_o r^2 \right)}$$
+
+    Since we know $\vec{F}=\vec{E}q$, we can find the force as:
+
+    $$\vec{F}_{\vec{p}}=\frac{1}{4\pi\varepsilon_o r^3}\left( \frac{\alpha q}{4\pi\varepsilon_o r^2 \right)}q$$
+
+    This can be simplified to:
+
+    $$\boxed{\vec{F}_{\vec{p}}=\frac{\alpha q^2}{(4\pi\varepsilon_o)^2r^5}}$$
+
+    Because the sign is positive, we know this is an attractive force
+
   \item A parallel plate capacitor has two metal plates and is filled with two different linear dielectrics. Each dielectric has thickness $d/2$.  The lower dielectric (A) has a dielectric constant $\varepsilon_r=3$ and the upper one (B) has dielectric constant $\varepsilon_r=5$.  The upper plate as a charge density of $+\sigma$ and the lower plate as a charge density of $-\sigma$
 
     \begin{enumerate}
@@ -38,7 +64,45 @@
 
       \item Assume the dielectric is air (dielectric strength = $3[\si{\mega\volt}/\si{\meter}]$, dielectric constant = 1)
 
+        In this case, we know $V=2.5[\si{\volt}]$, $\vec{E}=3\cdot10^6[\si{\volt}/\si{\meter}]$, $C=1[\si{\farad}]$, and $\varepsilon_r=0$. We can then write:
+
+        $$\vec{E}=\frac{V}{d}$$
+        $$d=\frac{V}{\vec{E}}$$
+        $$d=\frac{2.5}{3\cdot10^{6}}$$
+        $$d=8.33\bar{3}\cdot10^{-7}[\si{\meter}]$$
+
+        We know:
+
+        $$C=\frac{\varepsilon_o\varepsilon_r A}{d}$$
+        $$A=\frac{d C}{\varepsilon_o\varepsilon_r}$$
+        $$A=\frac{8.33\bar{3}\cdot10^{-7}(1)}{8.85\cdot10^{-12}}$$
+        $$A=9.416\cdot10^4[\si{\meter\squared}]$$
+
+        Now, we can find the volume:
+
+        $$V=A\cdot d$$
+        $$V=9.416\cdot10^4\cdot 8.33\bar{3}\cdot10^{-7}$$
+        $$\boxed{V=.0785[\si{\meter\cubed}]}$$
+
       \item Assume the dielectric is strontium titanate (dielectric strength = $8[\si{\mega\volt}/\si{\meter}]$, dielectric constant = 233)
+
+        We can use a similar approach as that from (a):
+
+        $$d=\frac{V}{\vec{E}}$$
+        $$d=\frac{2.5}{8\cdot10^6}$$
+        $$d=3.125\cdot10^{-7}[\si{\meter}]$$
+
+        And then:
+
+        $$A=\frac{Cd}{\varepsilon_o\varepsilon_r}$$
+        $$A=\frac{(1)(3.125\cdot10^{-7})}{8.85\cdot10^{-12}\cdot233}$$
+        $$A=151.55[\si{\meter\squared}]$$
+
+        Finally, we get:
+
+        $$V=Ad$$
+        $$V=\left( 3.125\cdot10^{-7} \right)\left( 151.55 \right)$$
+        $$\boxed{V=4.925\cdot10^{-5}[\si{\meter\cubed}]}$$
 
       Hint: Consider stored energy per unit volume
 
@@ -46,19 +110,155 @@
 
   \item Two long coaxial cylindrical metal tubes (inner radius $a$ and outer radius $b$) stand vertically in a tank of dielectric oil (susceptibility $\chi_e$, mass density $\rho_m$).  The inner cylinder is maintained at a potential $V$ and the outer one is grounded. To what height $h$ does the oil rise, in the space between the tubes?
 
+    We know that for a long coaxial cable, with charge density $\lambda$, the electric field can be defined as:
+
+    $$\vec{E}=\frac{\lambda}{2\pi\varepsilon_o r}\bold{\hat{r}}$$
+
+    Thus, for the air portion, the voltage would be:
+
+    $$V=\int_a^b \frac{\lambda}{2\pi\varepsilon_o r}\,dr$$
+    $$V(r)=\frac{\lambda}{2\pi\varepsilon_o}\ln\left( \frac{b}{a} \right)$$
+
+    For the oil portion, we can write:
+
+    $$\vec{E}=\frac{\lambda\prime}{2\pi\varepsilon r}\bold{\hat{r}}$$
+
+    Which then gives:
+
+    $$V(r)=\frac{\lambda\prime}{2\pi\varepsilon}\ln\left( \frac{b}{a} \right)$$
+
+    We then set the two voltages equal to obtain:
+
+    $$\lambda\prime=\frac{\lambda\varepsilon}{\varepsilon_o}$$
+
+    We know the total charge in the cable with total length $l$ is:
+
+    $$Q=\lambda(l-h)+\lambda\prime h$$
+
+    We can substitute our value of $\lambda\prime$ to get:
+
+    $$Q=\lambda(l-h)+\frac{\lambda\varepsilon h}{\varepsilon_o}$$
+
+    Since we know $\varepsilon=\varepsilon_o\varepsilon_r$, we can write:
+
+    $$Q=\lambda(l-h)+\lambda\varepsilon_r h$$
+    $$Q=\lambda l+\lambda h(\varepsilon_r-1)$$
+
+    Furthermore, since $(\varepsilon_r-1)=\chi_e$, we get:
+
+    $$Q=\lambda (l+h\chi_e)$$
+
+    We then use the definition of capacitance to find:
+
+    $$C=\frac{Q}{\Delta V}$$
+
+    This gives us:
+
+    $$C=\frac{\lambda(l+h\chi_e)(2\pi\varepsilon_o)}{\lambda\ln\left( \frac{b}{a} \right)}$$
+    $$C=\frac{(l+h\chi_e)(2\pi\varepsilon_o)}{\ln\left( \frac{b}{a} \right)}$$
+
+    Since we know the energy of a capacitor is defined as:
+
+    $$U=\frac{1}{2}CV^2$$
+
+    We can find the upward force using:
+
+    $$F=\frac{1}{2}V^2\frac{\partial C}{\partial h}$$
+
+    This is defined as:
+
+    $$\frac{\partial}{\partial h}\left( \frac{(l+h\chi_e)(2\pi\varepsilon_o)}{\ln\left( \frac{b}{a} \right)} \right)\to\frac{2\chi_e\pi\varepsilon_o}{\ln\left( \frac{b}{a} \right)}$$
+
+    This gives us an upward force of:
+
+    $$F=\frac{\chi_e\pi\varepsilon_oV^2}{\ln\left( \frac{b}{a} \right)}$$
+
+    Now, we need to find the gravitational force (which acts downward) on the oil. This can be done using the density of the oil:
+
+    $$m=\rho_mV$$
+
+    The volume of the area with oil present may be defined as the difference of volumes with radii $a$ and $b$:
+
+    $$V=\pi(b^2-a^2)h$$
+    $$m=\rho_m\pi\left( b^2-a^2 \right)h$$
+
+    The gravitational force is known to be $F=mg$, which gives us:
+
+    $$F=\rho_m\pi\left( b^2-a^2 \right)hg$$
+
+    We want the oil to be in equilibrium, so the upward force must be equal to the downward force. This yields:
+
+    $$\rho_m\pi\left( b^2-a^2 \right)hg=\frac{\chi_e\pi\varepsilon_oV^2}{\ln\left( \frac{b}{a} \right)}$$
+
+    We then rearrange to obtain the height as:
+
+    $$\boxed{h=\frac{\chi_e\varepsilon_o V^2}{g\rho_m(b^2-a^2)\ln\left( \frac{b}{a} \right)}}$$
+
   \item A point charge with charge $q$ is fixed at the center of a sphere of radius $R$ made of a linear dielectric material with susceptibility $\chi_e$. Find:
 
     \begin{enumerate}
 
       \item The electric field outside the sphere
 
+        The electric field outside the sphere can be defined as normal, using Gauss's law:
+
+        $$\oint \vec{E}\cdot d\vec{a}=\frac{q_{enc}}{\varepsilon_o}$$
+        $$\vec{E}\oint d\vec{a}=\frac{q_{enc}}{\varepsilon_o}$$
+        $$\boxed{\vec{E}_{r>R}=\frac{q}{4\pi\varepsilon_o r^2}\bold{\hat{r}}}$$
+
       \item The electric field in the sphere
+
+        Within the material, we need to define the electric field with respect to $\vec{D}$:
+
+        $$\oint \vec{D}\cdot d\vec{a}=q_{enc}$$
+        $$\vec{D}\oint d\vec{a}=q_{enc}$$
+        $$\vec{D}=\frac{q}{4\pi r^2}\bold{\hat{r}}$$
+
+        Furthermore, we know $\vec{D}=\varepsilon_r\vec{E}=\varepsilon_o(1+\chi_e)\vec{E}$, which yields:
+
+        $$\boxed{\vec{E}_{r<R}=\frac{q}{4\pi\varepsilon_o(1+\chi_e)r^2}\bold{\hat{r}}}$$
 
       \item The bound volume charged density $\rho_b$
 
+        The polarization may be defined as:
+
+        $$\vec{P}=\varepsilon_o\chi_e\vec{E}_{r<R}$$
+
+        We can find the bound volume charge density by taking the negative gradient of the polarization:
+
+        $$-\vec{\nabla}(\vec{P})=\vec{\nabla}\left( \frac{q\chi_e}{4\pi(1+\chi_e)r^2}\bold{\hat{r}} \right)$$
+        $$\rho_b=-\frac{q\chi_e}{4\pi(1+\chi_e)}\vec{\nabla}\left( \frac{\bold{\hat{r}}}{r^2} \right)$$
+
+        We know:
+
+        $$\vec{\nabla}\left( \frac{\bold{\hat{r}}}{r^2} \right)=4\pi\delta^2(\vec{r})$$
+
+        Thus, we end up with:
+
+        $$\boxed{\rho_b=-\frac{q\chi_e}{(1+\chi_e)}\delta^3(\vec{r})}$$
+
       \item The bound surface charge density $\sigma_b$ on the outer surface
 
-      Interesting question (not for credit): The dielectric sphere itself must be neutral, so where is the missing charge?
+        The surface charge density can be found once again using the polarization, except with $r=R$:
+
+        $$\sigma_b=\vec{P}_{r=R}\cdot\bold{\hat{r}}$$
+
+        This gives us:
+
+        $$\boxed{\sigma_b=\frac{q\chi_e}{4\pi(1+\chi_e)R^2}}$$
+
+        \noindent\fbox{%
+          \parbox{.85\textwidth}{%
+              Interesting question (not for credit): The dielectric sphere itself must be neutral, so where is the missing charge?
+            }%
+        }\\
+
+        Using our result from part (d), we can see:
+
+        $$q_{surf}=\sigma_b\cdot A=\sigma_b(4\pi R^2)$$
+        $$q_{surf}=\frac{q\chi_e}{(1+\chi_e)}$$
+
+        Thus, we see that, to compensate, there must be charge located at the center.
 
     \end{enumerate}
 
