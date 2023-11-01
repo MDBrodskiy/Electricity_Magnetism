@@ -26,6 +26,7 @@
   * [**Electric Fields in Matter**](https://github.com/MDBrodskiy/Electricity_Magnetism/tree/master/Notes/Section4.pdf)
   * [**Magnetostatics**](https://github.com/MDBrodskiy/Electricity_Magnetism/tree/master/Notes/Section5.pdf)
   * [**Magnetic Fields in Matter**](https://github.com/MDBrodskiy/Electricity_Magnetism/tree/master/Notes/Section6.pdf)
+  * [**Electrodynamics**](https://github.com/MDBrodskiy/Electricity_Magnetism/tree/master/Notes/Section7.pdf)
 * [**Homework**](https://github.com/MDBrodskiy/Electricity_Magnetism/tree/master/Homework/)
   * [**Homework 1**](https://github.com/MDBrodskiy/Electricity_Magnetism/tree/master/Homework/Homework1.pdf)
   * [**Homework 2**](https://github.com/MDBrodskiy/Electricity_Magnetism/tree/master/Homework/Homework2.pdf)
