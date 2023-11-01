@@ -42,7 +42,7 @@
 
     $$\boxed{\vec{F}_{\vec{p}}=\frac{\alpha q^2}{(4\pi\varepsilon_o)^2r^5}}$$
 
-    Because the sign is positive, we know this is an attractive force
+    Because the sign opposes $q$, we know this is an attractive force
 
   \item A parallel plate capacitor has two metal plates and is filled with two different linear dielectrics. Each dielectric has thickness $d/2$.  The lower dielectric (A) has a dielectric constant $\varepsilon_r=3$ and the upper one (B) has dielectric constant $\varepsilon_r=5$.  The upper plate as a charge density of $+\sigma$ and the lower plate as a charge density of $-\sigma$
 
@@ -50,11 +50,64 @@
 
       \item Find the electric displacement $\vec{D}$ in the dielectrics
 
+        We can define the electric field inside the region as twice the electric field due to a single sheet, which gives us:
+
+        $$\vec{E}=\vec{E}_1+\vec{E}_2$$
+        $$\vec{E}=\frac{\sigma}{2\varepsilon_1}+\frac{\sigma}{2\varepsilon_2}$$
+        $$\vec{E}=\frac{\sigma}{2\varepsilon_o\varepsilon_{r1}}+\frac{\sigma}{2\varepsilon_o\varepsilon_{r2}}$$
+        $$\vec{E}=\frac{\sigma}{6\varepsilon_o}+\frac{\sigma}{10\varepsilon_o}$$
+        $$\vec{E}=\frac{4\sigma}{15\varepsilon_o}$$
+
+        We know that, by definition, $\vec{D}=\varepsilon_r\varepsilon_o\vec{E}$, which then gives us:
+
+        $$\vec{D}_A=(3\varepsilon_o)\vec{E}$$
+        $$\boxed{\vec{D}_A=\frac{4\sigma}{5}}$$
+        $$\vec{D}_B=(5\varepsilon_o)\vec{E}$$
+        $$\boxed{\vec{D}_B=\frac{4\sigma}{3}}$$
+
       \item Find the electric field $\vec{E}$ in each dielectric
+
+        The electric field can be defined as above by:
+
+        $$\vec{E}=\frac{\sigma}{\varepsilon_r\varepsilon_o}$$
+
+        Thus, for the first slab we get:
+
+        $$\vec{E}_A\to\varepsilon_r=3$$
+        $$\boxed{\vec{E}_A=\frac{\sigma}{3\varepsilon_o}}$$
+        $$\vec{E}_B\to\varepsilon_r=5$$
+        $$\boxed{\vec{E}_B=\frac{\sigma}{5\varepsilon_o}}$$
 
       \item Find the potential difference between the plates
 
+        The potential can be defined as:
+
+        $$V=\vec{E}\cdot d$$
+
+        Which we can then use to write:
+
+        $$V=\left( \frac{\sigma}{3\varepsilon_o} +\frac{\sigma}{5\varepsilon_o}\right)\frac{d}{2}$$
+
+        This evaluates to:
+
+        $$\boxed{V=\frac{4\sigma d}{15\varepsilon_o}}$$
+
       \item Find the location and value of all of the bound charge
+
+        Given that this is a plate capacitor, we know $\rho_b=0$, and all of the charge resides on the surface. We can find the surface bound charge by taking the vertical direction as $+\bold{\hat{x}}$. We first find the polarizability:
+
+        $$\vec{P}=\varepsilon_o\chi_e\vec{E}$$
+        $$\vec{P}=\varepsilon_o(\varepsilon_r-1)\vec{E}$$
+        $$\vec{P}_A=\frac{2\sigma}{3}$$
+        $$\vec{P}_B=\frac{4\sigma}{5}$$
+
+        We can then find the charge in three locations, between the top plate and $B$, between $A$ and $B$, and between the bottom plate and $A$. This gives us:
+
+        $$\boxed{\sigma_B=\frac{4\sigma}{5}\cdot\bold{\hat{x}}\to\frac{4\sigma}{5}}$$
+        $$\boxed{\sigma_{AB}=\frac{4\sigma}{5}\cdot-\bold{\hat{x}}+\frac{2\sigma}{3}\cdot\bold{\hat{x}}\to-\frac{2\sigma}{15}}$$
+        $$\boxed{\sigma_A=\frac{2\sigma}{3}\cdot-\bold{\hat{x}}\to-\frac{2\sigma}{3}}$$
+
+        Summing up the bound charge gives us $\sigma_b=0$
 
     \end{enumerate}
 
