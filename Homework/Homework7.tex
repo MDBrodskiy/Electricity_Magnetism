@@ -22,13 +22,75 @@
 
       \item Find the total force on the sphere
 
+        Let us first define the dipole moment of the sphere. To do this, we must first define the current:
+
+        $$I=\frac{1}{T}\left[ \sigma(2\pi R\sin(\theta)) R\,d\theta \right]$$
+        $$I=\sigma\omega R^2\sin(\theta)\,d\theta$$
+
+        This gives us the dipole moment as:
+
+        $$d\vec{m}=IA\bold{\hat{z}}$$
+        $$d\vec{m}=\sigma\omega R^2\sin(\theta)\,d\theta( \pi R^2\sin^2(\theta))\bold{\hat{z}}$$
+        $$d\vec{m}=\pi\sigma\omega R^4\sin^3(\theta)\,d\theta\bold{\hat{z}}$$
+
+        From here, we can find:
+
+        $$\vec{m}=\pi\sigma\omega R^4\int\sin^3(\theta)\,d\theta\bold{\hat{z}}$$
+        $$\vec{m}=\pi\sigma\omega R^4\int_0^\pi\sin^3(\theta)\,d\theta\bold{\hat{z}}$$
+        $$\vec{m}=\frac{4}{3}\pi\sigma\omega R^4\bold{\hat{z}}$$
+
+        Now, we can write the force as:
+
+        $$\vec{F}=(\vec{m}\cdot\vec{\nabla})\vec{B}$$
+
+        This gives us:
+
+        $$\vec{F}=\left( \frac{4}{3}\pi\sigma\omega R^4\bold{\hat{z}}\cdot\vec{\nabla} \right)\vec{B}$$
+        $$\vec{F}=\left( \frac{4}{3}\pi\sigma\omega R^4(\bold{\hat{z}}\cdot\vec{\nabla}) \right)\vec{B}$$
+        $$\vec{F}=\left( \frac{4}{3}\pi\sigma\omega R^4 \right)\underbrace{\frac{\partial}{\partial z}(B_o\bold{\hat{y}})}_0$$
+
+        Thus, we see that the net force is zero:
+
+        $$\boxed{\vec{F}=0}$$
+
       \item Find the total torque on the sphere
 
+        Using the dipole defined in (a), we can write:
+
+        $$\vec{N}=\vec{m}\times\vec{B}$$
+        $$\vec{N}=\left( \frac{4}{3}\pi\sigma\omega R^4\bold{\hat{z}}\right)\times(B_o\bold{\hat{y}})$$
+        $$\vec{N}=\frac{4}{3}\pi\sigma\omega B_o R^4(\bold{\hat{z}}\times\bold{\hat{y}})$$
+        $$\boxed{\vec{N}=-\frac{4}{3}\pi\sigma\omega B_o R^4\bold{\hat{x}}}$$
+
       \item Generalize the result of (b) to find the torque for a uniform magnetic field in an arbitrary direction, $\vec{B}=B_x\bold{\hat{x}}+B_y\bold{\hat{y}}+B_z\bold{\hat{z}}$
+
+        Given the general case, we may write:
+
+        $$\left|\begin{matrix} \bold{\hat{x}} & \bold{\hat{y}} & \bold{\hat{z}}\\ 0 & 0 & 1\\ B_x & B_y & B_z\end{matrix}\right|=(-B_y\bold{\hat{x}}+B_x\bold{\hat{y}})$$
+
+        Thus, we can substitute $-B_o\bold{\hat{x}}$ from (b) with the above result to get:
+
+        $$\boxed{\vec{N}=\frac{4}{3}\pi\sigma\omega R^4\left( B_x\bold{\hat{y}}-B_y\bold{\hat{x}} \right)}$$
 
     \end{enumerate}
 
   \item Calculate the magnetic field $\vec{B}(x,y)$ in the positive quadrant of the $x$-$y$ plane due to a current coming on the $y$-axis from $y=+\infty$, turning $90^{\circ}$ at the origin, and exiting along the $x$-axis to $x=+\infty$
+
+    We know that the magnetic field at a point of distance $r$ from a wire can be defined as:
+
+    $$\vec{B}=\frac{\mu_o I}{2\pi r}$$
+
+    Thus, we can define the magnetic field produced by the $y$ current, with direction determined through the right hand rule, as:
+
+    $$\vec{B}_y=\frac{\mu_o I}{2\pi y}\bold{\hat{z}}$$
+
+    Using the same method, we can write the $x$ current magnetic field as:
+
+    $$\vec{B}_x=\frac{\mu_o I}{2\pi x}\bold{\hat{z}}$$
+
+    We can simply sum the magnetic field to find:
+
+    $$\boxed{\vec{B}(x,y)=\frac{\mu_o I}{2\pi}\left( \frac{1}{x}+\frac{1}{y} \right)\bold{\hat{z}}}$$
 
   \item A long cylindrical conductor has a uniform current density $\vec{J}$ oriented along the axis.
 
@@ -36,23 +98,60 @@
 
       \item Find the strength of the magnetic field as a function of $s$ (the perpendicular distance from the $z$-axis) for $s<a$.
 
+        Using Amp\`ere's Law, we can write:
+
+        $$\oint\vec{B}\cdot d\vec{l}=\mu_o I$$
+
+        Applying the given parameters, we find:
+
+        $$\oint\vec{B}\cdot d\vec{l}=\mu_o \vec{J}(\pi s^2)$$
+        $$\vec{B}\oint d\vec{l}=\mu_o \vec{J}(\pi s^2)$$
+        $$\vec{B}(2\pi s)=\mu_o \vec{J}(\pi s^2)$$
+        $$\boxed{\vec{B}=\frac{\mu_o \vec{J} s}{2}}$$
+
       \item Consider a charged particle with charge $q$ and momentum $p$ that passes through the cylinder in part (a) with an initial velocity parallel to the axis.  As a function of the distance $s$ of the particle from the axis, find the angle of deflection after passing through a short distance $\Delta z$. Considered as lens for such charged particles, what it the focal length of this segment of the conductor as a function of $\vec{J},p,q,\Delta z$? (Such lenses are actually used in particle accelerators). Assume that $\Delta z<<R$, where $R$ is the radius of curvature of the particle in the magnetic field, so a small angle approximation is valid for the deflection
 
       \item Find the current density $\vec{J}$ needed to focus particles of charge $e=1.6\cdot10^{−19}[\si{\coulomb}]$ and momentum $p=75\left[ \frac{\si{\giga\eV}}{c} \right]$ with a focal length of $f=20 [\si{\meter}]$ for $\Delta z=0.50[\si{\meter}]$
 
     \end{enumerate}
 
-  \item A double solenoid has two co-axial coils radii $a$ and $b$,with $n_a$ and $n_b$ turns per unit length, and with currents $I_a$ and $I_b$ flowing in opposite directions. Find:
+  \item A double solenoid has two co-axial coils radii $a$ and $b$, with $n_a$ and $n_b$ turns per unit length, and with currents $I_a$ and $I_b$ flowing in opposite directions. Find:
+
+    For the following problems, we can assume ideal solenoids, with current present only inside of the solenoid. The magnetic field may be defined as:
+
+    $$\vec{B}=\mu_onI$$
+
+    as was determined in class. Furthermore, let us define the axis of the solenoids as $\bold{\hat{x}}$, and assume that $I_a$ flows such that the magnetic field produced is in the $+\bold{\hat{x}}$ direction.
 
     \begin{enumerate}
 
       \item the magnetic field for the region inside the first coil ($s<a$)
 
+        Inside the first coil, there are two currents, $I_a$ and $I_b$. Thus, we can simply sum the magnetic fields from each to determine:
+
+        $$\boxed{\vec{B}_{s<a}=\mu_o\left( n_aI_a-n_bI_b \right)\bold{\hat{x}}}$$
+
       \item the magnetic field for the region between he two coils ($a<s<b$)
+
+        Since $s$ is now outside of the first solenoid, the only field present is from the second solenoid. This gives us:
+
+        $$\boxed{\vec{B}_{a<s<b}=-\mu_on_bI_b\bold{\hat{x}}}$$
 
       \item the magnetic field for the region inside outside both coils ($s>b$)
 
+        Outside of both solenoids, there would be no field present. Thus, we may simply write:
+
+        $$\boxed{\vec{B}_{s>b}=0}$$
+
       \item What ratio of currents would be required to have $\vec{B}=0$ for $s<a$?
+
+        For the field to be zero, we find from (a):
+
+        $$\mu_on_aI_a=\mu_on_bI_b$$
+
+        Which results in a ratio of:
+
+        $$\boxed{\frac{I_a}{I_b}=\frac{n_b}{n_a}}$$
 
     \end{enumerate}
 
