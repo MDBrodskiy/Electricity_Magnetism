@@ -111,7 +111,47 @@
 
       \item Consider a charged particle with charge $q$ and momentum $p$ that passes through the cylinder in part (a) with an initial velocity parallel to the axis.  As a function of the distance $s$ of the particle from the axis, find the angle of deflection after passing through a short distance $\Delta z$. Considered as lens for such charged particles, what it the focal length of this segment of the conductor as a function of $\vec{J},p,q,\Delta z$? (Such lenses are actually used in particle accelerators). Assume that $\Delta z<<R$, where $R$ is the radius of curvature of the particle in the magnetic field, so a small angle approximation is valid for the deflection
 
+        \begin{figure}[h!]
+          \centering
+          \include{Figures/Figure7-3.tex}
+          \caption{Set up of Particle Motion}
+          \label{fig:1}
+        \end{figure}
+
+        We can approximate this situation to centripetal rotation, which gives us:
+
+        $$\frac{mv^2}{R}=qvB$$
+        $$R=\frac{mv}{qB}$$
+        $$R=\frac{p}{qB}$$
+
+        Using Figure \ref{fig:1} from above, we can write:
+
+        $$\sin(\theta)=\frac{\Delta z}{R}$$
+
+        Using a small angle approximation, we write:
+
+        $$\theta=\frac{\Delta z}{R}$$
+        $$\theta=\frac{qB\Delta z}{p}$$
+
+        We then take $B$ from (a):
+
+        $$\theta=\frac{\mu_oq\vec{J}s\Delta z}{2p}$$
+
+        Finally, we can define:
+
+        $$\tan(\theta)\approx \theta=\frac{s}{f}$$
+
+        Rearranging, we get:
+
+        $$f=\frac{s}{\theta}$$
+        $$\boxed{f=\frac{2p}{\mu_oq\vec{J}\Delta z}}$$
+
       \item Find the current density $\vec{J}$ needed to focus particles of charge $e=1.6\cdot10^{−19}[\si{\coulomb}]$ and momentum $p=75\left[ \frac{\si{\giga\eV}}{c} \right]$ with a focal length of $f=20 [\si{\meter}]$ for $\Delta z=0.50[\si{\meter}]$
+
+        Using the formula from (b), we can write:
+
+        $$\vec{J}=\frac{2\left( \frac{(75\cdot10^9)(1.6\cdot10^{-19})}{3\cdot10^8} \right)}{(4\pi\cdot10^{-7})(1.6\cdot10^{-9})(20)(.5)}$$
+        $$\boxed{\vec{J}=3.98\cdot10^7\left[ \frac{\si{\ampere}}{\si{\meter\squared}} \right]}$$
 
     \end{enumerate}
 
