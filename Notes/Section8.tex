@@ -1,0 +1,88 @@
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Written By Michael Brodskiy
+% Class: Electricity & Magnetism
+% Professor: D. Wood
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\include{Includes.tex}
+
+\title{Electromagnetic Waves}
+\date{\today}
+\author{Michael Brodskiy\\ \small Professor: D. Wood}
+
+\begin{document}
+
+\maketitle
+
+\begin{itemize}
+
+  \item Maxwell's Equations
+
+    $$\vec{\nabla}\cdot\vec{E}=\frac{\rho}{\varepsilon_o}$$
+    $$\vec{\nabla}\cdot\vec{B}=-2$$
+    $$\vec{\nabla}\times\vec{E}=-\frac{\partial\vec{B}}{\partial t}$$
+    $$\vec{\nabla}\times\vec{B}=\mu_o\vec{J}+\mu_o\varepsilon_o\frac{\partial\vec{E}}{\partial t}$$
+
+    \begin{itemize}
+
+      \item The second equation indicates no magnetic monopoles exist
+
+      \item Where $J_d=\displaystyle\oint\vec{B}\cdot d\vec{l}=\mu_oI$
+
+      \item Electric fields diverge with strength proportional to charge
+
+      \item Magnetic fields do not diverge
+
+      \item Curling electric field opposes change in magnetic field
+
+        $$\vec{F}=q(\vec{E}+\vec{v}\time\vec{B})$$
+
+      \item Describes the Lorentz force, which indicates how charges move in fields
+
+      \item A key term, the displacement current ($\vec{J}_d$), was added by Maxwell
+
+        $$\vec{J}_d=\varepsilon_o\frac{\partial \vec{E}}{\partial t}=\frac{\partial \vec{D}}{\partial t}$$
+        $$I_d=\int\vec{J}_d\,d\vec{a}$$
+
+      \item Within a capacitor, the displacement current may be defined by:
+
+        $$I_d=\varepsilon_o\frac{d\vec{E}}{dt}A$$
+
+      \item In matter, the equivalent to $\vec{J}_d$ is polarization current
+
+        $$\vec{J}_p=\frac{\partial\vec{P}}{\partial t}$$
+        $$\vec{\nabla}\cdot\vec{J}_p=-\frac{\partial\rho_b}{\partial t}$$
+
+      \item Thus, we can rewrite some of the equations:
+
+        $$\vec{\nabla}\cdot\vec{E}=\frac{\rho_f}{\varepsilon_o}+\frac{-1}{\varepsilon_o}(\vec{\nabla}\cdot\vec{P})\rightarrow \vec{\nabla}\cdot\vec{D}=\rho_f$$
+        $$\vec{\nabla}\times\vec{B}=\mu_o\vec{J}_f+\mu_o\varepsilon_o\frac{\partial\vec{E}}{\partial t}+\mu_o\frac{\partial\vec{P}}{\partial t}+\mu_o(\vec{\nabla}\times\vec{m})\rightarrow \vec{\nabla}\times\vec{H}=\vec{J}_f+\frac{\partial\vec{D}}{\partial t}$$
+
+    \end{itemize}
+
+  \item Electromagnetic Waves
+
+    $$\vec{\nabla}(\vec{\nabla}\times\vec{E})=-\frac{\partial}{\partial t}(\vec{\nabla}\times\vec{B})=-\mu_o\varepsilon_o\frac{\partial}{\partial t}\left( \frac{\partial \vec{E}}{\partial t} \right)$$
+    $$\vec{\nabla}^2\vec{E}=\mu_o\varepsilon_o\frac{\partial^2\vec{E}}{\partial t^2}$$
+
+    \begin{itemize}
+
+      \item Applying our knowledge of the wave equation, we may write:
+
+        $$v=\frac{1}{\sqrt{\mu_o\varepsilon_o}}=c$$
+
+      \item We obtain the same result:
+
+        $$\vec{\nabla}^2\vec{E}=c^2\frac{\partial^2\vec{E}}{\partial t^2}$$
+        $$\vec{\nabla}^2\vec{B}=c^2\frac{\partial^2\vec{B}}{\partial t^2}$$
+
+      \item Magnetic and electric fields propagate at the speed of light, perpendicular to each other, to create light
+
+      \item The direction of the wave is $\vec{E}\times\vec{B}$
+
+    \end{itemize}
+
+\end{itemize}
+
+\end{document}
+
