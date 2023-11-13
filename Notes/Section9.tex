@@ -1,0 +1,53 @@
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Written By Michael Brodskiy
+% Class: Electricity & Magnetism
+% Professor: D. Wood
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\include{Includes.tex}
+
+\title{Potentials and Fields}
+\date{\today}
+\author{Michael Brodskiy\\ \small Professor: D. Wood}
+
+\begin{document}
+
+\maketitle
+
+\begin{itemize}
+
+  \item The energy density of a field may be written as:
+
+    $$U=\frac{1}{2}\left( \varepsilon_o\vec{E}^2+\frac{1}{\mu_o}\vec{B}^2 \right)$$
+
+  \item The Poynting Vector may be defined as:
+
+    $$\vec{S}=\frac{1}{\mu_o}(\vec{E}\times\vec{B})$$
+
+  \item For some volume $\tau$, we can write the total energy in it using:
+
+    $$\mathcal{U}_{tot}=\int_V U\,d\tau$$
+
+  \item The Poynting Vector represents the flow of energy out of the surface
+
+    $$\vec{\nabla}\cdot\vec{S}=\frac{1}{\mu_o}\vec{\nabla}\cdot(\vec{E}\times\vec{B})=\frac{1}{\mu_o}\left( \vec{B}\cdot(\vec{\nabla}\times\vec{E})-\vec{E}(\vec{\nabla}\times\vec{B}) \right)$$
+    $$\vec{\nabla}\cdot\vec{S}=-\frac{\partial}{\partial t}\left( \frac{\varepsilon_o\vec{E}^2}{2}+\frac{\vec{B}^2}{2\mu_o} \right)$$
+
+    \begin{itemize}
+
+      \item This can be simplified to attain:
+
+        $$\vec{\nabla}\cdot\vec{S}+\frac{\partial U}{\partial t}=0$$
+
+      \item A similar equation can be seen in conservation of charge:
+
+        $$\vec{\nabla}\cdot\vec{J}+\frac{\partial \rho}{\partial t}=0$$
+
+      \item Thus, we have obtained a conservation of energy formula
+
+    \end{itemize}
+
+\end{itemize}
+
+\end{document}
+
