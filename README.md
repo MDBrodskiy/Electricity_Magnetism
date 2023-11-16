@@ -37,6 +37,7 @@
   * [**Homework 5**](https://github.com/MDBrodskiy/Electricity_Magnetism/tree/master/Homework/Homework5.pdf)
   * [**Homework 6**](https://github.com/MDBrodskiy/Electricity_Magnetism/tree/master/Homework/Homework6.pdf)
   * [**Homework 7**](https://github.com/MDBrodskiy/Electricity_Magnetism/tree/master/Homework/Homework7.pdf)
+  * [**Homework 8**](https://github.com/MDBrodskiy/Electricity_Magnetism/tree/master/Homework/Homework8.pdf)
 * [**Exams**](https://github.com/MDBrodskiy/Electricity_Magnetism/tree/master/Exams/)
 
 <!--
