@@ -58,6 +58,79 @@
         $$\oint_S\overleftrightarrow{T}\cdot d\vec{a}=\vec{F}_{ext}$$
         $$\oint_V(\vec{\nabla}\cdot\overleftrightarrow{T})\cdot d\tau=\vec{F}_{ext}$$
 
+      \item $T_{ij}=\varepsilon_o\left( E_iE_j-\frac{1}{2}\delta_{ij}E^2 \right)+\frac{1}{\mu_o}\left( B_iB_j-\frac{1}{2}\delta_{ij}B^2 \right)$
+
+        $$\vec{\nabla}\cdot\overleftrightarrow{T}=\varepsilon_o\left( (\vec{\nabla}\cdot\vec{E} )\vec{E}+(\vec{E}\cdot\vec{\nabla})\vec{E}-\frac{1}{2}\vec{\nabla}\vec{E}^2\right)+\frac{1}{\mu_o}\left( (\vec{\nabla}\cdot\vec{B} )\vec{B}+(\vec{B}\cdot\vec{\nabla})\vec{B}-\frac{1}{2}\vec{\nabla}\vec{B}^2\right)$$
+        $$\vec{\nabla}\cdot\overleftrightarrow{T}=\varepsilon_o\left( (\vec{\nabla}\cdot\vec{E} )\vec{E}-\vec{E}\times(\vec{\nabla}\times\vec{E})\right)+\frac{1}{\mu_o}\left( (\vec{\nabla}\cdot\vec{B} )\vec{B}-\vec{B}\times(\vec{\nabla}\times\vec{B})\right)$$
+
+      \item Here, we see all four of Maxwell's laws. This lets us rewrite:
+
+        $$\vec{\nabla}\cdot\overleftrightarrow{T}=\underbrace{\rho\vec{E}+\mu_o\vec{J}\times\vec{B}}_{\text{Force per Volume, $\vec{f}$}}+\underbrace{\varepsilon_o\vec{E}\times\left( \frac{\partial \vec{B}}{\partial t} \right)+\varepsilon_o\vec{B}\times\left( \frac{\partial \vec{E}}{\partial t} \right)}_{\frac{\partial}{\partial t}(\varepsilon_o\vec{E}\times\vec{B})}$$
+
+      \item We can ultimately simplify to get:
+
+        $$\vec{\nabla}\cdot\overleftrightarrow{T}=\vec{f}-\frac{\partial}{\partial t}\mu_o\varepsilon_o\vec{S}$$
+
+      \item We can rewrite this as:
+
+        $$\frac{d\vec{p}}{dt}=F_{ext}-\frac{\partial}{\partial t}\int\varepsilon_o\mu_o\vec{S}\,d\tau$$
+
+      \item The momentum density may be written as:
+
+        $$\vec{g}=\frac{\vec{p}}{V}=\varepsilon_o\mu_o\vec{S}=\varepsilon_o\vec{E}\times\vec{B}$$
+
+
+      \item This can be summed up as:
+
+        $$-\vec{\nabla}\cdot\overleftrightarrow{T}+\frac{\partial \vec{g}}{\partial t}=0$$
+
+      \item Which is the continuity and conservation of momentum
+
+    \end{itemize}
+
+  \item Radiation Pressure
+
+    \begin{itemize}
+
+      \item For Absorption:
+
+        $$P=\vec{g}c\cdot\bold{\hat{n}}$$
+
+      \item For Reflection:
+
+        $$P=2\vec{g}c\cdot\bold{\hat{n}}$$
+
+      \item The time-averaged pressure may be defined as:
+
+        $$\langle P\rangle=\frac{1}{T}\int_0^TP\cdot dt$$
+
+    \end{itemize}
+
+  \item Angular Momentum
+
+    \begin{itemize}
+
+      \item The angular momentum may be defined as:
+
+        $$\vec{L}=\vec{r}\times\vec{p}$$
+
+      \item To find the angular momentum density, we may write:
+
+        $$\vec{l}=\vec{p}\times\vec{g}$$
+
+      \item The torque on the inner cylinder of a coaxial cable may be written as:
+
+        $$N=R_1qE_{\phi}=\frac{q\varepsilon}{2\pi}=-\frac{q}{2\pi}\frac{d\phi_1}{dt}$$
+
+      \item The change in angular momentum may be written as:
+
+        $$\Delta L_1=\frac{qB_iR_1^2}{2}$$
+
+      \item For the outer cylinder, the change would be the same, except with $R_1\to R_2$
+
+        $$\Delta L_{tot}=\frac{qB_i}{2}(R_1^2-R_2^2)$$
+        $$\vec{l}=\frac{qB_i r}{2\pi s\Delta z}\hat{\theta}$$
+
     \end{itemize}
 
 \end{itemize}
