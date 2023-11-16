@@ -22,9 +22,55 @@
 
       \item Compute the magnetic moment of the sphere. It might be helpful to model is as a collection of rings of current.
 
-      \item Find the vector potential outside of the sphere due to this magnetic dipole moment (just the dipole term)Compare the result with the calculation of the full vector potential from the text (example 5.11, eqn. 5.69).  What can you conclude about the higher magnetic moments (quadrupole and higher)?
+        The magnetic moment was computed in the previous homework to help find the force on the sphere. It can be done once again here. We can first define the current:
+
+        $$I=\frac{1}{T}\left[ \sigma(2\pi R\sin(\theta))R\,d\theta \right]$$
+        $$I=\sigma \omega R^2\sin(\theta)\,d\theta$$
+
+        This gives us the moment as:
+
+        $$d\vec{m}=IA\bold{\hat{z}}$$
+        $$d\vec{m}=\sigma\omega R^2\sin(\theta)\,d\theta (\pi R^2\sin^2(\theta))\bold{\hat{z}}$$
+        $$d\vec{m}=\pi\sigma\omega R^4\sin^3(\theta)\,d\theta\bold{\hat{z}}$$
+
+        From here, we can find:
+
+        $$\vec{m}=\pi\sigma\omega R^4\int_0^\pi\sin^3(\theta)\,d\theta\bold{\hat{z}}$$
+        $$\boxed{\vec{m}=\frac{4}{3}\pi\sigma\omega R^4\bold{\hat{z}}}$$
+
+      \item Find the vector potential outside of the sphere due to this magnetic dipole moment (just the dipole term). Compare the result with the calculation of the full vector potential from the text (example 5.11, eqn. 5.69).  What can you conclude about the higher magnetic moments (quadrupole and higher)?
+
+        We know the vector potential may be defined as:
+
+        $$\vec{A}=\frac{\mu_o}{4\pi}\frac{\vec{m}\times\vec{r}}{r^3}$$
+        $$\vec{A}=\frac{\mu_o}{4\pi}\frac{|\vec{m}|\sin(\theta)(\bold{\hat{z}}\times\bold{\hat{r}})}{r^2}$$
+        $$\vec{A}=\frac{\mu_o}{4\pi}\frac{4\pi\sigma\omega R^4\sin(\theta)\hat{\phi}}{3r^2}$$
+        $$\boxed{\vec{A}=\frac{\mu_o\sigma\omega R^4\sin(\theta)}{3r^2}\hat{\phi}}$$
+
+        This matches up with the value determined in the textbook. Thus, we can conclude that the higher-order moments must be zero.
 
       \item Compute the magnetic field from the vector potential found in (b).
+
+        We know that:
+
+        $$\vec{B}=\vec{\nabla}\times\vec{A}$$
+
+        Thus, we can write:
+
+        $$\vec{B}=\vec{\nabla}\times\left( \frac{\mu_o\sigma\omega R^4\sin(\theta)}{3r^2}\hat{\phi} \right)$$
+
+        We can write the curl in spherical coordinates as:
+
+        $$\vec{\nabla}\times\left( \frac{\mu_o\sigma\omega R^4\sin(\theta)}{3r^2}\hat{\phi} \right)=\frac{1}{r^2\sin(\theta)}\left|\begin{matrix} \bold{\hat{r}} & \bold{\hat{\theta}} & \bold{\hat{\phi}}\\ \frac{\partial}{\partial r} & \frac{\partial}{\partial \theta} & \frac{\partial}{\partial \phi} \\ 0 & 0 & (r\sin(\theta))A_\phi \end{matrix}\right|$$
+        $$\frac{1}{r^2\sin(\theta)}\left|\begin{matrix} \bold{\hat{r}} & \bold{\hat{\theta}} & \bold{\hat{\phi}}\\ \frac{\partial}{\partial r} & \frac{\partial}{\partial \theta} & \frac{\partial}{\partial \phi} \\ 0 & 0 & (r\sin(\theta))A_\phi \end{matrix}\right|=\frac{\mu_o\sigma\omega R^4}{3r^2\sin(\theta)}\left[\frac{\partial}{\partial\theta}\frac{\sin^2(\theta)}{r}\bold{\hat{r}}- \frac{\partial}{\partial r}\frac{\sin^2(\theta)}{r}\hat{\theta}\right]$$
+
+        This gives us:
+
+        $$\frac{\mu_o\sigma\omega R^4}{3r^2\sin(\theta)}\left[\frac{\partial}{\partial\theta}\frac{\sin^2(\theta)}{r}\bold{\hat{r}}- \frac{\partial}{\partial r}\frac{\sin^2(\theta)}{r}\hat{\theta}\right]=\frac{\mu_o\sigma\omega R^4}{3r^2\sin(\theta)}\left[\frac{2\sin(\theta)\cos(\theta)}{r}\bold{\hat{r}}+\frac{\sin^2(\theta)}{r^2}\hat{\theta}\right]$$
+
+        And finally:
+
+        $$\boxed{\vec{B}=\frac{\mu_o\sigma\omega R^4}{3r^3}\left[2\cos(\theta)\bold{\hat{r}}+\frac{\sin(\theta)}{r}\hat{\theta}\right]}$$
 
     \end{enumerate}
 
@@ -34,7 +80,50 @@
 
       \item Find the magnetic field on the center axis ($z$-axis) as a function of $z$
 
+        The magnetic field may be expressed as a formula we already defined:
+
+        $$\vec{B}=\frac{\mu_oI}{4\pi s}\left[ \sin(\theta_2)+\sin(\theta_1) \right]$$
+
+        Given the set-up, we know $\sin(\theta_1)=\sin(\theta_2)$. We can find these values to be:
+
+        $$\sin(\theta_1)=\sin(\theta_2)=\frac{L/2}{\sqrt{\left( L/2 \right)^2+z^2+\left( L/2 \right)^2}}=\frac{L/2}{\sqrt{z^2+L^2/2}}$$
+
+        Furthermore, we can define $s$ as:
+
+        $$s=\sqrt{z^2+L^2/4}$$
+
+        This defines the overall magnetic field contribution from one side as:
+
+        $$\vec{B}=\frac{\mu_oIL}{4\pi\sqrt{z^2+L^2/4}\sqrt{z^2+L^2/2}}$$
+
+        We can find the $\bold{\hat{z}}$ component as follows:
+
+        $$\vec{B}_z=\vec{B}\sin(\theta)\bold{\hat{z}}$$
+
+        We know that, given the geometry, we may write:
+
+        $$\sin(\theta)=\frac{L}{2\sqrt{z^2+L^2/4}}$$
+
+        Thus, the $z$-direction magnetic field from all four sides (multiplying by 4), is:
+
+        $$\boxed{\vec{B}_z=\frac{\mu_oIL^2}{2\pi(z^2+L^2/4)\sqrt{z^2+L^2/2}}\bold{\hat{z}}}$$
+
       \item Find the approximate field for $z>>L$.  Show that this corresponds to a dipole field, and determine the corresponding dipole moment.
+
+        When $z>>L$, we know that adding $L$-terms to $z$ have no effect. Thus, we may write:
+
+        $$\vec{B}_{z>>L}=\frac{\mu_oIL^2}{2\pi(z^2)\sqrt{z^2}}\bold{\hat{z}}$$
+        $$\vec{B}_{z>>L}=\frac{\mu_oIL^2}{2\pi z^3}\bold{\hat{z}}$$
+
+        We know that the magnetic moment can be defined as:
+
+        $$m=IL^2\bold{\hat{z}}$$
+
+        Thus, we may write:
+
+        $$\boxed{\vec{B}_{z>>L}=\frac{\mu_o\vec{m}}{2\pi z^3}\bold{\hat{z}}}$$
+
+        We know that this is the definition for a magnetic dipole placed at the center of the square, with moment $m=IL^2\bold{\hat{z}}$.
 
     \end{enumerate}
 
@@ -44,13 +133,52 @@
 
       \item Find the ratio of its magnetic dipole moment to its angular momentum, a.k.a.\ the gyromagnetic ratio, in terms of $Q$, $M$, and any fundamental constants.
 
+        The current induced by the movement of the charge can be defined as:
+
+        $$I=\frac{Q}{T}=\frac{\omega Q}{2\pi}$$
+
+        Where $T$ is the period of motion, and $\omega$ is the angular frequency. The area of the ring may be defined by:
+
+        $$A=\pi r^2$$
+
+        We can thus implement the definition of the magnetic moment to find:
+
+        $$\mu=IA\bold{\hat{z}}$$
+        $$\mu=\frac{r^2\omega Q}{2}\bold{\hat{z}}$$
+
+        The angular momentum may be defined as:
+
+        $$L=Mr^2\omega\bold{\hat{z}}$$
+
+        Thus, the ratio is:
+
+        $$\frac{\mu}{L}=\frac{r^2\omega Q}{2Mr^2\omega}$$
+        $$\boxed{\frac{\mu}{L}=\frac{Q}{2M}}$$
+
       \item What is this ratio for a uniform spinning sphere?  Do not do a new calculation, but think of the sphere a made up of many rings and apply the result from (a)
+
+        The gyromagnetic ratio for a sphere would simply be the same. Because it is a function of charge and mass, the size and shape have no effect, and, thus, we may write:
+
+        $$\boxed{\frac{\mu}{L}_{sphere}=\frac{Q}{2M}}$$
 
       \item From quantum mechanics, we know that the angular momentum of the electron along an axis is $\hbar/2$, where $\hbar=h/(2\pi)$ is the reduced Planck’s constant. What is the semiclassical prediction from (b) for the magnetic moment of the electron along that axis? [The full relativistic quantum field theory calculation is large by almost exactly a factor of 2.  See this problem in Griffiths for of the significance and history of the gyromagnetic ratio of this calculation]
 
+        We can rearrange our formula from (a) to write:
+
+        $$\mu=\frac{QL}{2M}$$
+
+        Since we know $L=\hbar/2$, we can write:
+
+        $$\mu=\frac{Q\hbar}{4M}$$
+
+        We then plug in all of our known values to write:
+
+        $$\mu=\frac{(1.6\cdot10^{-19})(1.05\cdot10^{-34})}{4\cdot(9.31\cdot10^{-31})}$$
+        $$\boxed{\mu=4.5\cdot10^{-24}[\si{\ampere\meter\squared}]}$$
+
     \end{enumerate}
 
-  \item A long cylinder of radius $R$ with its axis along the $z$-axis has a magnetization given by $M=ks^\hat{\phi}$. Find the magnetic field $\vec{B}$ for 
+  \item A long cylinder of radius $R$ with its axis along the $z$-axis has a magnetization given by $M=ks^2\hat{\phi}$. Find the magnetic field $\vec{B}$ for 
 
     \begin{enumerate}
 
@@ -60,7 +188,16 @@
 
     \end{enumerate}
 
-  \item A toroid with 100 turns has an inner radius of 10 cm and an outer radius of 20 cm. It is filled with Gadolinium ($\chi_e=0.48$). Find the magnetic field inside the toroid at a distance of 15 cm from the center when a current of 100 A is flowing through the coils.
+  \item A toroid with 100 turns has an inner radius of 10 cm and an outer radius of 20 cm. It is filled with Gadolinium ($\chi_m=0.48$). Find the magnetic field inside the toroid at a distance of 15 cm from the center when a current of 100 A is flowing through the coils.
+
+    We know that the magnetic field within a toroid may be calculated by using the formula:
+
+    $$\vec{B}=2\pi r\mu_onI$$
+
+    Applying the formula at $r=.15[\si{\meter}]$, we get:
+
+    $$\vec{B}=2\pi(.15)\left( 4\pi\cdot10^{-7} \right)(100)(100)$$
+    $$\boxed{\vec{B}=.011844\left[ \frac{\si{\ampere}}{\si{\meter}} \right]}$$
 
 \end{enumerate}
 
