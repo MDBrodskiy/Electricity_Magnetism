@@ -173,8 +173,8 @@
 
         We then plug in all of our known values to write:
 
-        $$\mu=\frac{(1.6\cdot10^{-19})(1.05\cdot10^{-34})}{4\cdot(9.31\cdot10^{-31})}$$
-        $$\boxed{\mu=4.5\cdot10^{-24}[\si{\ampere\meter\squared}]}$$
+        $$\mu=\frac{(1.6\cdot10^{-19})(1.05\cdot10^{-34})}{4\cdot(9.109\cdot10^{-31})}$$
+        $$\boxed{\mu=4.612\cdot10^{-24}[\si{\ampere\meter\squared}]}$$
 
     \end{enumerate}
 
@@ -184,20 +184,68 @@
 
       \item $s<R$
 
+        We need to find all of the bound current. We can begin by writing:
+
+        $$\vec{J}_b=\vec{\nabla}\times\vec{M}$$
+
+        From here, we obtain:
+
+        $$\vec{J}_b=\frac{1}{s}\frac{\partial}{\partial s}(sM)$$
+        $$\vec{J}_b=\frac{1}{s}\frac{\partial}{\partial s}(ks^3)\bold{\hat{z}}$$
+        $$\vec{J}_b=3ks\bold{\hat{z}}$$
+
+        Next, we find the surface current:
+
+        $$\vec{K}_b=\vec{M}\times\bold{\hat{n}}$$
+        $$\vec{K}_b=ks^2(\hat{\phi}\times\bold{\hat{s}})$$
+        $$\vec{K}_b=-kR^2\bold{\hat{z}}$$
+
+        We can then find that the current enclosed within the cylinder is:
+
+        $$I_{enc}=\int_0^s 3ks(2\pi s)\,ds$$
+        $$I_{enc}=6\pi k\int_0^s s^2\,ds$$
+        $$I_{enc}=2\pi ks^3$$
+
+        Applying Amp\`ere's law, we get:
+
+        $$\int\vec{B}\cdot d\vec{l}=\mu_oI_{enc}$$
+        $$\vec{B}(2\pi s)=2\mu_o\pi k s^3$$
+
+        Thus, we see:
+
+        $$\boxed{\vec{B}_{s<R}=\mu_oks^2\bold{\hat{\phi}}}$$
+
+        Note: this may also be expressed as $\vec{B}=\mu_o\vec{M}$
+
       \item $s>R$
+
+        Using the current densities from the (a), we can find the total enclosed current:
+
+        $$I_{enc}=\int_0^R 3ks(2\pi s)\,ds-\int_0^R kR^2(2\pi)\,ds$$
+        $$I_{enc}=6\pi k\int_0^R s^2\,ds-2\pi kR^2\int_0^R\,ds$$
+        $$I_{enc}=2\pi kR^3-2\pi kR^3$$
+        $$I_{enc}=0$$
+
+        Since the enclosed charge is 0, we know that $\boxed{\vec{B}=0}$
 
     \end{enumerate}
 
   \item A toroid with 100 turns has an inner radius of 10 cm and an outer radius of 20 cm. It is filled with Gadolinium ($\chi_m=0.48$). Find the magnetic field inside the toroid at a distance of 15 cm from the center when a current of 100 A is flowing through the coils.
 
-    We know that the magnetic field within a toroid may be calculated by using the formula:
+    We know that the auxiliary field within a toroid may be calculated by using the formula:
 
-    $$\vec{B}=2\pi r\mu_onI$$
+    $$\vec{H}=\frac{nI}{2\pi s}$$
 
-    Applying the formula at $r=.15[\si{\meter}]$, we get:
+    Applying the formula at $s=.15[\si{\meter}]$, we get:
 
-    $$\vec{B}=2\pi(.15)\left( 4\pi\cdot10^{-7} \right)(100)(100)$$
-    $$\boxed{\vec{B}=.011844\left[ \frac{\si{\ampere}}{\si{\meter}} \right]}$$
+    $$\vec{H}=\frac{(100)(100)}{2\pi (.15)}$$
+    $$\vec{H}=10610.3\left[ \frac{\si{\ampere}}{\si{\henry}} \right]$$
+
+    We can then apply:
+
+    $$\vec{B}=\mu_o(1+\chi_m)\vec{H}$$
+    $$\vec{B}=(4\pi\cdot10^{-7})(1+.48)10610.3$$
+    $$\boxed{\vec{B}=.01973\bar{3}\left[ \frac{\si{\ampere}}{\si{\meter}} \right]}$$
 
 \end{enumerate}
 
