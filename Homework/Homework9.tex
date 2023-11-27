@@ -1,0 +1,268 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Written By Michael Brodskiy
+% Class: Electricity & Magnetism
+% Professor: D. Wood
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\include{Includes.tex}
+
+\title{Homework 9}
+\date{November 29, 2023}
+\author{Michael Brodskiy\\ \small Professor: D. Wood}
+
+\begin{document}
+
+\maketitle
+
+\begin{enumerate}
+
+  \item Two long coaxial conducting cylinders have radii $a$ and $b$ and length $L$. The space in between them ($a<s<b$) is filled with a conducting material with a conductivity that varies with radius: $\sigma=k/s$ where $k$ is a constant. Find the resistance between the two cylinders.
+
+    First and foremost, we know that the resistivity is the inverse of the conductivity. This gives us:
+
+    $$\rho=\sigma^{-1}=\frac{s}{k}$$
+
+    We want to find the resistance of the entire length of wire. We can write the resistance as:
+
+    $$R=\frac{\rho l}{A}=\frac{\rho L}{\pi s^2}$$
+
+    We can then find:
+
+    $$R=\int_a^b\frac{L}{k\pi s}\,ds$$
+
+    Thus, we get:
+
+    $$\boxed{R=\frac{L}{k\pi}\ln\left( \frac{b}{a} \right)}$$
+
+  \item A rectangular loop of wire with length $L$ and width $w$ is rotated about the $y$-axis as shown, starting in the $xy$ plane at $t = 0$. There is a uniform magnetic field in the vertical direction $\vec{B}=B_o\bold{\hat{z}}$. The total resistance of the loop is $R$.
+
+    \begin{enumerate}
+
+      \item Find the EMF around the loop as a function of time.
+
+        Given an angle $\theta$ made between the normal vector, $\bold{\hat{n}}$ of the loop and the magnetic field, we may write the flux as:
+
+        $$\Phi=BA\cos(\theta)$$
+
+        We know the EMF can be defines as:
+
+        $$\varepsilon=-\frac{d\Phi}{dt}$$
+
+        This gives us:
+
+        $$\varepsilon=BA\sin(\theta)\frac{d\theta}{dt}$$
+
+        We know that the angle changes at a rate of $\omega$. Furthermore, we can also write $\theta=\omega t$. This yields:
+
+        $$\varepsilon=BA\omega\sin(\omega t)$$
+
+        Finally, the area may be described as $A=Lw$, which gives us:
+
+        $$\boxed{\varepsilon=BLw\omega\sin(\omega t)}$$
+
+      \item Find the current as a function of time.
+
+        Since the EMF is essentially an induced voltage, we may find the current as:
+
+        $$I=\frac{\varepsilon}{R}$$
+
+        This gives us:
+
+        $$\boxed{I=\frac{BLw\omega}{R}\sin(\omega t)}$$
+
+      \item Find the torque required to keep the loop rotating at a constant angular velocity $\omega$
+
+        The torque may be described as:
+
+        $$\tau=Fd$$
+
+        The force from the magnetic field may be described as:
+
+        $$F_{\vec{B}}=BIL$$
+
+        The distance may be defined by the sine of the same angle defined by $\theta$:
+
+        $$d=\frac{w}{2}\sin(\theta)+\frac{w}{2}\sin(\theta)$$
+
+        Thus, we combine the two to get:
+
+        $$\tau=BILw\sin(\theta)$$
+
+        Substituting the value of $I$ found in (b), we obtain:
+
+        $$\boxed{\tau=\frac{\omega(BLw\sin(\omega t))^2}{R}}$$
+
+      \item Find the power that the loop converts from mechanical energy to electrical energy.
+
+        This power may be described by the EMF, as the electromotive force converts mechanical to electrical energy. According to the formula for power, we may write:
+
+        $$P=\frac{V^2}{R}\to\frac{\varepsilon^2}{R}$$
+
+        This results in:
+
+        $$\boxed{P=\frac{(BLw\omega\sin(\omega t))^2}{R}}$$
+
+    \end{enumerate}
+
+  \item A square loop is cut out of a thick sheet of aluminum. It is them placed so that the top portion is in a uniform magnetic field $\vec{B}$, and the loop is allowed to fall under gravity. (In the diagram, shading indicates the field region, and $\vec{B}$ points out of the page.) The field strength is $1[\si{\tesla}]$.
+
+    \begin{enumerate}
+
+      \item Find the terminal velocity of the loop in m/s.  (You will need to look up the mass density and resistivity of aluminum. You can assign variables to the dimensions of the loop, but the value of the terminal velocity should not depend on these.)
+
+        Finding the net forces, we may write:
+
+        $$mg-BIl=ma$$
+
+        From the definition of EMF, we can write:
+
+        $$I=\frac{\varepsilon}{R}=\frac{Blv}{R}$$
+
+        This gives us:
+
+        $$mg-\frac{B^2l^2v}{R}=ma$$
+
+        Rearranging, we may write this as:
+
+        $$1=\frac{a}{g-\dfrac{B^2l^2v}{mR}}$$
+
+        Taking $a\to\frac{dv}{dt}$, we write:
+
+        $$\int_0^t\,dt=\int_0^v\frac{dv}{g-\dfrac{B^2l^2v}{mR}}$$
+
+        To make this easier, we once again rearrange:
+
+        $$\int_0^t\,dt=\int_0^v\frac{mR}{mRg-B^2l^2v}\,dv$$
+
+        We take $u=mRg-B^2l^2v$, which gives us $du=-B^2l^2dv$. We can then plug this in to get:
+
+        $$\int_0^t\,dt=-\frac{mR}{B^2l^2}\int_{mRg}^{mRg-B^2l^2v}\frac{1}{u}\,du$$
+
+        This gives us:
+
+        $$t=\frac{mR}{B^2l^2}\ln\left(  \frac{mRg}{mRg-B^2l^2v}\right)$$
+        $$\frac{B^2l^2}{mR}t=\ln\left(  \frac{g}{g-\frac{B^2l^2v}{mR}}\right)$$
+        $$e^{\frac{B^2l^2}{mR}t}=\frac{g}{g-\frac{B^2l^2v}{mR}}$$
+        $$e^{-\frac{B^2l^2}{mR}t}=1-\frac{B^2l^2v}{mRg}$$
+        $$1-e^{-\frac{B^2l^2}{mR}t}=\frac{B^2l^2v}{mRg}$$
+
+        And finally, we find the velocity as:
+
+        $$v=\frac{mRg}{B^2l^2}\left( 1-e^{-\frac{B^2l^2}{mR}t} \right)$$
+
+        To find the terminal velocity, the $m\frac{dv}{dt}$ term would be zero, which means that we find:
+
+        $$v_t=\frac{mRg}{B^2l^2}$$
+
+        Since the magnetic field is one Tesla, we may write:
+
+        $$v_t=\frac{mRg}{l^2}$$
+
+        The resistivity of aluminum is given by:
+
+        $$R=\frac{\rho l}{A}$$
+        $$R=\frac{(2.82\cdot10^{-8}) l}{A}$$
+
+        The mass density of aluminum (in kilogram per cubic meter) is given by:
+
+        $$\rho=2710$$
+
+        Thus, the mass is given by:
+
+        $$m=2710V=2710Al$$
+
+        Substituting these values into our formula (note: we multiply both by 4 for each side contribution), we get:
+
+        $$v_t=\frac{16(2.82\cdot10^{-8}l)(2710Al)g}{Al^2}$$
+
+        Canceling out the values, we get:
+
+        $$v_t=16(2.82\cdot10^{-8})(2710)g$$
+        $$\boxed{v_t=.0112\left[ \frac{\si{\meter}}{\si{\second}} \right]}$$
+
+      \item If the loop is released from rest, find the time (in seconds) for it to reach 90\% of its terminal velocity.
+
+        Using the velocity obtained in (a), we can write:
+
+        $$.9v_t=v_t\left( 1-e^{-\frac{B^2l^2}{mR}t} \right)$$
+        $$.9=\left( 1-e^{-\frac{B^2l^2}{mR}t} \right)$$
+        $$.1=e^{-\frac{B^2l^2}{mR}t}$$
+
+        We then take the logarithm of both side:
+
+        $$\frac{B^2l^2}{mR}t=\ln(10)$$
+        $$t=\frac{mR}{B^2l^2}\ln(10)$$
+        $$t=16(2.82\cdot10^{-8})(2710)\ln(10)$$
+        $$\boxed{t=.002815[\si{\second}]}$$
+
+    \end{enumerate}
+
+  \item Consider a toroid with rectangular cross section (inner radius = $a$, outer radius = $b$, height = $h$, number of turns of wire = $N$)
+
+    \begin{enumerate}
+
+      \item What is its self-inductance (assuming the core is empty)?
+
+        We know the formula for the self inductance is:
+
+        $$L=\frac{\mu N^2l}{2\pi}\ln\left( \frac{r_2}{r_1} \right)$$
+
+        Plugging in the given values, we find:
+
+        $$\boxed{L=\frac{\mu_oN^2h}{2\pi}\ln\left( \frac{b}{a} \right)}$$
+
+      \item What is this inductance in Henrys for $a=0.5[\si{\centi\meter}]$, $b=1.2[\si{\centi\meter}]$, $h=3[\si{\milli\meter}]$, $N=50$
+
+        Using our formula from (a), we get:
+
+        $$L=\frac{(4\pi\cdot10^{-7})(50)^2(.003)}{2\pi}\ln\left( \frac{1.2}{.5} \right)$$
+
+        This gives us:
+
+        $$\boxed{L=1.313\left[ \si{\micro\henry} \right]}$$
+
+      \item Now calculate the inductance for the same geometry if the core is filled with Ferrite N41 with a relative permeability $\mu_r=3000$
+
+        Using our formula from part (a), but with the new magnetic permeability, we get:
+
+        $$L=\frac{(3000)(4\pi\cdot10^{-7})(50)^2(.003)}{2\pi}\ln\left( \frac{1.2}{.5} \right)$$
+
+        This results in:
+
+        $$\boxed{L=3.94[\si{\milli\henry}]}$$
+
+    \end{enumerate}
+
+  \item Calculate the approximate stored energy of a medical MRI magnet. Treat is as a long solenoid of radius $0.8[\si{\meter}]$ and length $2.0[\si{\meter}]$ with a field strength of $1.5[\si{\tesla}]$.
+    
+    The stored energy may be defined as:
+
+    $$U_B=\frac{VB^2}{2\mu_o}$$
+
+    We know the volume may be defined as the cross-sectional area times the length. This gives us:
+
+    $$U_B=\frac{(2)(\pi(.8)^2)(1.5)^2}{2(4\pi\cdot10^{-7})}$$
+
+    This gives us:
+
+    $$\boxed{U_B=3.6[\si{\mega\joule}]}$$
+
+  \item Two coils are wrapped around a cylindrical form in such a way that the same flux passes through every turn of both coils. This forms a simple transformer. The primary turn has $N_1$ turns and the secondary has $N_2$ turns.
+
+    \begin{enumerate}
+
+      \item Suppose the primary coil is driven with an AC voltage $V_{in}=V_1\cos(\omega t)$ and the secondary coil is connected to a resistor, $R$. Show that the two currents satisfy the relations:
+
+        $$L_1\frac{dI_1}{dt}+M\frac{dI_2}{dt}=V_1\cos(\omega t)$$
+        $$L_2\frac{dI_2}{dt}+M\frac{dI_1}{dt}=-I_2R$$
+
+      \item  With a common flux through each loop, the square of the mutual inductance is equal to the product of the two self-inductances: $M^2 =L_1L_2$. Use this to solve the equations above to find $I_1(t)$ and $I_2(t)$. (Assume $I_1$ has no DC component.)
+
+      \item Calculate the input power ($P_{in}=V_{in}I_1$) and the output power ($P_{out}=V_{out}I_2$) and show that their averages over a full cycle are equal.
+
+    \end{enumerate}
+
+\end{enumerate}
+
+\end{document}
+
