@@ -18,21 +18,28 @@
 
   \item Two long coaxial conducting cylinders have radii $a$ and $b$ and length $L$. The space in between them ($a<s<b$) is filled with a conducting material with a conductivity that varies with radius: $\sigma=k/s$ where $k$ is a constant. Find the resistance between the two cylinders.
 
-    First and foremost, we know that the resistivity is the inverse of the conductivity. This gives us:
+    First and foremost, we may write:
 
-    $$\rho=\sigma^{-1}=\frac{s}{k}$$
+    $$\vec{J}=\sigma\vec{E}$$
 
-    We want to find the resistance of the entire length of wire. We can write the resistance as:
+    We can find $\vec{J}$, by using:
 
-    $$R=\frac{\rho l}{A}=\frac{\rho L}{\pi s^2}$$
+    $$\vec{J}=\frac{I}{A}$$
+    $$\vec{J}=\frac{I}{2\pi sL}$$
 
-    We can then find:
+    Combining the two, we get:
 
-    $$R=\int_a^b\frac{L}{k\pi s}\,ds$$
+    $$\vec{E}=\frac{I}{2\pi s\sigma L}\bold{\hat{s}}$$
+    $$\vec{E}=\frac{I}{2\pi k L}\bold{\hat{s}}$$
 
-    Thus, we get:
+    From here, we can integrate to find:
 
-    $$\boxed{R=\frac{L}{k\pi}\ln\left( \frac{b}{a} \right)}$$
+    $$\Delta V=-\int_b^a \vec{E}\,d\vec{s}$$
+    $$\Delta V=\frac{I(b-a)}{2\pi k L}$$
+
+    Since, using Ohm's law, we can find the resistance by dividing the voltage by the current, we get:
+
+    $$\boxed{R=\frac{(b-a)}{2\pi kL}}$$
 
   \item A rectangular loop of wire with length $L$ and width $w$ is rotated about the $y$-axis as shown, starting in the $xy$ plane at $t = 0$. There is a uniform magnetic field in the vertical direction $\vec{B}=B_o\bold{\hat{z}}$. The total resistance of the loop is $R$.
 
@@ -188,7 +195,7 @@
         $$.9=\left( 1-e^{-\frac{B^2l^2}{mR}t} \right)$$
         $$.1=e^{-\frac{B^2l^2}{mR}t}$$
 
-        We then take the logarithm of both side:
+        We then take the logarithm of both sides:
 
         $$\frac{B^2l^2}{mR}t=\ln(10)$$
         $$t=\frac{mR}{B^2l^2}\ln(10)$$
@@ -256,9 +263,98 @@
         $$L_1\frac{dI_1}{dt}+M\frac{dI_2}{dt}=V_1\cos(\omega t)$$
         $$L_2\frac{dI_2}{dt}+M\frac{dI_1}{dt}=-I_2R$$
 
+        First, we can write the fluxes through the two coils as:
+
+        $$\phi_1=I_1L_1+I_2M$$
+        $$\phi_1=I_2L_2+I_1M$$
+
+        Given the driving voltage of the first coil, we know that the EMF through the coil must cancel it:
+
+        $$V_{in}-\varepsilon_1=0$$
+        $$V_1\cos(\omega t)-\varepsilon_1=0$$
+
+        We can define the EMF as:
+
+        $$\varepsilon_1=\frac{d\phi_1}{dt}$$
+
+        This gives us:
+
+        $$V_1\cos(\omega t)-L_1\frac{dI_1}{dt}-M\frac{dI_2}{dt}=0$$
+        $$\boxed{L_1\frac{dI_1}{dt}+M\frac{dI_2}{dt}=V_1\cos(\omega t)}$$
+
+        This is the first relation. Now, we know that the sum of the voltages in the second loop must also be zero. This gives us:
+
+        $$\varepsilon_2+I_2R=0$$
+
+        Taking a similar approach, we differentiate to get:
+
+        $$L_2\frac{dI_2}{dt}+M\frac{dI_1}{dt}+I_2R=0$$
+        $$\boxed{L_2\frac{dI_2}{dt}+M\frac{dI_1}{dt}=-I_2R}$$
+
       \item  With a common flux through each loop, the square of the mutual inductance is equal to the product of the two self-inductances: $M^2 =L_1L_2$. Use this to solve the equations above to find $I_1(t)$ and $I_2(t)$. (Assume $I_1$ has no DC component.)
 
+        Using what we know, we can rewrite the two equations as:
+
+
+        $$L_1L_2\frac{dI_1}{dt}+ML_2\frac{dI_2}{dt}=L_2V_1\cos(\omega t)$$
+        $$L_2\frac{dI_2}{dt}=-M\frac{dI_1}{dt}-I_2R$$
+
+        This allows us to combine the two into one equation:
+
+        $$M^2\frac{dI_1}{dt}+M\left( -M\frac{dI_1}{dt}-I_2R \right)=L_2V_1\cos(\omega t)$$
+        $$\cancel{M^2\frac{dI_1}{dt}-M^2\frac{dI_1}{dt}}-MI_2R=L_2V_1\cos(\omega t)$$
+        $$\boxed{I_2=-\frac{L_2V_1\cos(\omega t)}{MR}}$$
+
+        From here, we can solve for $I_1$. We first find:
+
+        $$\frac{dI_2}{dt}=\frac{\omega L_2V_1\sin(\omega t)}{MR}$$
+
+        Substituting into the first equaton, we get:
+
+        $$L_1\frac{dI_1}{dt}+\frac{\omega L_2V_1\sin(\omega t)}{R}=V_1\cos(\omega t)$$
+        $$\frac{dI_1}{dt}=\frac{V_1\cos(\omega t)}{L_1}-\frac{\omega L_2V_1\sin(\omega t)}{L_1R}$$
+
+        We then distribute the differentials and integrate:
+
+        $$I_1=\int_0^t\frac{V_1\cos(\omega t)}{L_1}-\frac{\omega L_2V_1\sin(\omega t)}{L_1R}\,dt$$
+        $$\boxed{I_1=\frac{V_1}{\omega L_1}\left(\sin(\omega t) +\frac{\omega L_2\cos(\omega t)}{R}\right)}$$
+
+        We can confirm the lack of a DC constant, as all terms are sinusoidal.
+
       \item Calculate the input power ($P_{in}=V_{in}I_1$) and the output power ($P_{out}=V_{out}I_2$) and show that their averages over a full cycle are equal.
+
+        The input power becomes:
+
+        $$P_{in}=\left( V_1\cos(\omega t) \right)\left( \frac{V_1}{\omega L_1}\left(\sin(\omega t) +\frac{\omega L_2\cos(\omega t)}{R}\right)\right)$$
+        $$\boxed{P_{in}=\frac{V_1^2}{\omega L_1}\left(\frac{1}{2}\sin(2\omega t) +\frac{\omega L_2\cos^2(\omega t)}{R}\right)}$$
+
+        The output power becomes:
+
+        $$P_{out}=I_2(I_2R)$$
+        $$P_{out}=I_2^2R$$
+        $$\boxed{P_{out}=\frac{(L_2V_1\cos(\omega t))^2}{M^2R}}$$
+
+        The average power over a period may be determined by taking:
+
+        $$\langle P\rangle=\frac{1}{T}\int_0^T P\,dt$$
+
+        Thus, we do this for both powers:
+
+        $$\langle P_{in}\rangle=\frac{1}{T}\int_0^T \frac{V_1^2}{\omega L_1}\left(\frac{1}{2}\sin(2\omega t) +\frac{\omega L_2\cos^2(\omega t)}{R}\right)\,dt$$
+        $$\langle P_{in}\rangle=\frac{L_2V_1^2}{2L_1 R}$$
+
+        And now for the output power:
+
+        $$\langle P_{out}\rangle=\frac{1}{T}\int_0^T \frac{(L_2V_1\cos(\omega t))^2}{M^2R}\,dt$$
+        $$\langle P_{out}\rangle=\frac{L_2^2V_1^2}{2M^2R}$$
+
+        From the identity, $M^2=L_1L_2$, which gives us:
+
+        $$\langle P_{out}\rangle=\frac{L_2V_1^2}{2L_1R}$$
+
+        Thus, we see:
+
+        $$\boxed{\langle P_{in}\rangle=\langle P_{out}\rangle=\frac{L_2V_1^2}{2L_1R}}$$
 
     \end{enumerate}
 
