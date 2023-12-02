@@ -22,7 +22,43 @@
 
       \item Calculate the displacement current density just above the surface of the sphere.
 
-      \item Use the Amp\`re-Maxwell equation to calculate the induced magnetic field just above the surface at location that is an angle $\theta$ from the north pole (latitude = $90^{\circ}-\theta$). [Hint: Use a ring of constant latitudeas the amperian loop and use a cap-shaped enclosedsurface of the loop that follows the surface of the sphere.Be sure to include both the physical current and the displacement current.]  (While this is an interesting calculation, note that this is not a significant contribution to the Earth’s magnetic field.)
+    We can begin by finding a relationship between displacement current and the electric displacement:
+
+    $$\vec{J}=\frac{\partial \vec{D}}{\partial t}\to\varepsilon_o\frac{\partial\vec{E}}{\partial t}$$
+
+    We know the formula for the electric field to be:
+
+    $$\vec{E}=\frac{Q}{4\pi\varepsilon_o R^2}$$
+
+    Thus, we may conclude:
+
+    $$\vec{J}=\frac{\varepsilon_o}{4\pi\varepsilon_o R^2}\left( \frac{\partial Q}{\partial t} \right)$$
+    $$\boxed{\vec{J}=\frac{I}{4\pi R^2}}$$
+
+      \item Use the Amp\`re-Maxwell equation to calculate the induced magnetic field just above the surface at location that is an angle $\theta$ from the north pole (latitude = $90^{\circ}-\theta$). [Hint: Use a ring of constant latitude as the amperian loop and use a cap-shaped enclosed surface of the loop that follows the surface of the sphere. Be sure to include both the physical current and the displacement current.]  (While this is an interesting calculation, note that this is not a significant contribution to the Earth’s magnetic field.)
+
+        We may begin by expressing the equation as:
+
+        $$\int \vec{B}\cdot d\vec{l}=\mu_o\left( \sum I \right)$$
+        $$\vec{B}\int d\vec{l}=\mu_o\left( I+I_d \right)$$
+
+        The situation can be sketched as follows:
+
+        \begin{figure}[h]
+          \centering
+          \include{Figures/NorthPole}
+          \caption{The $90^{\circ}-\theta$ Shift Switches $\cos\to\sin$}
+          \label{fig:1}
+        \end{figure}
+
+        We can then express the path as:
+
+        $$\vec{B}(2\pi R\sin(\theta))=\mu_o(I+JA)$$
+        $$\vec{B}(2\pi R\sin(\theta))=\mu_o(I+I)$$
+
+        And finally, we get:
+
+        $$\boxed{\vec{B}=\frac{\mu_o I}{\pi R\sin(\theta)}}$$
 
     \end{enumerate}
 
@@ -32,7 +68,57 @@
 
       \item Find the Poynting vector in the space between the plates. Assume that the surface charge is distributed uniformly over the plates.
 
-      \item Calculate the rates of energy flow out of the volume between the plates by integrating $\vec{S}$ over an appropriate surface and show that it is equal to |$IV$|.
+        We may find the Poynting vector using the relation:
+
+        $$\oint \vec{B}\cdot d\vec{A}=\mu_o\varepsilon_o\frac{d}{dt}\oint \vec{E}\cdot d\vec{A}$$
+
+        Given the uniform charge contained within the area as $q$, we may find:
+
+        $$\vec{E}=\frac{\sigma}{\varepsilon_o}$$
+        $$\vec{E}=\frac{q}{\pi\varepsilon_o a^2}$$
+
+        From here, we get:
+
+        $$\vec{B}\oint d\vec{r}=\mu_o\varepsilon_o\frac{d}{dt}\left(\frac{q}{\pi\varepsilon_o a^2} \int d\vec{A}\right)$$
+        $$\vec{B}(2\pi r)=\mu_o\varepsilon_o\frac{\pi r^2}{\pi\varepsilon_o a^2}\frac{dq}{dt}$$
+        $$\vec{B}=\frac{\mu_or}{2\pi a^2}\frac{dq}{dt}$$
+
+        The change in charge with respect to time may be described as the current, so we get:
+
+        $$\vec{B}=\frac{\mu_orI}{2\pi a^2}$$
+
+        We can then find the Poynting vector, using:
+
+        $$\vec{S}=\frac{1}{\mu_o}\left( \vec{E}\cdot\vec{B} \right)\bold{\hat{r}}$$
+        $$\vec{S}=\frac{1}{\mu_o}\left( \frac{q}{\pi\varepsilon_o a^2}\cdot\frac{\mu_orI}{2\pi a^2} \right)\bold{\hat{r}}$$
+
+        This finally gives:
+
+        $$\boxed{\vec{S}=\frac{qrI}{2\pi^2\varepsilon_o a^4}\bold{\hat{r}}}$$
+
+      \item Calculate the rates of energy flow out of the volume between the plates by integrating $\vec{S}$ over an appropriate surface and show that it is equal to $|IV|$.
+
+        The energy flow out of the volume may be defined as:
+
+        $$P=\int \vec{S}\,dA$$
+        $$P=\vec{S}(2\pi a d)$$
+
+        Plugging in the value from (a) for $\vec{S}$, and evaluating at $r=a$ we get:
+
+        $$P=\left( \frac{qaI}{2\pi^2\varepsilon_o a^4} \right)\left( 2\pi ad \right)$$
+        $$P_{in}=\left( \frac{qId}{\pi\varepsilon_o a^2} \right)$$
+
+        The flow out would be the negative equivalent:
+
+        $$\boxed{P_{out}=-\frac{qId}{\pi\varepsilon_o a^2}}$$
+
+        We can see that the voltage may be defined as:
+
+        $$V=\frac{qd}{\pi\varepsilon_o a^2}$$
+
+        And that we then get the power outflow as:
+
+        $$P=-IV=|-IV|$$
 
     \end{enumerate}
 
@@ -41,6 +127,29 @@
     \begin{enumerate}
 
       \item Find the momentum (magnitude and direction) stored in the $\vec{E}$ and $\vec{B}$ fields at time $t=0$.
+
+        The magnetic field is given as:
+
+        $$\vec{B}=B_o\bold{\hat{x}}$$
+
+        The electric field can be defined as:
+
+        $$\vec{E}=\frac{Q}{\varepsilon_o A}\bold{\hat{z}}$$
+
+        The momentum density is defined as:
+
+        $$\frac{\vec{P}}{V}=\varepsilon_o\vec{E}\times\vec{B}$$
+
+        With $V=Ad$, we get:
+
+        $$\vec{P}=\varepsilon_oAd\left(\vec{E}\times\vec{B}\right)$$
+        $$\vec{P}=\varepsilon_oAd\left(\frac{Q}{\varepsilon_o A}\bold{\hat{z}}\times B_o\bold{\hat{x}}\right)$$
+        $$\vec{P}=\varepsilon_oAd\left|\begin{matrix} \bold{\hat{x}} & \bold{\hat{y}} & \bold{\hat{z}}\\ 0 & 0 & \frac{Q}{\varepsilon_o A}\\ B_o & 0 & 0\\ \end{matrix}\right|$$
+
+        Evaluating the matrix, we get:
+
+        $$\vec{P}=\varepsilon_oAd\left( \frac{B_oQ}{\varepsilon_o A} \right)\bold{\hat{y}}$$
+        $$\boxed{\vec{P}=dB_oQ\bold{\hat{y}}}$$
 
       \item Find the force on the wire as a function of time
 
@@ -56,7 +165,7 @@
 
       \item Calculate the total angular momentum of the electromagnetic fields, $L_Q$.
 
-      \item Consider a spinning shell whose rest energy $(Mc^2)$ is equal to its electrostatic potential energy $(Q^2/(8\pi\varepsilon_o R))$.Find the ratio between the mechanical ($L_M$) and electromagnetic ($L_Q$) contributions to the angular momentum.Use the fact that $c=1/\sqrt{\varepsilon_o\mu_o}$.
+      \item Consider a spinning shell whose rest energy $(Mc^2)$ is equal to its electrostatic potential energy $(Q^2/(8\pi\varepsilon_o R))$. Find the ratio between the mechanical ($L_M$) and electromagnetic ($L_Q$) contributions to the angular momentum. Use the fact that $c=1/\sqrt{\varepsilon_o\mu_o}$.
 
     \end{enumerate}
 
