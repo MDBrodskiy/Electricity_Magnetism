@@ -163,6 +163,26 @@
 
       \item Calculate the total energy of the electric and magnetic fields. You can use the results from Homework 8, Problem 1 for the $\vec{B}$-field — you do not need to re-derive it.  Be sure to include the magnetic field inside the sphere as well as outside.
 
+        We begin by defining the energy density as:
+
+        $$\mathcal{U}=\frac{1}{2}\left( \varepsilon_o\vec{E}^2+\frac{1}{\mu_o}\vec{B}^2\right)$$
+
+        The electric field may be defined as:
+
+        $$\vec{E}=\frac{\sigma}{\varepsilon_o}\bold{\hat{r}}$$
+        $$\vec{E}=\frac{Q}{4\pi\varepsilon_o R^2}\bold{\hat{r}}$$
+
+        Combining this with the magnetic field, $\vec{B}$, obtained in Homework 8, we get:
+
+        $$\mathcal{U}=\frac{1}{2}\left( \varepsilon_o\left( \frac{Q}{4\pi\varepsilon_o R^2} \bold{\hat{r}}\right)^2+\frac{1}{\mu_o}\left( \frac{\mu_o\sigma\omega R^4}{3r^3}\left[2\cos(\theta)\bold{\hat{r}}+\frac{\sin(\theta)}{r}\hat{\theta}\right]  \right)^2 \right)$$
+        $$\mathcal{U}=\frac{Q^2}{32\pi^2\varepsilon_o R^4}+\frac{\mu_o\sigma^2\omega^2 R^8}{9r^6}\left[4\cos^2(\theta)+\frac{\sin^2(\theta)}{r^2}\right]$$
+
+        We need to take into account the inside and outside magnetic field, which gives:
+
+        $$\mathcal{U}=\frac{Q^2}{32\pi^2\varepsilon_o R^4}+\frac{\mu_o\sigma^2\omega^2 R^8}{9r^6}\left[4\cos^2(\theta)+\frac{\sin^2(\theta)}{r^2}\right]+\frac{\mu_o\sigma^2\omega^2 R^2}{9}\left[4\cos^2(\theta)+\frac{\sin^2(\theta)}{R^2}\right]$$
+
+        From here, we need to integrate over the volume:
+
       \item Calculate the total angular momentum of the electromagnetic fields, $L_Q$.
 
       \item Consider a spinning shell whose rest energy $(Mc^2)$ is equal to its electrostatic potential energy $(Q^2/(8\pi\varepsilon_o R))$. Find the ratio between the mechanical ($L_M$) and electromagnetic ($L_Q$) contributions to the angular momentum. Use the fact that $c=1/\sqrt{\varepsilon_o\mu_o}$.
