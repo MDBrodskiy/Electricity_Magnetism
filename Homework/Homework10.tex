@@ -122,7 +122,7 @@
 
     \end{enumerate}
 
-  \item An ideal parallel plate capacitor with area $A$ and separation $d$ is oriented with the lower plate in the $xy$ plane and is immersed in a uniform horizontal magnetic field $\vec{B}=B_o\bold{\hat{x}}$. The capacitor starts with a charge $+Q$ on the lower plate and $−Q$ on the upper plate. At time $t=0$, a vertical wire with resistance $R$ is connected between the plates.
+  \item An ideal parallel plate capacitor with area $A$ and separation $d$ is oriented with the lower plate in the $xy$ plane and is immersed in a uniform horizontal magnetic field $\vec{B}=B_o\bold{\hat{x}}$. The capacitor starts with a charge $+Q$ on the lower plate and $-Q$ on the upper plate. At time $t=0$, a vertical wire with resistance $R$ is connected between the plates.
 
     \begin{enumerate}
 
@@ -153,7 +153,71 @@
 
       \item Find the force on the wire as a function of time
 
+        We know that the voltage across the capacitor may be expressed as:
+
+        $$V=\frac{q}{C}$$
+
+        With this scenario, we may express the voltage as:
+
+        $$IR=\frac{q}{C}$$
+
+        The current may be expressed as:
+
+        $$-R\frac{dq}{dt}=\frac{q}{C}$$
+
+        Rearranging the expression, we get:
+
+        $$\frac{dq}{q}=-\frac{1}{RC}\,dt$$
+
+        This yields the solution:
+
+        $$\ln(q)=-\frac{t}{RC}+c$$
+
+        We know that, at time $t=0$, $q=Q$, which gives us:
+
+        $$c=\ln(Q)$$
+
+        Thus, we may write:
+
+        $$q=Qe^{-\frac{t}{RC}}$$
+
+        From here, we may take the derivative with respect to time to discover:
+
+        $$I=-\frac{Q}{RC}e^{-\frac{t}{RC}}$$
+
+        The force on the wire may be expressed as:
+
+        $$\vec{F}=I\,d\vec{l}\times\vec{B},\quad d\vec{l}\to d\bold{\hat{z}}\text{\footnote{Note: $d$ here is the distance, not a differential}}$$
+
+        This gives us:
+
+        $$\vec{F}=Id\bold{\hat{z}}\times B_o\bold{\hat{x}}$$
+        $$\vec{F}=\frac{Qd}{RC}e^{-\frac{t}{RC}}\bold{\hat{z}}\times B_o\bold{\hat{x}}$$
+        $$\vec{F}=\left|\begin{matrix} \bold{\hat{x}} & \bold{\hat{y}} & \bold{\hat{z}}\\ 0 & 0 & Id\\ B_o & 0 & 0\\ \end{matrix}\right|$$
+
+        Finally, we get:
+
+        $$\boxed{\vec{F}=\frac{QdB_o}{RC}e^{-\frac{t}{RC}}\bold{\hat{y}}}$$
+
       \item Find the total impulse $\left( \int\vec{F}\,dt \right)$ on the wire for $t\to\infty$. Compare this with the change in stored momentum.
+
+        The impulse may be defined as:
+
+        $$\vec{j}=\int_0^\infty \frac{QdB_o}{RC}e^{-\frac{t}{RC}}\bold{\hat{y}}\,dt$$
+
+        The $(RC)^{-1}$ coefficient cancels out, leaving us with:
+
+        $$\boxed{\vec{j}=QdB_o\bold{\hat{y}}}$$
+
+        As calculated above, the initial momentum is:
+
+        $$\vec{P}=QdB_o\bold{\hat{y}}$$
+
+        Given infinite time, the momentum will deplete until it is zero, giving us:
+
+        $$\Delta\vec{P}=-QdB_o\bold{\hat{y}}$$
+
+        Thus, the total impulse is equal in magnitude but opposite in direction to the change in the momentum field vector.
 
     \end{enumerate}
 
@@ -163,25 +227,42 @@
 
       \item Calculate the total energy of the electric and magnetic fields. You can use the results from Homework 8, Problem 1 for the $\vec{B}$-field — you do not need to re-derive it.  Be sure to include the magnetic field inside the sphere as well as outside.
 
-        We begin by defining the energy density as:
+        We know that the energy density may be written as:
 
-        $$\mathcal{U}=\frac{1}{2}\left( \varepsilon_o\vec{E}^2+\frac{1}{\mu_o}\vec{B}^2\right)$$
+        $$\mathcal{U}=\frac{1}{\mu_o}\vec{B}^2$$
 
-        The electric field may be defined as:
+        We can insert the magnetic field obtained in Homework 8 to get:
 
-        $$\vec{E}=\frac{\sigma}{\varepsilon_o}\bold{\hat{r}}$$
-        $$\vec{E}=\frac{Q}{4\pi\varepsilon_o R^2}\bold{\hat{r}}$$
+        $$\mathcal{U}=\frac{1}{\mu_o}\left( \frac{\mu_o\sigma\omega R^4}{3r^3}\left[ 2\cos(\theta)\bold{\hat{r}}+\frac{\sin(\theta)}{r}\hat{\theta} \right] \right)^2$$
 
-        Combining this with the magnetic field, $\vec{B}$, obtained in Homework 8, we get:
+        We can insert $r\to R$ to obtain the total magnetic field:
 
-        $$\mathcal{U}=\frac{1}{2}\left( \varepsilon_o\left( \frac{Q}{4\pi\varepsilon_o R^2} \bold{\hat{r}}\right)^2+\frac{1}{\mu_o}\left( \frac{\mu_o\sigma\omega R^4}{3r^3}\left[2\cos(\theta)\bold{\hat{r}}+\frac{\sin(\theta)}{r}\hat{\theta}\right]  \right)^2 \right)$$
-        $$\mathcal{U}=\frac{Q^2}{32\pi^2\varepsilon_o R^4}+\frac{\mu_o\sigma^2\omega^2 R^8}{9r^6}\left[4\cos^2(\theta)+\frac{\sin^2(\theta)}{r^2}\right]$$
+        $$\mathcal{U}=\frac{1}{\mu_o}\left( \frac{\mu_o\sigma\omega R}{3}\left[ 2\cos(\theta)\bold{\hat{r}}+\frac{\sin(\theta)}{R}\hat{\theta} \right] \right)^2$$
 
-        We need to take into account the inside and outside magnetic field, which gives:
+        Squaring the expression we find:
 
-        $$\mathcal{U}=\frac{Q^2}{32\pi^2\varepsilon_o R^4}+\frac{\mu_o\sigma^2\omega^2 R^8}{9r^6}\left[4\cos^2(\theta)+\frac{\sin^2(\theta)}{r^2}\right]+\frac{\mu_o\sigma^2\omega^2 R^2}{9}\left[4\cos^2(\theta)+\frac{\sin^2(\theta)}{R^2}\right]$$
+        $$\mathcal{U}=\frac{1}{\mu_o}\left( \frac{\mu_o^2\sigma^2\omega^2 R^2}{9}\left[ 4\cos^2(\theta)+\frac{\sin^2(\theta)}{R^2} \right] \right)$$
+        $$\mathcal{U}=\frac{\mu_o\sigma^2\omega^2 R^2}{9}\left[ 4\cos^2(\theta)+\frac{\sin^2(\theta)}{R^2} \right]$$
 
-        From here, we need to integrate over the volume:
+        We can then plug in the defined value of $\sigma$ to get:
+
+        $$\mathcal{U}=\frac{\mu_oQ^2\omega^2}{144\pi^2R^2}\left[ 4\cos^2(\theta)+\frac{\sin^2(\theta)}{R^2} \right]$$
+
+        The energy density then becomes:
+
+        $$\mathcal{U}=\frac{\mu_oQ^2\omega^2}{36\pi^2R^2}\cos^2(\theta)+\frac{\mu_oQ^2\omega^2}{144\pi^2R^4}\sin^2(\theta)$$
+
+        We then integrate over the volume to obtain:
+
+        $$U=\int_0^{2\pi}\int_0^\pi\int_0^R \mathcal{U} r^2\sin(\theta)\,dr\,d\theta\,d\phi$$
+        $$U=\int_0^{2\pi}\int_0^\pi\int_0^R \frac{\mu_oQ^2\omega^2}{36\pi^2}\sin(\theta)\cos^2(\theta)+\frac{\mu_oQ^2\omega^2}{144\pi^2r^2}\sin^3(\theta)\,dr\,d\theta\,d\phi$$
+        $$U=\int_0^\pi\int_0^R \frac{\mu_oQ^2\omega^2}{18\pi}\sin(\theta)\cos^2(\theta)+\frac{\mu_oQ^2\omega^2}{72\pi r^2}\sin^3(\theta)\,dr\,d\theta$$
+        $$U=\int_0^\pi \frac{\mu_oQ^2\omega^2R}{18\pi}\sin(\theta)\cos^2(\theta)-\frac{\mu_oQ^2\omega^2}{72\pi R}\sin^3(\theta)\,d\theta$$
+
+        Finally, we get:
+
+        $$U=\frac{\mu_oQ^2\omega^2R}{27\pi}-\frac{\mu_oQ^2\omega^2}{54\pi R}$$
+        $$\boxed{U=\frac{\mu_oQ^2\omega^2}{27\pi}\left[R-\frac{1}{2R}\right]}$$
 
       \item Calculate the total angular momentum of the electromagnetic fields, $L_Q$.
 
