@@ -28,12 +28,12 @@
 
     We know the formula for the electric field to be:
 
-    $$\vec{E}=\frac{Q}{4\pi\varepsilon_o R^2}$$
+    $$\vec{E}=\frac{Q}{4\pi\varepsilon_o R^2}\bold{\hat{r}}$$
 
     Thus, we may conclude:
 
     $$\vec{J}=\frac{\varepsilon_o}{4\pi\varepsilon_o R^2}\left( \frac{\partial Q}{\partial t} \right)$$
-    $$\boxed{\vec{J}=\frac{I}{4\pi R^2}}$$
+    $$\boxed{\vec{J}=\frac{I}{4\pi R^2}\bold{\hat{r}}}$$
 
       \item Use the Amp\`re-Maxwell equation to calculate the induced magnetic field just above the surface at location that is an angle $\theta$ from the north pole (latitude = $90^{\circ}-\theta$). [Hint: Use a ring of constant latitude as the amperian loop and use a cap-shaped enclosed surface of the loop that follows the surface of the sphere. Be sure to include both the physical current and the displacement current.]  (While this is an interesting calculation, note that this is not a significant contribution to the Earth’s magnetic field.)
 
@@ -53,12 +53,12 @@
 
         We can then express the path as:
 
-        $$\vec{B}(2\pi R\sin(\theta))=\mu_o(I+JA)$$
-        $$\vec{B}(2\pi R\sin(\theta))=\mu_o(I+I)$$
+        $$\vec{B}(2\pi R\sin(\theta))=\mu_o\left(I+J\int_0^{2\pi}d\phi\int_0^\theta \sin(\theta)\,d\theta R^2\right)$$
+        $$\vec{B}(2\pi R\sin(\theta))=\mu_o\left(I+\frac{I}{2}\left[ 1-\cos(\theta) \right]\right)$$
 
         And finally, we get:
 
-        $$\boxed{\vec{B}=\frac{\mu_o I}{\pi R\sin(\theta)}}$$
+        $$\boxed{\vec{B}=\frac{\mu_o I[3-\cos(\theta)]}{4\pi R\sin(\theta)}}$$
 
     \end{enumerate}
 
@@ -106,11 +106,11 @@
         Plugging in the value from (a) for $\vec{S}$, and evaluating at $r=a$ we get:
 
         $$P=\left( \frac{qaI}{2\pi^2\varepsilon_o a^4} \right)\left( 2\pi ad \right)$$
-        $$P_{in}=\left( \frac{qId}{\pi\varepsilon_o a^2} \right)$$
+        $$P_{out}=\left( \frac{qId}{\pi\varepsilon_o a^2} \right)$$
 
         The flow out would be the negative equivalent:
 
-        $$\boxed{P_{out}=-\frac{qId}{\pi\varepsilon_o a^2}}$$
+        $$\boxed{P_{out}=\frac{qId}{\pi\varepsilon_o a^2}}$$
 
         We can see that the voltage may be defined as:
 
@@ -229,44 +229,143 @@
 
         We know that the energy density may be written as:
 
-        $$\mathcal{U}=\frac{1}{\mu_o}\vec{B}^2$$
+        $$\mathcal{U}=\frac{\varepsilon_o}{2}\vec{E}^2+\frac{1}{2\mu_o}\vec{B}^2$$
 
-        We can insert the magnetic field obtained in Homework 8 to get:
+        We can decompose the energy into components to get:
 
-        $$\mathcal{U}=\frac{1}{\mu_o}\left( \frac{\mu_o\sigma\omega R^4}{3r^3}\left[ 2\cos(\theta)\bold{\hat{r}}+\frac{\sin(\theta)}{r}\hat{\theta} \right] \right)^2$$
+        $$\mathcal{U}=\mathcal{U}_{\vec{E},in}+\mathcal{U}_{\vec{E},out}+\mathcal{U}_{\vec{B},in}+\mathcal{U}_{\vec{B},out}$$
 
-        We can insert $r\to R$ to obtain the total magnetic field:
+        We know that we may define the electric field as:
 
-        $$\mathcal{U}=\frac{1}{\mu_o}\left( \frac{\mu_o\sigma\omega R}{3}\left[ 2\cos(\theta)\bold{\hat{r}}+\frac{\sin(\theta)}{R}\hat{\theta} \right] \right)^2$$
+        $$\vec{E}_{out}=\frac{Q}{4\pi\varepsilon_o r^2}\bold{\hat{r}}$$
+        $$\vec{E}_{in}=0$$
 
-        Squaring the expression we find:
+        From Homework 8, Problem 1, the magnetic field may be defined as:
 
-        $$\mathcal{U}=\frac{1}{\mu_o}\left( \frac{\mu_o^2\sigma^2\omega^2 R^2}{9}\left[ 4\cos^2(\theta)+\frac{\sin^2(\theta)}{R^2} \right] \right)$$
-        $$\mathcal{U}=\frac{\mu_o\sigma^2\omega^2 R^2}{9}\left[ 4\cos^2(\theta)+\frac{\sin^2(\theta)}{R^2} \right]$$
+        $$\vec{B}=\frac{\mu_o\sigma\omega R^4}{3r^3}\left[ 2\cos(\theta)\bold{\hat{r}}+\sin(\theta)\hat{\theta} \right]$$
 
-        We can then plug in the defined value of $\sigma$ to get:
+        We know that, inside, $\theta=0$ and $r\to R$, which gives us:
 
-        $$\mathcal{U}=\frac{\mu_oQ^2\omega^2}{144\pi^2R^2}\left[ 4\cos^2(\theta)+\frac{\sin^2(\theta)}{R^2} \right]$$
+        $$\vec{B}_{out}=\frac{\mu_o\sigma\omega R^4}{3r^3}\left[ 2\cos(\theta)\bold{\hat{r}}+\sin(\theta)\hat{\theta} \right]$$
+        $$\vec{B}_{in}=\frac{2}{3}\mu_o\sigma\omega R\bold{\hat{r}}$$
 
-        The energy density then becomes:
+        We can define two energies that are easier for us to calculate as:
 
-        $$\mathcal{U}=\frac{\mu_oQ^2\omega^2}{36\pi^2R^2}\cos^2(\theta)+\frac{\mu_oQ^2\omega^2}{144\pi^2R^4}\sin^2(\theta)$$
+        $$\mathcal{U}_{\vec{E},in}=0$$
 
-        We then integrate over the volume to obtain:
+        And then:
 
-        $$U=\int_0^{2\pi}\int_0^\pi\int_0^R \mathcal{U} r^2\sin(\theta)\,dr\,d\theta\,d\phi$$
-        $$U=\int_0^{2\pi}\int_0^\pi\int_0^R \frac{\mu_oQ^2\omega^2}{36\pi^2}\sin(\theta)\cos^2(\theta)+\frac{\mu_oQ^2\omega^2}{144\pi^2r^2}\sin^3(\theta)\,dr\,d\theta\,d\phi$$
-        $$U=\int_0^\pi\int_0^R \frac{\mu_oQ^2\omega^2}{18\pi}\sin(\theta)\cos^2(\theta)+\frac{\mu_oQ^2\omega^2}{72\pi r^2}\sin^3(\theta)\,dr\,d\theta$$
-        $$U=\int_0^\pi \frac{\mu_oQ^2\omega^2R}{18\pi}\sin(\theta)\cos^2(\theta)-\frac{\mu_oQ^2\omega^2}{72\pi R}\sin^3(\theta)\,d\theta$$
+        $$\mathcal{U}_{\vec{B},in}=\frac{1}{2\mu_o}\left( \frac{2}{3}\mu_o\sigma\omega R \right)^2$$
+        $$\mathcal{U}_{\vec{B},in}=\frac{2}{9}\mu_o\sigma^2\omega^2 R^2$$
+        $$\mathcal{U}_{\vec{B},in}=\frac{2}{9}\mu_o\omega^2 R^2\cdot\frac{Q^2}{16\pi^2R^4}$$
+        $$\mathcal{U}_{\vec{B},in}=\frac{\mu_o\omega^2Q^2}{72\pi^2R^2}$$
 
-        Finally, we get:
+        We then multiply by the volume to get:
 
-        $$U=\frac{\mu_oQ^2\omega^2R}{27\pi}-\frac{\mu_oQ^2\omega^2}{54\pi R}$$
-        $$\boxed{U=\frac{\mu_oQ^2\omega^2}{27\pi}\left[R-\frac{1}{2R}\right]}$$
+        $$U_{\vec{B},in}=\frac{\mu_o\omega^2Q^2}{72\pi^2R^2}\left( \frac{4}{3}\pi R^3 \right)$$
+        $$U_{\vec{B},in}=\frac{\mu_o\omega^2Q^2R}{54\pi}$$
+
+        For the outer regions we now find:
+
+        $$\mathcal{U}_{\vec{E},out}=\frac{\varepsilon_o}{2}\left( \frac{Q}{4\pi\varepsilon_o R^2} \right)^2$$
+        $$\mathcal{U}_{\vec{E},out}=\frac{\varepsilon_o}{2}\left( \frac{Q^2}{16\pi^2\varepsilon_o^2 R^4} \right)$$
+        $$\mathcal{U}_{\vec{E},out}=\frac{Q^2}{32\pi^2\varepsilon_o R^4}$$
+
+        We now calculate the energy:
+
+        $$U_{\vec{E},out}=\frac{Q^2}{32\pi^2\varepsilon_o}\int_0^{2\pi}\,d\phi\int_0^\pi\sin(\theta)\,d\theta\int_{R}^\infty \frac{1}{r^2}\,dr$$
+        $$U_{\vec{E},out}=\frac{Q^2}{8\pi\varepsilon_oR}$$
+
+        Returning to the outer fields, we find the magnetic energy density:
+
+        $$\mathcal{U}_{\vec{B},out}=\frac{1}{2\mu_o}\left(\frac{\mu_o\sigma\omega R^4}{3r^3}\left[ 2\cos(\theta)\bold{\hat{r}}+\sin(\theta)\hat{\theta} \right]  \right)^2$$
+        $$\mathcal{U}_{\vec{B},out}=\frac{1}{2\mu_o}\left(\frac{\mu_o^2\sigma^2\omega^2 R^8}{9r^6}\left[ 4\cos^2(\theta)+\sin^2(\theta)\right]  \right)$$
+        $$\mathcal{U}_{\vec{B},out}=\frac{\mu_o\sigma^2\omega^2 R^8}{18r^6}\left[ 4\cos^2(\theta)+\sin^2(\theta)\right] $$
+        $$\mathcal{U}_{\vec{B},out}=\frac{\mu_oQ^2\omega^2 R^4}{288\pi^2r^6}\left[ 4\cos^2(\theta)+\sin^2(\theta)\right] $$
+
+        Once again, we find the energy:
+
+        $$U_{\vec{B},out}=\frac{\mu_oQ^2\omega^2 R^4}{288\pi^2}\int_0^{2\pi}\,d\phi\underbrace{\int_0^\pi\left[ 4\cos^2(\theta)\sin(\theta)+\sin^3(\theta)\right]\,d\theta}_{4}\underbrace{\int_R^\infty \frac{1}{r^4}\,dr}_{\frac{1}{3R^3}}$$
+        $$U_{\vec{B},out}=\frac{\mu_oQ^2\omega^2 R}{108\pi}$$
+
+        We sum all of the energy components to get:
+
+        $$U_{tot}=U_{\vec{E},in}+U_{\vec{E},out}+U_{\vec{B},in}+U_{\vec{B},out}$$
+        $$U_{tot}=0+\frac{Q^2}{8\pi\varepsilon_o R}+\frac{\mu_o\omega^2Q^2R}{54\pi}+\frac{\mu_oQ^2\omega^2 R}{108\pi}$$
+
+        Thus, we finally get:
+
+        $$\boxed{U_{tot}=\frac{Q^2}{8\pi\varepsilon_o R}+\frac{\mu_o\omega^2Q^2R}{36\pi}}$$
 
       \item Calculate the total angular momentum of the electromagnetic fields, $L_Q$.
 
+        To find the angular momentum, we must find $\vec{g}$. We can first say:
+
+        $$\vec{g}_{in}=0$$
+
+        since $\vec{E}_{in}=0$. To find $\vec{g}_{out}$, we can use:
+
+        $$\vec{g}=\varepsilon_o\vec{E}\times\vec{B}$$
+
+        This gives us:
+
+        $$\vec{g}_{out}=\varepsilon_o\left(\frac{Q}{4\pi\varepsilon_o r^2}\right)\left( \frac{\mu_o\sigma\omega R^4}{3r^3} \right)\left[ \cancel{\bold{\hat{r}}\times 2\cos(\theta)\bold{\hat{r}}}+\bold{\hat{r}}\times\sin(\theta)\hat{\theta} \right]$$
+        $$\vec{g}_{out}=\varepsilon_o\left(\frac{Q}{4\pi\varepsilon_o r^2}\right)\left( \frac{\mu_o\sigma\omega R^4}{3r^3} \right)\left[ \bold{\hat{r}}\times\sin(\theta)\hat{\theta} \right]$$
+        $$\vec{g}_{out}=\frac{\mu_oQ\sigma\omega R^4}{12\pi r^5}\sin(\theta)\hat{\phi}$$
+
+        We can then find the angular momentum according to:
+
+        $$\vec{l}=\vec{r}\times\vec{g}$$
+        $$\vec{l}=r\left( \frac{\mu_oQ\sigma\omega R^4}{12\pi r^5}\sin(\theta) \right)[\bold{\hat{r}}\times\hat{\phi}]$$
+        $$\vec{l}=-\frac{\mu_oQ\sigma\omega R^4}{12\pi r^4}\sin(\theta)\hat{\theta}$$
+
+        We know that, due to the sphere spinning along the $z$-axis, only angular momentum along the $z$ component will contribute. Thus, we get:
+
+        $$\vec{l}_z=-\frac{\mu_oQ\sigma\omega R^4}{12\pi r^4}\sin(\theta)(\hat{\theta}\cdot\bold{\hat{z}}$$
+        $$\vec{l}_z=\frac{\mu_oQ\sigma\omega R^4}{12\pi r^4}\sin^2(\theta)$$
+
+        To find $L_Q$, we may write:
+
+        $$L_Q=\oint \vec{l}\,d\tau$$
+
+        This gives us:
+
+        $$\vec{L}_Q=\frac{\mu_oQ^2\omega R^2}{48\pi^2}\int_0^{2\pi}\,d\phi\int_0^{\pi}\sin^3(\theta)\,d\theta\int_R^\infty \frac{1}{r^2}\,dr$$
+        $$\boxed{\vec{L}_Q=\frac{\mu_oQ^2\omega R}{18\pi}\bold{\hat{z}}}$$
+
       \item Consider a spinning shell whose rest energy $(Mc^2)$ is equal to its electrostatic potential energy $(Q^2/(8\pi\varepsilon_o R))$. Find the ratio between the mechanical ($L_M$) and electromagnetic ($L_Q$) contributions to the angular momentum. Use the fact that $c=1/\sqrt{\varepsilon_o\mu_o}$.
+
+        Given this, we can set:
+
+        $$\vec{L}_Q\Rightarrow\frac{\mu_oQ^2\omega R}{18\pi}=\frac{Q^2}{8\pi\varepsilon_o R}$$
+
+        We can rearrange to get:
+
+        $$\vec{L}_Q=(Mc^2)\frac{4c^2\mu_o\varepsilon_o\omega R^2}{9}$$
+
+        We know that:
+
+        $$c^2=\frac{1}{\mu_o\varepsilon_o}$$
+
+        This gives us:
+
+        $$\vec{L}_Q=\frac{4M\omega R^2}{9}\bold{\hat{z}}$$
+
+        For a spinning shell with mass $M$, we may write:
+
+        $$I=\frac{2}{3}MR^2$$
+
+        We also know:
+
+        $$\vec{L}_M=I\vec{\omega}$$
+
+        This gives:
+
+        $$\vec{L}_M=\frac{2}{3}M\omega R^2\bold{\hat{z}}$$
+
+        Finding the ratio, we get:
+
+        $$\boxed{\frac{\vec{L}_M}{\vec{L}_Q}=\frac{(2)(9)M\omega R^2\bold{\hat{z}}}{(3)(4)M\omega R^2\bold{\hat{z}}}=\frac{3}{2}}$$
 
     \end{enumerate}
 
