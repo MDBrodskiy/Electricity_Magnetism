@@ -18,13 +18,140 @@
 
 \begin{abstract}
 
-  The purpose of this document is to analyze how the electric field of a parallel plate capacitor may be plotted in the GNU Octave program. Various scenarios will be analyzed, such as a basic conductor (with air), a conductor with a dielectric, and a conductor with a diamagnetic.
+  The purpose of this document is to analyze how the voltage, and, subsequently, the electric field  and force between a parallel plate capacitor may be plotted in the GNU Octave program. We assume a charge-discharge cycle for the capacitor, as indicated in the attached circuit schematic. Various oscillation periods will be tested.
 
 \end{abstract}
 
 \begin{flushleft}
-  Keywords: \underline{parallel plate capacitor}, \underline{electric field}, \underline{GNU Octave}, \underline{dielectric}, \underline{diamagnetic}
+  Keywords: \underline{parallel plate capacitor}, \underline{electric field}, \underline{GNU Octave}, \underline{charge-discharge}, \underline{cycle}
 \end{flushleft}
+
+\newpage
+
+\tableofcontents
+
+\newpage
+
+\section{Preliminary Assumptions and Calculations}
+
+We may use the following schematic to design the capacitor testing circuit:
+
+\begin{figure}[H]
+  \centering
+  \include{Figures/Circuit}
+  \caption{Circuit Schematic}
+  \label{fig:1}
+\end{figure}
+
+The switch flips between 1 and 2 based on a periodic cycle defined by a time interval $T$. Let us assume that a standard $1[\si{\micro\farad}]$ capacitor is used, along with a $100[\si{\ohm}]$ resistor. Furthermore, suppose that the battery has a voltage $V=5[\si{\volt}]$, and that, at time $t=0$, the switch has been in position $1$ for a long time, and is moved to $2$. We may begin by assuming that the initial voltage is entirely across the capacitor, such that:
+
+$$V_o=5$$
+
+According to discharging capacitors, we may write:
+
+$$V=5e^{-\frac{t}{RC}}$$
+
+for the stage in which the capacitor is losing charge. Let us start with a case in which the capacitor discharges to 25\% of its initial voltage value, and then the switch flips until fully charged (this repeats every $T$). This occurs when:
+
+$$\ln\left( .01 \right)=-\frac{T}{RC}$$
+$$T=-(100)(1\cdot10^{-6})\ln(.1)$$
+$$T=.139[\si{\milli\second}]$$
+
+Finally, let us assume that the plates are separated by $1[\si{\milli\meter}]$. Let us now proceed to the computational portion.
+
+\newpage
+
+\section{Computational Analysis}
+
+\subsection{$T\to$ 25\% of Initial Voltage Discharge Time}
+
+Using the scenario laid out in the preliminary assumptions, we may begin plotting. Let us choose a time step size of $t=10[\si{\micro\second}]$ and 100 iterations:
+
+\begin{center}
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=.9\textwidth]{Figures/QuarterT.png}
+    \caption{Period ($T$) is Time to Discharge to $25\%$ Initial Voltage}
+    \label{fig:2}
+  \end{figure}
+\end{center}
+
+As expected, we can see the capacitor discharging in the long run, as it is unable to reach its initial value on recharge. Note that we do see the initial discharge fall to $25\%$ of the initial value ($5\to1.25[\si{\volt}]$).
+
+\subsection{$T=20[\si{\micro\second}]$ (Small Period)}
+
+Let us repeat the analysis with the same parameters specified in Section 2.1, but with a set period of $20[\si{\micro\second}]$. This yields:
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=.9\textwidth]{Figures/T20.png}
+  \caption{Period of $20[\si{\micro\second}]$}
+  \label{fig:3}
+\end{figure}
+
+We can see that, as compared to the initial period setting, this setting has oscillations occur much more frequently, as expected.
+
+\subsection{Arbitrary $T$}
+
+We can also test a case in which the oscillations occur randomly. That is, each interval for charge-discharge is randomly timed. We will set reasonable time boundaries so that the random time interval rests in the range $[2\cdot10^{-5},9.2\cdot10^{-4}]$. The following was generated:
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=.9\textwidth]{Figures/RandT.png}
+  \caption{Random Period Value}
+  \label{fig:4}
+\end{figure}
+
+\subsection{Edge Case Check}
+
+We can confirm the accuracy of this projection by testing edge cases. Let us first see the capacitor discharge to $100\%$ of its initial value:
+
+\begin{center}
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=.9\textwidth]{Figures/NoDischarge.png}
+    \caption{Discharge to $100\%$ (No Discharge)}
+    \label{fig:4}
+  \end{figure}
+\end{center}
+
+As expected, the switch never flips to position 2, which does not allow the capacitor to discharge. As expected, the voltage remains at its initial value. For the second edge case, we can see what happens when the capacitor discharges to $0\%$ of its initial value (no subsequent charge). This gives us:
+
+\begin{center}
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=.9\textwidth]{Figures/OnlyDischarge.png}
+    \caption{Discharge to $0\%$ (No Charge After Discharge)}
+    \label{fig:5}
+  \end{figure}
+\end{center}
+
+As expected, we can see that the capacitor simply discharges.
+
+\section{Conclusion}
+
+As such, we are successfully able to model oscillating capacitors with the attached code (see Appendix).
+
+\newpage
+
+\section{Appendix}
+
+\lstinputlisting[
+    caption=GNU Octave Code, % Caption above the listing
+	label=lst:L1, % Label for referencing this listing
+	language=matlab, % Use python functions/syntax highlighting
+	frame=single, % Frame around the code listing
+	showstringspaces=false, % Don't put marks in string spaces
+	numbers=left, % Line numbers on left
+	numberstyle=\tiny, % Line numbers styling
+    backgroundcolor=\color{black!5}, % Set background color
+    keywordstyle=\color{magenta!80}, % Set keyword color
+    commentstyle=\color{blue!80}, % Set comment color
+    stringstyle=\color{green!80}, % Set string color
+    breaklines=true
+  ]{HWC.m}
+
+
 
 \end{document}
 
